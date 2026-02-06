@@ -2,6 +2,11 @@
 <html lang="en" class="scroll-smooth"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Omesh Kandregula - Product Builder</title>
+
+<!-- Favicon -->
+<link rel="icon" type="image/jpeg" href="/assets/images/omesh.jpg">
+<link rel="apple-touch-icon" href="/assets/images/omesh.jpg">
+
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -154,14 +159,36 @@ color: #a1a1aa !important;
                         </p>
 
                         <div class="pt-4 flex flex-wrap gap-4">
-                            <a href="#" class="inline-flex items-center gap-2 px-5 py-2.5 text-xs font-medium uppercase tracking-wide transition-colors bg-white text-black hover:bg-zinc-300">
-                                <iconify-icon icon="solar:download-linear" width="16" stroke-width="1.5"></iconify-icon>
-                                Download Resume
+                            <!-- View Resume -->
+                            <a
+                                href="/assets/resume/Omesh_Resume.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="inline-flex items-center gap-2 px-5 py-2.5 text-xs font-medium uppercase tracking-wide transition-colors bg-white text-black hover:bg-zinc-300"
+                            >
+                                <iconify-icon icon="solar:eye-linear" width="16" stroke-width="1.5"></iconify-icon>
+                                View Resume
                             </a>
-                            <a href="#about" class="inline-flex items-center gap-2 px-5 py-2.5 border text-xs font-medium uppercase tracking-wide transition-colors border-white/10 text-zinc-300 hover:border-white/30 hover:text-white hover:bg-white/[0.02]">
+
+                            <!-- Download Resume -->
+                            <a
+                                href="/assets/resume/Omesh_Resume.pdf"
+                                download
+                                class="inline-flex items-center gap-2 px-5 py-2.5 border text-xs font-medium uppercase tracking-wide transition-colors border-white/10 text-zinc-300 hover:border-white/30 hover:text-white hover:bg-white/[0.02]"
+                            >
+                                <iconify-icon icon="solar:download-linear" width="16" stroke-width="1.5"></iconify-icon>
+                                Download
+                            </a>
+
+                            <!-- Read More -->
+                            <a
+                                href="#about"
+                                class="inline-flex items-center gap-2 px-5 py-2.5 border text-xs font-medium uppercase tracking-wide transition-colors border-white/10 text-zinc-300 hover:border-white/30 hover:text-white hover:bg-white/[0.02]"
+                            >
                                 Read More
                             </a>
                         </div>
+
                     </div>
                 </section>
 
