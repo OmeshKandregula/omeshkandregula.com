@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tekton - Omesh Kandregula</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+html {
+zoom: 0.8;
+}
+body {
+font-family: 'Inter', sans-serif;
+background-color: #000000;
+background-image:
+linear-gradient(to right, #111111 1px, transparent 1px),
+linear-gradient(to bottom, #111111 1px, transparent 1px);
+background-size: 24px 24px;
+background-attachment: fixed;
+}
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+/* Fade in animation for expanded content */
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(10px); }
+to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+animation: fadeIn 0.8s ease-out forwards;
+}
+</style></head>
+<body class="antialiased selection:bg-white/20 selection:text-white flex flex-col min-h-screen text-zinc-400">
+
+    <!-- Main Grid Wrapper -->
+    <div class="max-w-[1400px] mx-auto w-full border-x relative bg-black/40 min-h-screen flex flex-col border-white/10 backdrop-blur-[2px]">
+        
+        <!-- Header -->
+        <header class="sticky top-0 z-50 border-b bg-black/80 backdrop-blur-md border-white/10">
+            <div class="grid grid-cols-1 md:grid-cols-12 h-16 divide-y md:divide-y-0 md:divide-x divide-white/10">
+                <div class="col-span-1 md:col-span-3 flex items-center px-6 justify-between md:justify-start">
+                    <a href="index.html" class="group flex items-center gap-2 uppercase hover:text-white transition-colors text-xs font-medium text-zinc-400 tracking-widest">
+                        <iconify-icon icon="solar:arrow-left-linear" width="16" class="group-hover:-translate-x-1 transition-transform"></iconify-icon>
+                        Back to Home
+                    </a>
+                </div>
+                <div class="col-span-1 md:col-span-9 flex items-center px-6 justify-end">
+                    <span class="text-xs font-mono text-zinc-600 uppercase">Project: Tekton</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="flex-grow">
+            
+            <!-- Hero Section -->
+            <section class="border-b border-white/10 p-8 md:p-16 lg:p-24 bg-white/[0.01]">
+                <div class="max-w-4xl">
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl tracking-tight leading-[0.95] text-white font-medium mb-4">
+                        Tekton
+                    </h1>
+
+                    <p class="text-xl md:text-2xl text-zinc-400 font-light tracking-tight mb-6">
+                        Miniature Concrete 3D Printer for Material Research
+                    </p>
+
+                    <a
+                      href="https://www.tvasta.construction/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="inline-flex items-center gap-3 text-zinc-400 opacity-80 hover:text-white hover:opacity-100 transition-colors"
+                    >
+                        <img
+                            src="assets/images/tvasta-logo.jpg"
+                            alt="Tvasta Manufacturing Solutions logo"
+                            class="h-5 w-auto object-contain opacity-70 translate-y-[1px]"
+                        />
+                        <span class="text-sm font-light flex items-center gap-1">
+                            Tvasta Manufacturing Solutions
+                            <iconify-icon icon="solar:arrow-up-right-linear" width="12" class="opacity-60"></iconify-icon>
+                        </span>
+
+                    </a>
+
+                </div>
+            </section>
+
+
+            <!-- SKIM VIEW (Always Visible) -->
+            <div id="skim-view" class="grid grid-cols-1 md:grid-cols-12 divide-y md:divide-y-0 md:divide-x divide-white/10 border-b border-white/10">
+                
+                <!-- Left Column: Context & Problem -->
+                <div class="col-span-1 md:col-span-7 p-8 md:p-16 space-y-12">
+                    
+                    <!-- One Liner -->
+                    <div class="space-y-4">
+                        <h3 class="uppercase flex items-center gap-2 text-xs font-medium text-blue-400 tracking-widest">
+                            <iconify-icon icon="solar:bolt-linear" width="14"></iconify-icon>
+                            Summary
+                        </h3>
+                        <p class="text-lg md:text-xl text-white font-light leading-relaxed">
+                            Built a compact concrete 3D printer to support small-scale material research and rapid experimentation.
+                        </p>
+                    </div>
+
+                    <!-- Context -->
+                    <div class="space-y-4">
+                        <h3 class="text-xs font-medium uppercase tracking-widest text-zinc-500">Context</h3>
+                        <div class="p-6 border border-white/10 bg-white/[0.02] rounded-sm">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-white font-medium text-sm">Product Engineering Intern</span>
+                                <span class="text-zinc-600 text-[10px] font-mono">Tvasta Manufacturing Solutions</span>
+                            </div>
+                            <p class="text-sm text-zinc-400 font-light">Construction-tech startup working on concrete 3D printing systems.</p>
+                        </div>
+                    </div>
+
+                    <!-- The Problem -->
+                    <div class="space-y-4">
+                        <h3 class="text-xs font-medium uppercase tracking-widest text-zinc-500">The Problem</h3>
+                        <ul class="space-y-3 text-sm font-light text-zinc-400 leading-relaxed list-disc list-inside marker:text-zinc-700">
+                            <li>Most concrete 3D printers are designed for large-scale construction; they are expensive and poorly suited for research.</li>
+                            <li class="">Existing desktop printers struggle with construction materials due to clogging, abrasion, and inconsistent flow.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Right Column: Solution & Role -->
+                <div class="col-span-1 md:col-span-5 divide-y divide-white/10 bg-white/[0.005]">
+                    
+                    <!-- What I Worked On -->
+                    <div class="p-8 md:p-12 space-y-4">
+                        <h3 class="text-xs font-medium uppercase tracking-widest text-zinc-500 flex items-center gap-2">
+                            <iconify-icon icon="solar:box-linear" width="14"></iconify-icon>
+                            What I Worked On
+                        </h3>
+                        <p class="text-sm text-white font-medium mb-2">A research-focused concrete 3D printer.</p>
+                        <ul class="space-y-2 text-sm text-zinc-400 font-light">
+                            <li class="flex items-start gap-2">
+                                <iconify-icon icon="solar:check-read-linear" class="text-emerald-500 mt-0.5 min-w-[14px]"></iconify-icon>
+                                <span>Supports printing with concrete &amp; other paste-type materials</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <iconify-icon icon="solar:check-read-linear" class="text-emerald-500 mt-0.5 min-w-[14px]"></iconify-icon>
+                                <span>Prioritizes modularity &amp; ease of cleaning</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- My Role -->
+                    <div class="p-8 md:p-12 space-y-4">
+                        <h3 class="text-xs font-medium uppercase tracking-widest text-zinc-500">My Role</h3>
+                        <div class="space-y-3">
+                            <p class="text-sm text-zinc-400 font-light">Converted research needs into system-level requirements.</p>
+                            <p class="text-sm text-zinc-400 font-light">Worked across mechanical design, integration, and testing.</p>
+                            <p class="text-sm text-zinc-400 font-light">Iterated on material flow, extrusion consistency, and usability.</p>
+                        </div>
+                    </div>
+
+                    <!-- Outcomes -->
+                    <div class="p-8 md:p-12 space-y-4 bg-white/[0.02]">
+                        <h3 class="text-xs font-medium uppercase tracking-widest text-emerald-500">Outcomes</h3>
+                        <div class="space-y-4">
+                            <div class="flex gap-3">
+                                <div class="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500 shrink-0">
+                                    <iconify-icon icon="solar:chart-2-linear" width="16"></iconify-icon>
+                                </div>
+                                <div class="">
+                                    <p class="text-sm text-white font-medium">Reliable Prints</p>
+                                    <p class="text-xs text-zinc-500 mt-1">Demonstrated stable small-scale printing with construction materials.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-3">
+                                <div class="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500 shrink-0">
+                                    <iconify-icon icon="solar:test-tube-linear" width="16"></iconify-icon>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-white font-medium">Controlled Experiments</p>
+                                    <p class="text-xs text-zinc-500 mt-1">Enabled testing across various materials and geometries.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-3">
+                                <div class="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500 shrink-0">
+                                    <iconify-icon icon="solar:dollar-linear" width="16"></iconify-icon>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-white font-medium">Cost Effective</p>
+                                    <p class="text-xs text-zinc-500 mt-1">Delivered functional research tool at significantly lower cost.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Focus Areas Bar -->
+            <div class="border-b border-white/10 p-6 md:px-16 flex flex-wrap items-center gap-4 bg-[#050505]">
+                <span class="text-[10px] uppercase tracking-widest text-zinc-600 mr-2">Focus Areas:</span>
+                <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] text-zinc-400 bg-white/[0.02]">System Design</span>
+                <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] text-zinc-400 bg-white/[0.02]">Prototyping</span>
+                <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] text-zinc-400 bg-white/[0.02]">Testing</span>
+                <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] text-zinc-400 bg-white/[0.02]">Iteration</span>
+                <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] text-zinc-400 bg-white/[0.02]">Tradeoff Analysis</span>
+            </div>
+
+            <!-- EXPANSION TOGGLE -->
+            <div id="read-more-container" class="py-24 flex flex-col items-center justify-center border-b border-white/10 bg-gradient-to-b from-black to-zinc-900/20">
+                <button class="group flex gap-3 hover:bg-zinc-200 transition-colors uppercase text-xs font-medium text-black tracking-widest bg-white rounded-sm pt-3 pr-8 pb-3 pl-8 gap-x-3 gap-y-3 items-center" id="read-more-btn">
+                    <span class="">Read More</span>
+                    <iconify-icon icon="solar:arrow-down-linear" width="16" class="group-hover:translate-y-0.5 transition-transform"></iconify-icon>
+                </button>
+            </div>
+
+            <!-- EXPANDED CONTENT (Hidden by default) -->
+            <div id="expanded-content" class="hidden">
+                
+                <!-- Problem Context & Goals -->
+                <section class="grid grid-cols-1 md:grid-cols-12 border-b border-white/10 animate-fade-in">
+                    <div class="col-span-1 md:col-span-4 p-8 md:p-16 border-b md:border-b-0 md:border-r border-white/10">
+                        <h2 class="text-2xl md:text-3xl text-white font-medium tracking-tight mb-4">Problem Context</h2>
+                        <p class="text-sm text-zinc-500">Output scale vs. Learning speed</p>
+                    </div>
+                    <div class="col-span-1 md:col-span-8 p-8 md:p-16 space-y-6">
+                        <p class="leading-relaxed text-lg font-light text-zinc-300">Concrete printing systems are typically optimized for output scale, not learning speed. For research teams, the real challenge is repeatability, ease of iteration, and system maintainability.</p>
+                        <p class="text-base text-zinc-400 font-light leading-relaxed">
+                            This project focused on rethinking the printer as a research instrument, not a production machine.
+                        </p>
+                        
+                        <div class="mt-8 pt-8 border-t border-white/10">
+                            <h4 class="text-sm font-medium text-white mb-4">Product Goals</h4>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-zinc-400 font-light">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-1.5 h-1.5 bg-zinc-600 rounded-full"></div>
+                                    <span class="">Fits into a lab or workshop environment</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-1.5 h-1.5 bg-zinc-600 rounded-full"></div>
+                                    <span>Supports construction material experiments</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-1.5 h-1.5 bg-zinc-600 rounded-full"></div>
+                                    <span class="">Easy to disassemble, clean, reconfigure</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-1.5 h-1.5 bg-zinc-600 rounded-full"></div>
+                                    <span>Encourages fast iteration cycles</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- System Architecture -->
+                <section class="border-b border-white/10 bg-white/[0.01] animate-fade-in" style="animation-delay: 0.1s;">
+                    <div class="p-8 md:p-16 border-b border-white/10">
+                        <h2 class="text-2xl md:text-3xl text-white font-medium tracking-tight">System Architecture</h2>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/10">
+                        <!-- Motion -->
+                        <div class="p-8 md:p-12 space-y-6">
+                            <div class="w-10 h-10 border border-white/10 bg-black flex items-center justify-center text-white">
+                                <iconify-icon icon="solar:move-to-folder-linear" width="20"></iconify-icon>
+                            </div>
+                            <h3 class="text-lg font-medium text-white">Motion System</h3>
+                            <ul class="space-y-3 text-sm text-zinc-400 font-light">
+                                <li>Cartesian-style motion for predictable and accurate positioning.</li>
+                                <li>Chosen for simplicity, stability, and ease of maintenance.</li>
+                            </ul>
+                        </div>
+                        <!-- Material -->
+                        <div class="p-8 md:p-12 space-y-6">
+                            <div class="flex text-white bg-black w-10 h-10 border-white/10 border items-center justify-center">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cylinder">
+        <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+        <path d="M3 5v14a9 3 0 0 0 18 0V5"></path>
+    </svg>
+</div>
+                            <h3 class="text-lg font-medium text-white">Material Handling</h3>
+                            <ul class="space-y-3 text-sm text-zinc-400 font-light">
+                                <li class="">Batch-based material storage and delivery system.</li>
+                                <li class="">Designed to minimize clogging and simplify cleanup after experiments.</li>
+                            </ul>
+                        </div>
+                        <!-- Extrusion -->
+                        <div class="p-8 md:p-12 space-y-6">
+                            <div class="w-10 h-10 border border-white/10 bg-black flex items-center justify-center text-white">
+                                <iconify-icon icon="solar:layers-linear" width="20" class=""></iconify-icon>
+                            </div>
+                            <h3 class="text-lg font-medium text-white">Extrusion System</h3>
+                            <ul class="space-y-3 text-sm text-zinc-400 font-light">
+                                <li>Mechanically driven extrusion to handle dense materials.</li>
+                                <li>Interchangeable components to support different material types.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Design Decisions -->
+                <section class="grid grid-cols-1 md:grid-cols-12 border-b border-white/10 animate-fade-in" style="animation-delay: 0.2s;">
+                    <div class="col-span-1 md:col-span-4 p-8 md:p-16 border-b md:border-b-0 md:border-r border-white/10 bg-[#050505]">
+                        <h2 class="text-xl md:text-2xl text-white font-medium tracking-tight mb-4">Key Design Decisions</h2>
+                        <p class="text-sm text-zinc-500 leading-relaxed">
+                            Tradeoffs were made intentionally based on research workflows.
+                        </p>
+                    </div>
+                    <div class="col-span-1 md:col-span-8 p-8 md:p-16">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                            <div class="space-y-2">
+                                <span class="text-xs font-mono text-zinc-500 uppercase">Architecture</span>
+                                <p class="text-white text-sm font-medium">Modularity over Coupling</p>
+                                <p class="text-xs text-zinc-400 leading-relaxed">Prioritized modular designs to ensure subsystems could be independently serviced or upgraded.</p>
+                            </div>
+                            <div class="space-y-2">
+                                <span class="text-xs font-mono text-zinc-500 uppercase">Workflow</span>
+                                <p class="text-white text-sm font-medium">Research over Throughput</p>
+                                <p class="text-xs text-zinc-400 leading-relaxed">Optimized for reliability during experiments rather than raw printing speed.</p>
+                            </div>
+                            <div class="space-y-2">
+                                <span class="text-xs font-mono text-zinc-500 uppercase">Constraints</span>
+                                <p class="text-white text-sm font-medium">Accepted Limits</p>
+                                <p class="text-xs text-zinc-400 leading-relaxed">Accepted known constraints in exchange for higher reliability and usability for researchers.</p>
+                            </div>
+                            <div class="space-y-2">
+                                <span class="text-xs font-mono text-zinc-500 uppercase">Learning</span>
+                                <p class="text-white text-sm font-medium">Real-world Focus</p>
+                                <p class="text-xs text-zinc-400 leading-relaxed">Focused on learning from real prints rather than theoretical performance metrics.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Testing, Results & Learnings -->
+                <section class="grid grid-cols-1 md:grid-cols-2 border-b border-white/10 animate-fade-in" style="animation-delay: 0.3s;">
+                    <div class="p-8 md:p-16 border-b md:border-b-0 md:border-r border-white/10">
+                        <div class="flex items-center gap-3 mb-6">
+                            <iconify-icon icon="solar:tuning-square-2-linear" class="text-emerald-500" width="20"></iconify-icon>
+                            <h3 class="text-lg font-medium text-white">Testing &amp; Results</h3>
+                        </div>
+                        <ul class="space-y-4 text-sm text-zinc-400 font-light list-disc list-inside">
+                            <li>Conducted subsystem-level testing to validate basic functionality.</li>
+                            <li>Iterated on material flow and extrusion consistency.</li>
+                            
+                        </ul>
+                    </div>
+                    <div class="p-8 md:p-16 bg-white/[0.01]">
+                        <div class="flex items-center gap-3 mb-6">
+                            <iconify-icon icon="solar:lightbulb-linear" class="text-amber-500" width="20"></iconify-icon>
+                            <h3 class="text-lg font-medium text-white">Learnings</h3>
+                        </div>
+                        <ul class="space-y-4 text-sm text-zinc-400 font-light list-disc list-inside">
+                            <li>Material handling is the dominant constraint in concrete printing.</li>
+                            <li>Maintainability matters as much as print quality in research setups.</li>
+                            
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Media Gallery (Safe) -->
+                <section class="p-8 md:p-16 border-b border-white/10 animate-fade-in" style="animation-delay: 0.4s;">
+                    <h3 class="text-xs font-medium uppercase tracking-widest text-zinc-500 mb-8">System Visualization</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Placeholder 1 -->
+                        <div class="group relative aspect-video border border-white/10 overflow-hidden">
+                            <img
+                                src="assets/images/tekton-full-setup.jpeg"
+                                alt="Tekton full printer setup"
+                                class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
+                            />
+                        </div>
+
+                         <!-- Placeholder 2 -->
+                        <div class="group relative aspect-video border border-white/10 overflow-hidden">
+                            <img
+                                src="assets/images/tekton-printed-sample.jpeg"
+                                alt="Clay printed sample from Tekton"
+                                class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
+                            />
+                        </div>
+
+                         <!-- Placeholder 3 -->
+                        <div class="relative aspect-video border border-white/10 overflow-hidden md:col-span-3 lg:col-span-3 bg-black">
+                            <video
+                              src="assets/videos/tekton-operation.mp4"
+                              controls
+                              preload="metadata"
+                              controlslist="nodownload noplaybackrate"
+                              class="w-full h-full object-cover"
+                            ></video>
+
+                        </div>
+
+                    </div>
+                    <div class="mt-4 text-center">
+                        <p class="text-[10px] uppercase text-zinc-600 tracking-widest">Confidential / Non-Proprietary Views Only</p>
+                    </div>
+                </section>
+
+                <!-- Closing Note -->
+                <section class="md:p-16 text-center bg-gradient-to-b from-black to-zinc-900/40 border-white/10 border-t pt-8 pr-8 pb-8 pl-8 animate-fade-in" style="animation-delay: 0.5s;">
+                    <div class="max-w-3xl mr-auto ml-auto">
+                        <div class="md:p-12 border-white/10 border rounded-sm pt-8 pr-8 pb-8 pl-8 space-y-6">
+                            <div class="flex items-center gap-3 mb-2">
+                                <div class="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500 shrink-0">
+                                    <iconify-icon icon="solar:lightbulb-bolt-linear" width="16"></iconify-icon>
+                                </div>
+                                <span class="text-xs font-medium uppercase tracking-widest text-emerald-500">Key Takeaway</span>
+                            </div>
+                            <p class="md:text-xl text-lg font-medium text-white tracking-tight">
+                                This project was about system thinking under constraints.
+                            </p>
+                            <p class="leading-relaxed text-sm font-light text-zinc-400">
+                                The goal wasn't to build the biggest printer, but the right one for learning fast and iterating responsibly.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="border-t relative overflow-hidden border-white/10 bg-black">
+             <div class="absolute inset-0 bg-[linear-gradient(to_right,#222_1px,transparent_1px),linear-gradient(to_bottom,#222_1px,transparent_1px)] bg-[size:24px_24px] opacity-20"></div>
+            <div class="grid grid-cols-1 md:grid-cols-12 divide-y md:divide-y-0 md:divide-x relative z-10 divide-white/10">
+                <div class="col-span-1 md:col-span-9 p-8 md:p-12 flex flex-col justify-center items-start">
+                    <h2 class="md:text-3xl text-2xl font-medium text-white tracking-tight mb-2">Like projects that balance constraints and execution?</h2>
+                    <p class="text-sm font-light text-zinc-500 mb-6">Let's connect.</p>
+                    <a href="mailto:kandregulaomesh@gmail.com" class="px-5 py-2 border text-xs font-medium uppercase tracking-widest transition-all duration-300 border-zinc-700 bg-zinc-900/50 text-white hover:bg-white hover:text-black hover:border-white flex items-center gap-2">
+                        <iconify-icon icon="solar:letter-linear" width="16" stroke-width="1.5"></iconify-icon>
+                        Contact Me
+                    </a>
+                </div>
+                <div class="col-span-1 md:col-span-3 md:p-12 flex flex-col bg-black/50 pt-8 pr-8 pb-8 pl-8 justify-end">
+                    <div class="mt-auto font-mono text-[10px] space-y-6 text-zinc-600">
+                        <div class="text-[10px] text-zinc-600 font-mono mt-auto space-y-3">
+                            <div class="flex items-center gap-2 text-zinc-400">
+                                <iconify-icon icon="solar:map-point-linear" width="14" stroke-width="1.5"></iconify-icon>
+                                <span>PITTSBURGH, PA</span>
+                            </div>
+                            <div class="flex items-center gap-4 border-t pt-4 border-white/10">
+                                <div><span class="block text-zinc-500">40.4406° N</span></div>
+                                <div><span class="block text-zinc-500">79.9959° W</span></div>
+                            </div>
+                            <div class="pt-6 text-zinc-700">
+                                © 2026 OMESH KANDREGULA
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('read-more-btn').addEventListener('click', function() {
+            const expandedContent = document.getElementById('expanded-content');
+            const buttonContainer = document.getElementById('read-more-container');
+            
+            // Show content with animation
+            expandedContent.classList.remove('hidden');
+            expandedContent.classList.add('animate-fade-in');
+            
+            // Hide the button container smoothly
+            buttonContainer.style.display = 'none';
+        });
+    </script>
+
+</body></html>

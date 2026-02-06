@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ScreenSage - Omesh Kandregula</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body {
+font-family: 'Inter', sans-serif;
+background-color: #000000;
+background-image:
+linear-gradient(to right, #111111 1px, transparent 1px),
+linear-gradient(to bottom, #111111 1px, transparent 1px);
+background-size: 24px 24px;
+background-attachment: fixed;
+zoom: 0.8;
+}
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+/* Fade in animation for expanded content */
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(10px); }
+to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+animation: fadeIn 0.8s ease-out forwards;
+}
+</style></head>
+<body class="antialiased selection:bg-white/20 selection:text-white flex flex-col min-h-screen text-zinc-400">
+
+    <!-- Main Grid Wrapper -->
+    <div class="max-w-[1400px] mx-auto w-full border-x relative bg-black/40 min-h-screen flex flex-col border-white/10 backdrop-blur-[2px]">
+        
+        <!-- Header -->
+        <header class="sticky top-0 z-50 border-b bg-black/80 backdrop-blur-md border-white/10">
+            <div class="grid grid-cols-1 md:grid-cols-12 h-16 divide-y md:divide-y-0 md:divide-x divide-white/10">
+                <div class="col-span-1 md:col-span-3 flex items-center px-6 justify-between md:justify-start">
+                    <a href="index.html" class="group flex items-center gap-2 uppercase hover:text-white transition-colors text-xs font-medium text-zinc-400 tracking-widest">
+                        <iconify-icon icon="solar:arrow-left-linear" width="16" stroke-width="1.5" class="group-hover:-translate-x-1 transition-transform"></iconify-icon>
+                        Back to Home
+                    </a>
+                </div>
+                <div class="col-span-1 md:col-span-9 flex items-center px-6 justify-between">
+                    <span class="uppercase text-xs text-zinc-600 font-mono ml-auto">Project: ScreenSage</span>
+                    <div class="hidden md:flex gap-4">
+                         
+                         
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="flex-grow">
+            
+            <!-- Hero & Executive Summary Grid -->
+            <section class="grid grid-cols-1 md:grid-cols-12 divide-y md:divide-y-0 md:divide-x divide-white/10 border-b border-white/10">
+                
+                <!-- Main Title Area -->
+                <div class="col-span-1 md:col-span-8 p-8 md:p-16 lg:p-24 bg-white/[0.01]">
+                    <div class="max-w-2xl">
+                        <div class="inline-flex items-center gap-2 mb-6 text-blue-400">
+                             <iconify-icon icon="solar:smartphone-rotate-orientation-linear" width="16" stroke-width="1.5"></iconify-icon>
+                             <span class="text-xs font-medium uppercase tracking-widest">Product Concept</span>
+                        </div>
+                        <h1 class="md:text-6xl text-5xl font-medium text-white tracking-tight mb-6 leading-[0.95]">
+                            ScreenSage
+                        </h1>
+                        <p class="text-xl md:text-2xl text-zinc-400 font-light tracking-tight leading-relaxed">
+                            A gamified approach to reducing phone screen time through social accountability and friendly competition.
+                        </p>
+                        
+                        <!-- Read More / Expandable Content -->
+                        <div id="hero-expanded" class="hidden overflow-hidden transition-all duration-500 ease-in-out">
+                            <p class="text-base text-zinc-400 font-light leading-relaxed mt-6 pr-4 border-l border-white/10 pl-6">
+                                ScreenSage isn't just a tracker; it's a social contract. By analyzing the failures of passive monitoring tools, we identified that users ignore data but react to social friction. The resulting prototype gamified the 'unplugging' experience, turning digital detox into a team sport rather than a solitary punishment.
+                            </p>
+                        </div>
+                        
+                        <button onclick="document.getElementById('hero-expanded').classList.toggle('hidden'); this.querySelector('span').textContent = this.querySelector('span').textContent === 'Read More' ? 'Read Less' : 'Read More'; this.querySelector('iconify-icon').setAttribute('icon', this.querySelector('span').textContent === 'Read More' ? 'solar:arrow-right-linear' : 'solar:arrow-up-linear');" class="group inline-flex items-center gap-2 mt-8 text-xs font-medium uppercase tracking-widest text-white hover:text-blue-400 transition-colors focus:outline-none">
+                            <span>Read More</span>
+                            <iconify-icon icon="solar:arrow-right-linear" width="14" stroke-width="1.5" class="group-hover:translate-x-1 transition-transform"></iconify-icon>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Key Metrics / Quick Stats -->
+                <div class="col-span-1 md:col-span-4 bg-[#050505]">
+                    <div class="grid grid-cols-1 divide-y divide-white/10 h-full">
+                        <div class="p-8 md:p-10 flex flex-col justify-center">
+                            <span class="text-xs font-mono text-zinc-600 uppercase mb-2">Role</span>
+                            <span class="text-white font-medium">Product Designer</span>
+                            <span class="text-sm text-zinc-500 mt-1">Student Build Sprint • IIT Madras</span>
+                        </div>
+                        <div class="p-8 md:p-10 flex flex-col justify-center">
+                             <span class="text-xs font-mono text-zinc-600 uppercase mb-2">Outcome</span>
+                             <div class="flex items-center gap-3">
+                                 <iconify-icon icon="solar:graph-down-linear" class="text-emerald-500" width="24" stroke-width="1.5"></iconify-icon>
+                                 <span class="text-lg font-medium text-white">40% Reduction</span>
+                             </div>
+                             <span class="text-xs text-zinc-500 mt-1">In pilot participant screen time</span>
+                        </div>
+                        <div class="p-8 md:p-10 flex flex-col justify-center">
+                             <span class="text-xs font-mono text-zinc-600 uppercase mb-2">Core Insight</span>
+                             <p class="text-sm text-zinc-400 font-light">"I don't care about the graph, I care if I beat my friend."</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Problem & Solution Row -->
+            <section class="grid grid-cols-1 md:grid-cols-12 divide-y md:divide-y-0 md:divide-x divide-white/10 border-b border-white/10">
+                
+                <!-- Left: The Problem Context -->
+                <div class="col-span-1 md:col-span-5 p-8 md:p-12 space-y-8">
+                    <h3 class="text-xs font-medium uppercase tracking-widest text-zinc-500 flex items-center gap-2">
+                        <iconify-icon icon="solar:danger-circle-linear" width="14" stroke-width="1.5"></iconify-icon>
+                        The Problem
+                    </h3>
+                    <div class="space-y-6">
+                        <h2 class="text-2xl text-white font-medium tracking-tight">Awareness isn't enough.</h2>
+                        <p class="text-sm text-zinc-400 font-light leading-relaxed">
+                            Most digital well-being tools are passive. They show you a graph of your failure (high screen time) but offer no immediate incentive to change.
+                        </p>
+                        <ul class="space-y-4 pt-4">
+                            <li class="flex gap-4">
+                                <span class="w-6 h-6 rounded-full border border-white/10 flex items-center justify-center text-zinc-500 text-[10px] shrink-0">01</span>
+                                <span class="text-sm text-zinc-400 font-light">Users ignore "Time Limit" notifications easily.</span>
+                            </li>
+                            <li class="flex gap-4">
+                                <span class="w-6 h-6 rounded-full border border-white/10 flex items-center justify-center text-zinc-500 text-[10px] shrink-0">02</span>
+                                <span class="text-sm text-zinc-400 font-light">Self-discipline depletes throughout the day.</span>
+                            </li>
+                            <li class="flex gap-4">
+                                <span class="w-6 h-6 rounded-full border border-white/10 flex items-center justify-center text-zinc-500 text-[10px] shrink-0">03</span>
+                                <span class="text-sm text-zinc-400 font-light">Existing apps feel like punishment, not play.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Right: The Solution / Product Idea -->
+                <div class="col-span-1 md:col-span-7 bg-white/[0.005]">
+                    <div class="p-8 md:p-12 h-full flex flex-col">
+                         <div class="mb-8">
+                            <h3 class="text-xs font-medium uppercase tracking-widest text-zinc-500 flex items-center gap-2 mb-8">
+                                <iconify-icon icon="solar:lightbulb-linear" width="14" stroke-width="1.5"></iconify-icon>
+                                The Approach
+                            </h3>
+                            <h2 class="text-2xl text-white font-medium tracking-tight mb-4">Turning a personal habit into a shared challenge.</h2>
+                            <p class="text-sm text-zinc-400 font-light leading-relaxed max-w-xl">
+                                ScreenSage shifts the focus from "limit yourself" to "beat your friends." By introducing social friction and small-group accountability, we made putting the phone down a competitive advantage.
+                            </p>
+                         </div>
+
+                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-auto">
+                            <div class="p-5 border border-white/10 bg-black/40 rounded-sm">
+                                <iconify-icon icon="solar:users-group-two-rounded-linear" class="text-blue-400 mb-3" width="20" stroke-width="1.5"></iconify-icon>
+                                <h4 class="text-sm font-medium text-white mb-1">Weekly Leagues</h4>
+                                <p class="text-xs text-zinc-500 leading-relaxed">Small groups (3-5 friends) reset every Monday. Low stakes, high engagement.</p>
+                            </div>
+                            <div class="p-5 border border-white/10 bg-black/40 rounded-sm">
+                                <iconify-icon icon="solar:chart-square-linear" class="text-blue-400 mb-3" width="20" stroke-width="1.5"></iconify-icon>
+                                <h4 class="text-sm font-medium text-white mb-1">Cumulative Scoring</h4>
+                                <p class="text-xs text-zinc-500 leading-relaxed">Total screen time determines rank. Lower is better. Live updates create urgency.</p>
+                            </div>
+                         </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- EXPANSION TOGGLE -->
+            <div id="read-more-container" class="py-24 flex flex-col items-center justify-center border-b border-white/10 bg-gradient-to-b from-black to-zinc-900/20">
+                <button class="group flex gap-3 hover:bg-zinc-200 transition-colors uppercase text-xs font-medium text-black tracking-widest bg-white rounded-sm pt-3 pr-8 pb-3 pl-8 gap-x-3 gap-y-3 items-center" id="read-more-btn">
+                    <span class="">Read More</span>
+                    <iconify-icon icon="solar:arrow-down-linear" width="16" class="group-hover:translate-y-0.5 transition-transform"></iconify-icon>
+                </button>
+            </div>
+
+            <!-- EXPANDED CONTENT (Hidden by default) -->
+            <div id="expanded-content" class="hidden">
+
+                <!-- Research & Discovery (Full Width Insert) -->
+                <section class="border-b border-white/10 p-8 md:p-12 bg-[#080808]">
+                    <div class="max-w-5xl">
+                        <h3 class="text-xs font-medium uppercase tracking-widest text-zinc-500 mb-6">Discovery</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+                            <div class="">
+                                <h2 class="text-xl text-white font-medium tracking-tight mb-4">"Don't ask them what they want."</h2>
+                                <p class="text-sm text-zinc-400 font-light leading-relaxed mb-6">
+                                    I used  methodology for user interviews. Instead of asking "Would you use an app that tracks screen time?", I asked about their last week.
+                                </p>
+                                <div class="pl-4 border-l border-zinc-700 space-y-4">
+                                    <div class="">
+                                        <p class="text-xs text-zinc-500 uppercase tracking-wider mb-1">Question asked</p>
+                                        <p class="text-sm text-zinc-300 italic">"Tell me about the last time you felt you spent too much time on your phone."</p>
+                                    </div>
+                                    <div class="">
+                                        <p class="text-xs text-zinc-500 uppercase tracking-wider mb-1">Insight Uncovered</p>
+                                        <p class="text-sm text-zinc-300 italic">People often doom-scrolled while waiting for something else, or when feeling lonely. The "social" element was the missing link.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-white/[0.02] border border-white/10 p-6 rounded-sm">
+                                <h4 class="text-sm font-medium text-white mb-4">Research-Informed Decisions</h4>
+                                <ul class="space-y-4 text-sm font-light text-zinc-400">
+                                    <li class="flex items-start gap-3">
+                                        <iconify-icon icon="solar:check-circle-linear" class="text-zinc-600 mt-0.5" width="16" stroke-width="1.5"></iconify-icon>
+                                        <span class=""> Global leaderboards are discouraging. Competing with strangers doesn't matter. Competing with your roommate does.</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <iconify-icon icon="solar:check-circle-linear" class="text-zinc-600 mt-0.5" width="16" stroke-width="1.5"></iconify-icon>
+                                        <span class=""> Infinite streaks cause burnout. If you have a bad day, you should be able to try again next week.</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <iconify-icon icon="solar:check-circle-linear" class="text-zinc-600 mt-0.5" width="16" stroke-width="1.5"></iconify-icon>
+                                        <span> Negative reinforcement (locking apps) caused users to uninstall. Positive competition caused them to engage.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Execution & What We Built -->
+                <section class="grid grid-cols-1 md:grid-cols-12 divide-y md:divide-y-0 md:divide-x divide-white/10 border-b border-white/10">
+                    <div class="col-span-1 md:col-span-4 p-8 md:p-12">
+                        <h2 class="text-2xl text-white font-medium tracking-tight mb-4">What We Built</h2>
+                        <p class="text-sm text-zinc-400 font-light leading-relaxed mb-6">
+                            The focus was on feasibility and clarity. We scoped features to fit tight timelines, prioritizing the "Core Loop" of the application.
+                        </p>
+                        <div class="space-y-2">
+                            <div class="flex items-center gap-2 text-xs text-zinc-500 uppercase tracking-wider">
+                                <iconify-icon icon="solar:code-file-linear" width="14"></iconify-icon>
+                                <span>Tech Stack</span>
+                            </div>
+                            <p class="text-sm text-white">Figma, React Native (Expo), Firebase</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-span-1 md:col-span-8 bg-white/[0.01] p-8 md:p-12">
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                            <div class="space-y-3">
+                                <div class="w-10 h-10 flex items-center justify-center bg-zinc-900 border border-white/10 text-white rounded-full">
+                                    <iconify-icon icon="solar:login-2-linear" width="20" stroke-width="1.5" class=""></iconify-icon>
+                                </div>
+                                <h4 class="text-sm font-medium text-white">1. Onboarding</h4>
+                                <p class="text-xs text-zinc-500 font-light leading-relaxed">Permission handling for screen time access and creating a user profile.</p>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="w-10 h-10 flex items-center justify-center bg-zinc-900 border border-white/10 text-white rounded-full">
+                                    <iconify-icon icon="solar:users-group-rounded-linear" width="20" stroke-width="1.5"></iconify-icon>
+                                </div>
+                                <h4 class="text-sm font-medium text-white">2. Squad Creation</h4>
+                                <p class="text-xs text-zinc-500 font-light leading-relaxed">Invite-only groups ensuring users only compete with people they know.</p>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="w-10 h-10 flex items-center justify-center bg-zinc-900 border border-white/10 text-white rounded-full">
+                                    <iconify-icon icon="solar:cup-star-linear" width="20" stroke-width="1.5"></iconify-icon>
+                                </div>
+                                <h4 class="text-sm font-medium text-white">3. The Leaderboard</h4>
+                                <p class="text-xs text-zinc-500 font-light leading-relaxed">Real-time ranking based on inverse screen time. The lowest time wins.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Learnings Section -->
+                <section class="grid grid-cols-1 md:grid-cols-12 divide-y md:divide-y-0 md:divide-x divide-white/10">
+                    
+                    <!-- Left: Learnings List -->
+                    <div class="col-span-1 md:col-span-8 p-8 md:p-16">
+                        <h2 class="text-2xl text-white font-medium tracking-tight mb-8">Learnings &amp; Reflection</h2>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-8">
+                            <div class="flex gap-4">
+                                <iconify-icon icon="solar:chat-round-line-linear" class="text-zinc-500 shrink-0 mt-1" width="20" stroke-width="1.5"></iconify-icon>
+                                <div class="space-y-2">
+                                    <h4 class="text-sm font-medium text-white">Talk Less. Observe More.</h4>
+                                    <p class="text-sm text-zinc-400 font-light leading-relaxed">User research is most effective when it avoids pitching ideas. Focusing on real behavior uncovered more useful insights than asking users what they wanted.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4 gap-x-4 gap-y-4">
+        <iconify-icon icon="lucide:brain" class="text-zinc-500 shrink-0 mt-1" width="20" stroke-width="1.5"></iconify-icon>
+        <div class="space-y-2">
+            <h4 class="text-sm font-medium text-white">Psychology over Features</h4>
+            <p class="text-sm text-zinc-400 font-light leading-relaxed">Behavior change products rely more on understanding
+                human motivation than on complex technical features.</p>
+        </div>
+    </div>
+                            <div class="flex gap-4">
+                                <iconify-icon icon="solar:rocket-linear" class="text-zinc-500 shrink-0 mt-1" width="20" stroke-width="1.5"></iconify-icon>
+                                <div class="space-y-2">
+                                    <h4 class="text-sm font-medium text-white">Validate Early</h4>
+                                    <p class="text-sm text-zinc-400 font-light leading-relaxed">Shipping less code but validating the core mechanism early is more valuable than building a full suite of features.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4 gap-x-4 gap-y-4">
+        <iconify-icon icon="solar:refresh-circle-linear" class="text-zinc-500 shrink-0 mt-1" width="20" stroke-width="1.5"></iconify-icon>
+        <div class="space-y-2">
+            <h4 class="text-sm font-medium text-white">Iterate on Friction</h4>
+            <p class="leading-relaxed text-sm font-light text-zinc-400">Initially, onboarding was too hard. Reducing steps
+                to "Join a Squad" increased conversion by ~40% in prototypes.</p>
+        </div>
+    </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Skills Matrix -->
+                    <div class="col-span-1 md:col-span-4 md:p-16 pt-8 pr-8 pb-8 pl-8">
+        <h3 class="text-xs font-medium uppercase tracking-widest text-zinc-500 mb-6 flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-list-checks w-[14px] h-[14px]" data-icon-replaced="true" style="width: 14px; height: 14px; color: rgb(113, 113, 122)"><path d="M10 6h11"></path><path d="M10 12h11"></path><path d="M10 18h11"></path><path d="M3 6h.01"></path><path d="M3 12h.01"></path><path d="M3 18h.01"></path></svg>
+            Skills Applied
+        </h3>
+        <div class="flex flex-col border-t border-white/5">
+            <div class="group flex items-center gap-3 py-3 border-b border-white/5 hover:bg-white/[0.02] -mx-4 px-4 transition-all duration-200 cursor-default">
+                <div class="w-4 h-4 rounded-[4px] bg-blue-500 flex items-center justify-center shadow-[0_0_15px_rgba(59,130,246,0.25)] group-hover:bg-blue-400 group-hover:shadow-[0_0_20px_rgba(59,130,246,0.4)] transition-all duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="text-white"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <span class="text-sm text-zinc-400 group-hover:text-zinc-200 font-medium transition-colors">Product Strategy</span>
+            </div>
+            <div class="group flex items-center gap-3 py-3 border-b border-white/5 hover:bg-white/[0.02] -mx-4 px-4 transition-all duration-200 cursor-default">
+                <div class="w-4 h-4 rounded-[4px] bg-blue-500 flex items-center justify-center shadow-[0_0_15px_rgba(59,130,246,0.25)] group-hover:bg-blue-400 group-hover:shadow-[0_0_20px_rgba(59,130,246,0.4)] transition-all duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="text-white"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <span class="text-sm text-zinc-400 group-hover:text-zinc-200 font-medium transition-colors">User Research</span>
+            </div>
+            <div class="group flex items-center gap-3 py-3 border-b border-white/5 hover:bg-white/[0.02] -mx-4 px-4 transition-all duration-200 cursor-default">
+                <div class="w-4 h-4 rounded-[4px] bg-blue-500 flex items-center justify-center shadow-[0_0_15px_rgba(59,130,246,0.25)] group-hover:bg-blue-400 group-hover:shadow-[0_0_20px_rgba(59,130,246,0.4)] transition-all duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="text-white"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <span class="text-sm text-zinc-400 group-hover:text-zinc-200 font-medium transition-colors">Rapid Prototyping</span>
+            </div>
+            <div class="group flex items-center gap-3 py-3 border-b border-white/5 hover:bg-white/[0.02] -mx-4 px-4 transition-all duration-200 cursor-default">
+                <div class="w-4 h-4 rounded-[4px] bg-blue-500 flex items-center justify-center shadow-[0_0_15px_rgba(59,130,246,0.25)] group-hover:bg-blue-400 group-hover:shadow-[0_0_20px_rgba(59,130,246,0.4)] transition-all duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="text-white"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <span class="text-sm text-zinc-400 group-hover:text-zinc-200 font-medium transition-colors">Behavioral Design</span>
+            </div>
+        </div>
+    </div>
+                </section>
+                
+                <!-- Key Takeaway Section -->
+                <section class="md:p-16 text-center bg-gradient-to-b from-black to-zinc-900/40 border-white/10 border-t pt-8 pr-8 pb-8 pl-8 animate-fade-in" style="animation-delay: 0.4s;">
+                    <div class="max-w-3xl mr-auto ml-auto">
+                        <div class="md:p-12 border-white/10 border rounded-sm pt-8 pr-8 pb-8 pl-8 space-y-6">
+                            <div class="flex items-center gap-3 mb-2">
+                                <div class="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500 shrink-0">
+                                    <iconify-icon icon="solar:lightbulb-bolt-linear" width="16"></iconify-icon>
+                                </div>
+                                <span class="text-xs font-medium uppercase tracking-widest text-emerald-500">Key Takeaway</span>
+                            </div>
+                            <p class="md:text-xl text-lg font-medium text-white tracking-tight">This project was about testing assumptions early.</p>
+                            <p class="leading-relaxed text-sm font-light text-zinc-400">Small experiments revealed what actually changed behavior.</p>
+                        </div>
+                    </div>
+                </section>
+            
+            </div> <!-- End of Expanded Content -->
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="border-t relative overflow-hidden border-white/10 bg-black">
+            <!-- Footer Grid Background -->
+             <div class="absolute inset-0 bg-[linear-gradient(to_right,#222_1px,transparent_1px),linear-gradient(to_bottom,#222_1px,transparent_1px)] bg-[size:24px_24px] opacity-20"></div>
+            <div class="grid grid-cols-1 md:grid-cols-12 divide-y md:divide-y-0 md:divide-x relative z-10 divide-white/10">
+                <div class="col-span-1 md:col-span-9 p-8 md:p-12 flex flex-col justify-center items-start">
+                    <h2 class="md:text-3xl text-2xl font-medium text-white tracking-tight mb-2">This is how I think, test, and decide what to build.</h2>
+                    <p class="text-sm font-light text-zinc-500 mb-6">Curious to go deeper? Let's talk.</p>
+                    <a href="mailto:kandregulaomesh@gmail.com" class="px-5 py-2 border text-xs font-medium uppercase tracking-widest transition-all duration-300 border-zinc-700 bg-zinc-900/50 text-white hover:bg-white hover:text-black hover:border-white flex items-center gap-2">
+                        <iconify-icon icon="solar:letter-linear" width="16" stroke-width="1.5"></iconify-icon>
+                        Contact Me
+                    </a>
+                </div>
+                <div class="col-span-1 md:col-span-3 md:p-12 flex flex-col bg-black/50 pt-8 pr-8 pb-8 pl-8 justify-end">
+                    <div class="mt-auto font-mono text-[10px] space-y-6 text-zinc-600">
+                        <div class="text-[10px] text-zinc-600 font-mono mt-auto space-y-3">
+                            <div class="flex items-center gap-2 text-zinc-400">
+                                <iconify-icon icon="solar:map-point-linear" width="14" stroke-width="1.5"></iconify-icon>
+                                <span>PITTSBURGH, PA</span>
+                            </div>
+                            <div class="flex items-center gap-4 border-t pt-4 border-white/10">
+                                <div><span class="block text-zinc-500">40.4406° N</span></div>
+                                <div class=""><span class="block text-zinc-500">79.9959° W</span></div>
+                            </div>
+                            <div class="pt-6 text-zinc-700">
+                                © 2026 OMESH KANDREGULA
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <script>
+        document.getElementById('read-more-btn').addEventListener('click', function() {
+            const expandedContent = document.getElementById('expanded-content');
+            const buttonContainer = document.getElementById('read-more-container');
+            
+            // Show content with animation
+            expandedContent.classList.remove('hidden');
+            expandedContent.classList.add('animate-fade-in');
+            
+            // Hide the button container smoothly
+            buttonContainer.style.display = 'none';
+        });
+    </script>
+
+</body></html>
