@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arcane - Omesh Kandregula</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+html {
+zoom: 80%;
+}
+body {
+font-family: 'Inter', sans-serif;
+background-color: #000000;
+background-image:
+linear-gradient(to right, #111111 1px, transparent 1px),
+linear-gradient(to bottom, #111111 1px, transparent 1px);
+background-size: 24px 24px;
+background-attachment: fixed;
+}
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+/* Fade in animation for expanded content */
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(10px); }
+to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+animation: fadeIn 0.8s ease-out forwards;
+}
+</style></head>
+<body class="antialiased selection:bg-white/20 selection:text-white flex flex-col min-h-screen text-zinc-400">
+
+    <!-- Main Grid Wrapper -->
+    <div class="max-w-[1400px] mx-auto w-full border-x relative bg-black/40 min-h-screen flex flex-col border-white/10 backdrop-blur-[2px]">
+        
+        <!-- Header -->
+        <header class="sticky top-0 z-50 border-b bg-black/80 backdrop-blur-md border-white/10">
+            <div class="grid grid-cols-1 md:grid-cols-12 h-16 divide-y md:divide-y-0 md:divide-x divide-white/10">
+                <div class="col-span-1 md:col-span-3 flex items-center px-6 justify-between md:justify-start">
+                    <a href="index.html" class="group flex items-center gap-2 uppercase hover:text-white transition-colors text-xs font-medium text-zinc-400 tracking-widest">
+                        <iconify-icon icon="solar:arrow-left-linear" width="16" stroke-width="1.5" class="group-hover:-translate-x-1 transition-transform"></iconify-icon>
+                        Back to Home
+                    </a>
+                </div>
+                <div class="col-span-1 md:col-span-9 flex items-center px-6 justify-end">
+                    <span class="text-xs font-mono text-zinc-600 uppercase tracking-widest">Project: Arcane</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="flex-grow">
+            
+            <!-- Hero Section -->
+            <section class="border-b border-white/10 p-8 md:p-16 lg:p-24 bg-white/[0.01]">
+                <div class="max-w-4xl space-y-6">
+                    <h1 class="md:text-6xl lg:text-7xl leading-[0.95] text-5xl font-medium text-white tracking-tight">
+                        <a href="https://arcanenews.lovable.app/" target="_blank" class="inline-flex items-center gap-4 hover:opacity-80 transition-opacity">
+                            <span>Arcane</span>
+                        </a>
+                    </h1>
+                    <p class="text-xl md:text-2xl text-zinc-400 font-light tracking-tight">
+                        AI Intelligence Agent for Decision-Makers
+                    </p>
+                    <div class="pt-4 space-y-3">
+                        <div class="flex items-center gap-4 flex-wrap">
+                            <span class="uppercase text-xs text-white tracking-widest font-mono bg-white/10 border-white/20 border rounded-sm pt-1 pr-2 pb-1 pl-2">Prodhacks 2026</span>
+                            <span class="text-sm font-medium text-white tracking-wide">Built at Prodhacks • MVP • AI Agents</span>
+                        </div>
+                        <p class="text-sm text-zinc-500 font-light">Built end-to-end as part of a week-long hackathon at CMU.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SKIM VIEW (Default) -->
+            <div id="skim-view" class="grid grid-cols-1 md:grid-cols-12 divide-y md:divide-y-0 md:divide-x divide-white/10 border-b border-white/10">
+                
+                <!-- Left Column: Context & Problem -->
+                <div class="col-span-1 md:col-span-7 p-8 md:p-16 space-y-12">
+                    
+                    <!-- One Liner -->
+                    <div class="space-y-4">
+                        <h3 class="uppercase flex items-center gap-2 text-xs font-medium text-blue-400 tracking-widest">
+                            <iconify-icon icon="solar:bolt-linear" width="14" stroke-width="1.5"></iconify-icon>
+                            Summary
+                        </h3>
+                        <p class="text-lg md:text-xl text-white font-light leading-relaxed">
+                            An AI agent that scans the internet on your behalf and delivers a single, high-signal news update daily directly to your inbox.
+                        </p>
+                    </div>
+
+                    <!-- Context -->
+                    <div class="space-y-4">
+                        <h3 class="text-xs font-medium uppercase tracking-widest text-zinc-500">Context</h3>
+                        <div class="p-6 border border-white/10 bg-white/[0.02] rounded-sm">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-white font-medium text-sm">Founder &amp; Product Lead</span>
+                                <span class="text-zinc-600 text-xs font-mono">MVP • 1 Week</span>
+                            </div>
+                            <p class="text-sm text-zinc-400 font-light">Built end-to-end as part of a week-long hackathon at CMU named <strong>Prodhacks</strong>. Focused on user research, problem framing, product strategy, and rapid MVP execution.</p>
+                        </div>
+                    </div>
+
+                    <!-- The Problem -->
+                    <div class="space-y-4">
+                        <h3 class="text-xs font-medium uppercase tracking-widest text-zinc-500">The Problem</h3>
+                        <p class="text-sm text-zinc-400 font-light mb-2">Staying informed today is cognitively expensive. Users actively struggling with information fatigue often:</p>
+                        <ul class="space-y-3 text-sm font-light text-zinc-400 leading-relaxed list-disc list-inside marker:text-zinc-700">
+                            <li>Check multiple platforms and aggregators daily.</li>
+                            <li>Open several articles on the same topic but abandon them halfway.</li>
+                            <li>Feel constant anxiety about missing something critical.</li>
+                            <li>Suffer from decision fatigue due to information abundance.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Right Column: Solution & Role -->
+                <div class="col-span-1 md:col-span-5 divide-y divide-white/10 bg-white/[0.005]">
+                    
+                    <!-- What I Built -->
+                    <div class="p-8 md:p-12 space-y-4">
+                        <h3 class="text-xs font-medium uppercase tracking-widest text-zinc-500 flex items-center gap-2">
+                            <iconify-icon icon="solar:code-square-linear" width="14" stroke-width="1.5"></iconify-icon>
+                            What I Built
+                        </h3>
+                        <p class="text-sm text-white font-medium mb-2">Designed and shipped a functional MVP during the hackathon.</p>
+                        <ul class="space-y-2 text-sm text-zinc-400 font-light">
+                            <li class="flex items-start gap-2">
+                                <iconify-icon icon="solar:check-read-linear" stroke-width="1.5" class="text-emerald-500 mt-0.5 min-w-[14px]"></iconify-icon>
+                                <span>AI-driven source scanning workflow</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <iconify-icon icon="solar:check-read-linear" stroke-width="1.5" class="text-emerald-500 mt-0.5 min-w-[14px]"></iconify-icon>
+                                <span>Relevance filtering and cross-source synthesis logic</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <iconify-icon icon="solar:check-read-linear" stroke-width="1.5" class="text-emerald-500 mt-0.5 min-w-[14px]"></iconify-icon>
+                                <span>Personalized email digest delivery system</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Product Approach -->
+                    <div class="p-8 md:p-12 space-y-4">
+                        <h3 class="text-xs font-medium uppercase tracking-widest text-zinc-500">Product Approach</h3>
+                        <div class="space-y-3">
+                            <p class="text-sm text-zinc-400 font-light">Agent-led, not feed-based. Designed to make decisions, not maximize engagement.</p>
+                            <p class="text-sm text-zinc-400 font-light">Optimized for Clarity over Clicks, and Signal over Volume.</p>
+                            <p class="text-sm text-zinc-400 font-light">Constraint forces quality: delivering only one update per day.</p>
+                        </div>
+                    </div>
+
+                    <!-- Metrics -->
+                    <div class="p-8 md:p-12 space-y-4 bg-white/[0.02]">
+                        <h3 class="text-xs font-medium uppercase tracking-widest text-emerald-500">Outcomes</h3>
+                        <div class="space-y-4">
+                            <div class="flex gap-3">
+                                <div class="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500 shrink-0">
+                                    <iconify-icon icon="solar:rocket-linear" width="16" stroke-width="1.5"></iconify-icon>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-white font-medium">Shipped MVP</p>
+                                    <p class="text-xs text-zinc-500 mt-1">Built the full system independently in under a week.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-3">
+                                <div class="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500 shrink-0">
+                                    <iconify-icon icon="solar:users-group-rounded-linear" width="16" stroke-width="1.5"></iconify-icon>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-white font-medium">Validated Demand</p>
+                                    <p class="text-xs text-zinc-500 mt-1">Confirmed problem hypothesis through user interviews.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-3">
+                                <div class="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500 shrink-0">
+                                    <iconify-icon icon="solar:map-linear" width="16" stroke-width="1.5"></iconify-icon>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-white font-medium">Clear Roadmap</p>
+                                    <p class="text-xs text-zinc-500 mt-1">Defined monetization and scalable personalization strategies.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Focus Areas Bar -->
+            <div class="border-b border-white/10 p-6 md:px-16 flex flex-wrap items-center gap-4 bg-[#050505]">
+                <span class="text-xs uppercase tracking-widest text-zinc-600 mr-2">Skills:</span>
+                <span class="px-3 py-1 border border-white/10 rounded-full text-xs text-zinc-400 bg-white/[0.02]">AI Agents</span>
+                <span class="px-3 py-1 border border-white/10 rounded-full text-xs text-zinc-400 bg-white/[0.02]">Information Systems</span>
+                <span class="px-3 py-1 border border-white/10 rounded-full text-xs text-zinc-400 bg-white/[0.02]">Product Strategy</span>
+                <span class="px-3 py-1 border border-white/10 rounded-full text-xs text-zinc-400 bg-white/[0.02]">Personalization</span>
+                <span class="px-3 py-1 border border-white/10 rounded-full text-xs text-zinc-400 bg-white/[0.02]">MVP Development</span>
+            </div>
+
+            <!-- EXPANSION TOGGLE -->
+            <div id="read-more-container" class="py-24 flex flex-col items-center justify-center border-b border-white/10 bg-gradient-to-b from-black to-zinc-900/20">
+                <button class="group flex gap-3 hover:bg-zinc-200 transition-colors uppercase text-xs font-medium text-black tracking-widest bg-white rounded-sm pt-3 pr-8 pb-3 pl-8 gap-x-3 gap-y-3 items-center" id="read-more-btn">
+                    <span>Read More</span>
+                    <iconify-icon icon="solar:arrow-down-linear" width="16" stroke-width="1.5" class="group-hover:translate-y-0.5 transition-transform"></iconify-icon>
+                </button>
+            </div>
+
+            <!-- EXPANDED CONTENT (Hidden by default) -->
+            <div id="expanded-content" class="hidden">
+                
+                <!-- Problem Context -->
+                <section class="grid grid-cols-1 md:grid-cols-12 border-b border-white/10 animate-fade-in">
+                    <div class="col-span-1 md:col-span-4 p-8 md:p-16 border-b md:border-b-0 md:border-r border-white/10">
+                        <h2 class="text-2xl md:text-3xl text-white font-medium tracking-tight mb-4">Research &amp; Validation</h2>
+                        <p class="text-sm text-zinc-500">The gap in the market</p>
+                    </div>
+                    <div class="col-span-1 md:col-span-8 p-8 md:p-16 space-y-6">
+                        <p class="leading-relaxed text-lg font-light text-zinc-300">
+                            The pain isn't reading. The pain is filtering.
+                        </p>
+                        <p class="text-base text-zinc-400 font-light leading-relaxed">
+                            During research at Prodhacks, interviews revealed that professionals don't need more content. They need Signal, Context, and Impact. The majority of interviewed professionals indicated a strong preference for a single, reliable daily digest over continuous feeds.
+                        </p>
+                        
+                        <div class="mt-8 pt-8 border-t border-white/10">
+                            <h4 class="text-sm font-medium text-white mb-4">Validation Data</h4>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-zinc-400 font-light">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-1.5 h-1.5 bg-zinc-600 rounded-full"></div>
+                                    <span>78% feel overwhelmed by source volume</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-1.5 h-1.5 bg-zinc-600 rounded-full"></div>
+                                    <span>75% check 3 or more platforms daily</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-1.5 h-1.5 bg-zinc-600 rounded-full"></div>
+                                    <span>72% abandon long-form articles midway</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-1.5 h-1.5 bg-zinc-600 rounded-full"></div>
+                                    <span>65% feel unsure if they missed something</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Current User Journey -->
+                <section class="grid grid-cols-1 md:grid-cols-12 border-b border-white/10 bg-[#050505] animate-fade-in" style="animation-delay: 0.1s;">
+                    <div class="col-span-1 md:col-span-4 p-8 md:p-16 border-b md:border-b-0 md:border-r border-white/10">
+                        <h2 class="text-2xl md:text-3xl text-white font-medium tracking-tight mb-4">User Journey</h2>
+                        <p class="text-sm text-zinc-500">The broken loop before Arcane</p>
+                    </div>
+                    <div class="col-span-1 md:col-span-8 p-8 md:p-16 space-y-8">
+                        <div class="space-y-4 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-white/10 before:to-transparent">
+                            
+                            <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                                <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white/20 bg-black text-zinc-500 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-[0_0_0_8px_#050505]">
+                                    <span class="text-xs font-mono">01</span>
+                                </div>
+                                <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] border border-white/10 p-5 rounded-sm bg-white/[0.02]">
+                                    <h4 class="text-white text-sm font-medium mb-1">Intent</h4>
+                                    <p class="text-xs text-zinc-400 font-light">Desire to stay informed on industry trends.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                                <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white/20 bg-black text-zinc-500 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-[0_0_0_8px_#050505]">
+                                    <span class="text-xs font-mono">02</span>
+                                </div>
+                                <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] border border-white/10 p-5 rounded-sm bg-white/[0.02]">
+                                    <h4 class="text-white text-sm font-medium mb-1">Hunt</h4>
+                                    <p class="text-xs text-zinc-400 font-light">Jump blindly across multiple sources and aggregators.</p>
+                                </div>
+                            </div>
+
+                            <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                                <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white/20 bg-black text-zinc-500 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-[0_0_0_8px_#050505]">
+                                    <span class="text-xs font-mono">03</span>
+                                </div>
+                                <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] border border-white/10 p-5 rounded-sm bg-white/[0.02]">
+                                    <h4 class="text-white text-sm font-medium mb-1">Fatigue</h4>
+                                    <p class="text-xs text-zinc-400 font-light">Scroll through filler content, mentally filtering noise, leading to fatigue.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 p-6 bg-white/[0.03] border border-white/10 text-center rounded-sm">
+                            <p class="text-sm font-medium text-white tracking-wide">Arcane compresses that entire journey into one structured delivery.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Product Architecture -->
+                <section class="border-b border-white/10 bg-white/[0.01] animate-fade-in" style="animation-delay: 0.2s;">
+                    <div class="p-8 md:p-16 border-b border-white/10">
+                        <h2 class="text-2xl md:text-3xl text-white font-medium tracking-tight">System Architecture</h2>
+                        <p class="text-sm text-zinc-500 mt-2">High-Level Workflow</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/10">
+                        <!-- Component 1 -->
+                        <div class="p-8 md:p-12 space-y-6">
+                            <div class="w-10 h-10 border border-white/10 bg-black flex items-center justify-center text-white">
+                                <iconify-icon icon="solar:chat-line-linear" width="20" stroke-width="1.5"></iconify-icon>
+                            </div>
+                            <h3 class="text-lg font-medium text-white">1. Input &amp; Pipeline</h3>
+                            <ul class="space-y-3 text-sm text-zinc-400 font-light">
+                                <li>System receives user interests via natural language prompt.</li>
+                                <li>Agentic pipeline scans trusted sources and aggregates raw data.</li>
+                            </ul>
+                        </div>
+                        <!-- Component 2 -->
+                        <div class="p-8 md:p-12 space-y-6">
+                            <div class="flex text-white bg-black w-10 h-10 border-white/10 border items-center justify-center">
+                                <iconify-icon icon="solar:sort-by-time-linear" width="20" stroke-width="1.5"></iconify-icon>
+                            </div>
+                            <h3 class="text-lg font-medium text-white">2. Filtering &amp; Synthesis</h3>
+                            <ul class="space-y-3 text-sm text-zinc-400 font-light">
+                                <li>Prioritizes noise vs. signal based on explicit user profile.</li>
+                                <li>AI compresses multiple angles into one coherent briefing.</li>
+                            </ul>
+                        </div>
+                        <!-- Component 3 -->
+                        <div class="p-8 md:p-12 space-y-6">
+                            <div class="w-10 h-10 border border-white/10 bg-black flex items-center justify-center text-white">
+                                <iconify-icon icon="solar:target-linear" width="20" stroke-width="1.5"></iconify-icon>
+                            </div>
+                            <h3 class="text-lg font-medium text-white">3. Impact &amp; Delivery</h3>
+                            <ul class="space-y-3 text-sm text-zinc-400 font-light">
+                                <li>Generates reasoning on *why* this update matters to the user.</li>
+                                <li>Scheduled daily push directly to the user's email inbox.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Design Decisions -->
+                <section class="grid grid-cols-1 md:grid-cols-12 border-b border-white/10 animate-fade-in" style="animation-delay: 0.3s;">
+                    <div class="col-span-1 md:col-span-4 p-8 md:p-16 border-b md:border-b-0 md:border-r border-white/10 bg-[#050505]">
+                        <h2 class="text-xl md:text-2xl text-white font-medium tracking-tight mb-4">Market &amp; Strategy</h2>
+                        <p class="text-sm text-zinc-500 leading-relaxed">
+                            Positioning the product for sustainable value creation over raw engagement.
+                        </p>
+                    </div>
+                    <div class="col-span-1 md:col-span-8 p-8 md:p-16">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                            <div class="space-y-2">
+                                <span class="text-xs font-mono text-zinc-500 uppercase">Competitive Edge</span>
+                                <p class="text-white text-sm font-medium">Time &amp; Confidence</p>
+                                <p class="text-xs text-zinc-400 leading-relaxed">Arcane does not compete on content ownership. It competes entirely on time saved, clarity delivered, and decision confidence.</p>
+                            </div>
+                            <div class="space-y-2">
+                                <span class="text-xs font-mono text-zinc-500 uppercase">Phase 1</span>
+                                <p class="text-white text-sm font-medium">Ad-Supported Growth</p>
+                                <p class="text-xs text-zinc-400 leading-relaxed">Establish habit loop, build user trust, and scale the distribution network via zero-friction entry.</p>
+                            </div>
+                            <div class="space-y-2">
+                                <span class="text-xs font-mono text-zinc-500 uppercase">Phase 2</span>
+                                <p class="text-white text-sm font-medium">Premium Subscription</p>
+                                <p class="text-xs text-zinc-400 leading-relaxed">Unlock advanced utility for power users: deep personalization, multi-topic granular tracking, and an ad-free experience.</p>
+                            </div>
+                            <div class="space-y-2">
+                                <span class="text-xs font-mono text-zinc-500 uppercase">Future</span>
+                                <p class="text-white text-sm font-medium">B2B Expansion</p>
+                                <p class="text-xs text-zinc-400 leading-relaxed">Enterprise-level digests utilizing shared organizational context injected into team-wide intelligence reports.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Demo Section -->
+                <section class="p-8 md:p-16 border-b border-white/10 animate-fade-in" style="animation-delay: 0.4s;">
+                    <div class="flex flex-col items-center justify-center text-center max-w-2xl mx-auto space-y-6">
+                        <h3 class="text-xs font-medium uppercase tracking-widest text-zinc-500">Live Project</h3>
+                        <p class="text-lg text-white font-medium tracking-tight">Experience Arcane</p>
+                        <p class="text-sm text-zinc-400 font-light">Explore the MVP live and see how a constrained daily intelligence digest looks in practice.</p>
+                        
+                        <div class="pt-4">
+                            <a href="https://arcanenews.lovable.app/" target="_blank" rel="noopener noreferrer" class="uppercase hover:bg-zinc-200 transition-colors flex items-center gap-2 text-xs font-medium text-black tracking-widest bg-white pt-3 pr-6 pb-3 pl-6 rounded-sm">
+                                Visit Arcane App
+                                <iconify-icon icon="solar:arrow-right-up-linear" width="16" stroke-width="1.5"></iconify-icon>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Closing Note -->
+                <section class="md:p-16 text-center bg-gradient-to-b from-black to-zinc-900/40 border-white/10 border-t pt-8 pr-8 pb-8 pl-8 animate-fade-in" style="animation-delay: 0.5s;">
+                    <div class="max-w-3xl mr-auto ml-auto">
+                        <div class="md:p-12 border-white/10 border rounded-sm pt-8 pr-8 pb-8 pl-8 space-y-6">
+                            <div class="flex items-center gap-3 mb-2 justify-center">
+                                <div class="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500 shrink-0">
+                                    <iconify-icon icon="solar:lightbulb-bolt-linear" width="16" stroke-width="1.5"></iconify-icon>
+                                </div>
+                                <span class="text-xs font-medium uppercase tracking-widest text-emerald-500">Key Takeaway</span>
+                            </div>
+                            <p class="md:text-xl text-lg font-medium text-white tracking-tight">Constraint increases trust.</p>
+                            <p class="leading-relaxed text-sm font-light text-zinc-400">By artificially limiting output to one item during the Prodhacks build, users trusted the curation algorithm more than if it had given them five. Signal prioritization is the true product moat.</p>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="border-t relative overflow-hidden border-white/10 bg-black">
+             <div class="absolute inset-0 bg-[linear-gradient(to_right,#222_1px,transparent_1px),linear-gradient(to_bottom,#222_1px,transparent_1px)] bg-[size:24px_24px] opacity-20"></div>
+            <div class="grid grid-cols-1 md:grid-cols-12 divide-y md:divide-y-0 md:divide-x relative z-10 divide-white/10">
+                <div class="col-span-1 md:col-span-9 p-8 md:p-12 flex flex-col justify-center items-start">
+                    <h2 class="md:text-3xl text-2xl font-medium text-white tracking-tight mb-2">This is one example of how I build.</h2>
+                    <p class="text-sm font-light text-zinc-500 mb-6">If it resonates, let's talk.</p>
+                    <a href="mailto:kandregulaomesh@gmail.com" class="px-5 py-2 border text-xs font-medium uppercase tracking-widest transition-all duration-300 border-zinc-700 bg-zinc-900/50 text-white hover:bg-white hover:text-black hover:border-white flex items-center gap-2">
+                        <iconify-icon icon="solar:letter-linear" width="16" stroke-width="1.5"></iconify-icon>
+                        Contact Me
+                    </a>
+                </div>
+                <div class="col-span-1 md:col-span-3 md:p-12 flex flex-col bg-black/50 pt-8 pr-8 pb-8 pl-8 justify-end">
+                    <div class="mt-auto font-mono text-xs space-y-6 text-zinc-600">
+                        <div class="text-xs text-zinc-600 font-mono mt-auto space-y-3">
+                            <div class="flex items-center gap-2 text-zinc-400">
+                                <iconify-icon icon="solar:map-point-linear" width="14" stroke-width="1.5"></iconify-icon>
+                                <span>PITTSBURGH, PA</span>
+                            </div>
+                            <div class="flex items-center gap-4 border-t pt-4 border-white/10">
+                                <div><span class="block text-zinc-500">40.4406° N</span></div>
+                                <div><span class="block text-zinc-500">79.9959° W</span></div>
+                            </div>
+                            <div class="pt-6 text-zinc-700">
+                                © 2026 OMESH KANDREGULA
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('read-more-btn').addEventListener('click', function() {
+            const expandedContent = document.getElementById('expanded-content');
+            const buttonContainer = document.getElementById('read-more-container');
+            
+            // Show content with animation
+            expandedContent.classList.remove('hidden');
+            expandedContent.classList.add('animate-fade-in');
+            
+            // Hide the button container smoothly
+            buttonContainer.style.display = 'none';
+        });
+    </script>
+
+
+</body></html>

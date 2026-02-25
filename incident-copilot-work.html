@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Incident Copilot - Omesh Kandregula</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+html {
+zoom: 80%;
+}
+body {
+font-family: 'Inter', sans-serif;
+background-color: #000000;
+background-image:
+linear-gradient(to right, #111111 1px, transparent 1px),
+linear-gradient(to bottom, #111111 1px, transparent 1px);
+background-size: 24px 24px;
+background-attachment: fixed;
+}
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+/* Fade in animation for expanded content */
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(10px); }
+to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+animation: fadeIn 0.8s ease-out forwards;
+}
+</style></head>
+<body class="scroll-smooth antialiased selection:bg-white/20 selection:text-white flex flex-col min-h-screen text-zinc-400">
+
+    <!-- Main Grid Wrapper -->
+    <div class="max-w-[1400px] mx-auto w-full border-x relative bg-black/40 min-h-screen flex flex-col border-white/10 backdrop-blur-[2px]">
+        
+        <!-- Header -->
+        <header class="sticky top-0 z-50 border-b bg-black/80 backdrop-blur-md border-white/10">
+            <div class="grid grid-cols-1 md:grid-cols-12 h-16 divide-y md:divide-y-0 md:divide-x divide-white/10">
+                <div class="col-span-1 md:col-span-3 flex items-center px-6 justify-between md:justify-start">
+                    <a href="index.html" class="group flex items-center gap-2 uppercase hover:text-white transition-colors text-xs font-medium text-zinc-400 tracking-widest">
+                        <iconify-icon icon="solar:arrow-left-linear" width="16" stroke-width="1.5" class="group-hover:-translate-x-1 transition-transform"></iconify-icon>
+                        Back to Home
+                    </a>
+                </div>
+                <div class="col-span-1 md:col-span-9 flex items-center px-6 justify-end">
+                    <span class="text-xs font-mono text-zinc-600 uppercase tracking-widest">Project: Incident Copilot</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="flex-grow">
+            
+            <!-- Hero Section -->
+            <section class="border-b border-white/10 p-8 md:p-16 lg:p-24 bg-white/[0.01]">
+                <div class="max-w-4xl space-y-6">
+                    <h1 class="md:text-6xl lg:text-7xl leading-[0.95] text-5xl font-medium text-white tracking-tight">
+                        Incident Copilot
+                    </h1>
+                    <p class="text-xl md:text-2xl text-zinc-400 font-light tracking-tight">
+                        AI-Assisted Incident Triage System
+                    </p>
+                    <div class="pt-4 space-y-3">
+                        <div class="flex items-center gap-4 flex-wrap">
+                            <span class="uppercase text-xs text-white tracking-widest font-mono bg-white/10 border-white/20 border rounded-sm pt-1 pr-2 pb-1 pl-2">TartanHacks 2026</span>
+                            <span class="text-sm font-medium text-white tracking-wide">Built at TartanHacks • Full-Stack • AI Systems</span>
+                        </div>
+                        <p class="text-sm text-zinc-500 font-light">Designed and shipped in a weekend hackathon (36 hours).</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SKIM VIEW (Default) -->
+            <div id="skim-view" class="grid grid-cols-1 md:grid-cols-12 divide-y md:divide-y-0 md:divide-x divide-white/10 border-b border-white/10">
+                
+                <!-- Left Column: Context & Problem -->
+                <div class="col-span-1 md:col-span-7 p-8 md:p-16 space-y-12">
+                    
+                    <!-- Overview -->
+                    <div class="space-y-4">
+                        <h3 class="uppercase flex items-center gap-2 text-xs font-medium text-blue-400 tracking-widest">
+                            <iconify-icon icon="solar:bolt-linear" width="14" stroke-width="1.5"></iconify-icon>
+                            Overview
+                        </h3>
+                        <p class="text-lg md:text-xl text-white font-light leading-relaxed">
+                            Incident Copilot is an AI-assisted dashboard that aggregates operational signals - logs, alerts, support tickets, and deployment notes - and generates a structured triage report in seconds.
+                        </p>
+                        <p class="text-base text-zinc-400 font-light leading-relaxed">
+                            Built end-to-end during TartanHacks, it demonstrates how AI can compress incident chaos into actionable clarity.
+                        </p>
+                    </div>
+
+                    <!-- Hackathon Constraint -->
+                    <div class="space-y-4">
+                        <h3 class="text-xs font-medium uppercase tracking-widest text-zinc-500">Hackathon Constraint</h3>
+                        <div class="p-6 border border-white/10 bg-white/[0.02] rounded-sm space-y-3">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-white font-medium text-sm">The Challenge</span>
+                                <span class="text-zinc-600 text-xs font-mono">36 Hours</span>
+                            </div>
+                            <p class="text-sm text-zinc-400 font-light">Design and ship a functioning AI decision-support system over the weekend.</p>
+                            <div class="border-t border-white/10 pt-3 mt-3">
+                                <p class="text-xs text-zinc-500 font-medium uppercase tracking-widest mb-2">Constraint Forced:</p>
+                                <ul class="space-y-1.5 text-sm text-zinc-400 font-light list-disc list-inside marker:text-zinc-700">
+                                    <li>Clear scope</li>
+                                    <li>System-first architecture</li>
+                                    <li>Deterministic layers for reliability</li>
+                                    <li>Strict output structure</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- The Problem -->
+                    <div class="space-y-4">
+                        <h3 class="text-xs font-medium uppercase tracking-widest text-zinc-500">The Problem</h3>
+                        <p class="text-sm text-zinc-400 font-light mb-2">During production incidents, high cognitive load increases resolution time:</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
+                            <ul class="space-y-3 text-sm font-light text-zinc-400 leading-relaxed list-disc list-inside marker:text-zinc-700">
+                                <li class="text-white font-medium mb-1 list-none -ml-5">Chaos Factors</li>
+                                <li>Logs are noisy</li>
+                                <li>Alerts stack rapidly</li>
+                                <li>Customers report failures</li>
+                                
+                            </ul>
+                            <ul class="space-y-3 text-sm font-light text-zinc-400 leading-relaxed list-disc list-inside marker:text-zinc-700">
+                                <li class="text-white font-medium mb-1 list-none -ml-5">Manual Triage Requires</li>
+                                <li>Cross-referencing multiple signals</li>
+                                <li>Guessing root causes</li>
+                                <li>Searching past incidents</li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Solution & Role -->
+                <div class="col-span-1 md:col-span-5 divide-y divide-white/10 bg-white/[0.005]">
+                    
+                    <!-- What I Built -->
+                    <div class="p-8 md:p-12 space-y-4">
+                        <h3 class="text-xs font-medium uppercase tracking-widest text-zinc-500 flex items-center gap-2">
+                            <iconify-icon icon="solar:code-square-linear" width="14" stroke-width="1.5"></iconify-icon>
+                            What I Built
+                        </h3>
+                        <ul class="space-y-2 text-sm text-zinc-400 font-light pt-2">
+                            <li class="flex items-start gap-2">
+                                <iconify-icon icon="solar:check-read-linear" stroke-width="1.5" class="text-emerald-500 mt-0.5 min-w-[14px]"></iconify-icon>
+                                <span>Multi-signal ingestion interface</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <iconify-icon icon="solar:check-read-linear" stroke-width="1.5" class="text-emerald-500 mt-0.5 min-w-[14px]"></iconify-icon>
+                                <span>Deterministic severity scoring engine</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <iconify-icon icon="solar:check-read-linear" stroke-width="1.5" class="text-emerald-500 mt-0.5 min-w-[14px]"></iconify-icon>
+                                <span>Similar-incident retrieval system</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <iconify-icon icon="solar:check-read-linear" stroke-width="1.5" class="text-emerald-500 mt-0.5 min-w-[14px]"></iconify-icon>
+                                <span>Schema-constrained AI triage generator</span>
+                            </li>
+                            
+                            
+                        </ul>
+                    </div>
+
+                    <!-- System Philosophy -->
+                    <div class="p-8 md:p-12 space-y-4">
+                        <h3 class="text-xs font-medium uppercase tracking-widest text-zinc-500">System Philosophy</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <p class="text-sm text-white font-medium mb-1">Hybrid Intelligence</p>
+                                <p class="text-sm text-zinc-400 font-light">Rule-based scoring for baseline reliability paired with LLM reasoning for structured hypothesis generation.</p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-white font-medium mb-1">Optimized For</p>
+                                <p class="text-sm text-zinc-400 font-light">Speed, Clarity, and Trust.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MVP Scope -->
+                    <div class="p-8 md:p-12 space-y-4">
+                        <h3 class="text-xs font-medium uppercase tracking-widest text-zinc-500">MVP Scope</h3>
+                        <p class="text-sm text-white font-medium">The weekend build supports:</p>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="px-2 py-1 bg-white/[0.03] border border-white/10 rounded-sm text-xs text-zinc-400">4 Signal Types</span>
+                            <span class="px-2 py-1 bg-white/[0.03] border border-white/10 rounded-sm text-xs text-zinc-400">Severity Scoring</span>
+                            <span class="px-2 py-1 bg-white/[0.03] border border-white/10 rounded-sm text-xs text-zinc-400">Hypothesis Generation</span>
+                            <span class="px-2 py-1 bg-white/[0.03] border border-white/10 rounded-sm text-xs text-zinc-400">Recommended Actions</span>
+                            <span class="px-2 py-1 bg-white/[0.03] border border-white/10 rounded-sm text-xs text-zinc-400">Confidence Estimation</span>
+                        </div>
+                        <p class="text-xs text-zinc-500 font-light mt-4 italic">Designed as a decision-support system, not automation.</p>
+                    </div>
+
+                    <!-- Outcomes -->
+                    <div class="p-8 md:p-12 space-y-4 bg-white/[0.02]">
+                        <h3 class="text-xs font-medium uppercase tracking-widest text-emerald-500">Outcomes</h3>
+                        <div class="space-y-4">
+                            <div class="flex gap-3">
+                                <div class="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500 shrink-0">
+                                    <iconify-icon icon="solar:rocket-linear" width="16" stroke-width="1.5"></iconify-icon>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-white font-medium">Shipped in 36 Hours</p>
+                                    <p class="text-xs text-zinc-500 mt-1">Architected and fully built both frontend and backend within the hackathon time limit.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-3">
+                                <div class="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500 shrink-0">
+                                    <iconify-icon icon="solar:shield-check-linear" width="16" stroke-width="1.5"></iconify-icon>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-white font-medium">System Reliability</p>
+                                    <p class="text-xs text-zinc-500 mt-1">Implemented schema-controlled LLM outputs and deterministic scoring for trust.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-3">
+                                <div class="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500 shrink-0">
+                                    <iconify-icon icon="solar:database-linear" width="16" stroke-width="1.5"></iconify-icon>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-white font-medium">Context Awareness</p>
+                                    <p class="text-xs text-zinc-500 mt-1">Built a lightweight incident memory layer to surface similar past events.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Focus Areas Bar -->
+            <div class="border-b border-white/10 p-6 md:px-16 flex flex-wrap items-center gap-4 bg-[#050505]">
+                <span class="text-xs uppercase tracking-widest text-zinc-600 mr-2">Skills:</span>
+                <span class="px-3 py-1 border border-white/10 rounded-full text-xs text-zinc-400 bg-white/[0.02]">AI Systems</span>
+                <span class="px-3 py-1 border border-white/10 rounded-full text-xs text-zinc-400 bg-white/[0.02]">Operational Intelligence</span>
+                <span class="px-3 py-1 border border-white/10 rounded-full text-xs text-zinc-400 bg-white/[0.02]">Incident Response</span>
+                <span class="px-3 py-1 border border-white/10 rounded-full text-xs text-zinc-400 bg-white/[0.02]">Full-Stack Development</span>
+                <span class="px-3 py-1 border border-white/10 rounded-full text-xs text-zinc-400 bg-white/[0.02]">Hackathon Build</span>
+            </div>
+
+            <!-- EXPANSION TOGGLE -->
+            <div id="read-more-container" class="py-24 flex flex-col items-center justify-center border-b border-white/10 bg-gradient-to-b from-black to-zinc-900/20">
+                <button class="group flex gap-3 hover:bg-zinc-200 transition-colors uppercase text-xs font-medium text-black tracking-widest bg-white rounded-sm pt-3 pr-8 pb-3 pl-8 gap-x-3 gap-y-3 items-center" id="read-more-btn">
+                    <span>Read More</span>
+                    <iconify-icon icon="solar:arrow-down-linear" width="16" stroke-width="1.5" class="group-hover:translate-y-0.5 transition-transform"></iconify-icon>
+                </button>
+            </div>
+
+            <!-- EXPANDED CONTENT (Hidden by default) -->
+            <div id="expanded-content" class="hidden">
+                
+                <!-- Architecture -->
+                <section class="border-b border-white/10 bg-white/[0.01] animate-fade-in">
+                    <div class="p-8 md:p-16 border-b border-white/10">
+                        <h2 class="text-2xl md:text-3xl text-white font-medium tracking-tight">System Architecture</h2>
+                        <p class="text-sm text-zinc-500 mt-2">End-to-end stack built for operational speed</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/10">
+                        <!-- Frontend -->
+                        <div class="p-8 md:p-12 space-y-6">
+                            <div class="w-10 h-10 border border-white/10 bg-black flex items-center justify-center text-white">
+                                <iconify-icon icon="solar:monitor-smartphone-linear" width="20" stroke-width="1.5"></iconify-icon>
+                            </div>
+                            <h3 class="text-lg font-medium text-white">Frontend</h3>
+                            <ul class="space-y-3 text-sm text-zinc-400 font-light list-disc list-inside marker:text-zinc-700">
+                                <li>Tailwind dashboard UI</li>
+                                <li>Structured triage layout</li>
+                                <li>Dynamic binding of AI output</li>
+                            </ul>
+                        </div>
+                        <!-- Backend -->
+                        <div class="p-8 md:p-12 space-y-6">
+                            <div class="flex text-white bg-black w-10 h-10 border-white/10 border items-center justify-center">
+                                <iconify-icon icon="solar:server-square-linear" width="20" stroke-width="1.5"></iconify-icon>
+                            </div>
+                            <h3 class="text-lg font-medium text-white">Backend</h3>
+                            <ul class="space-y-3 text-sm text-zinc-400 font-light list-disc list-inside marker:text-zinc-700">
+                                <li>Express server orchestration</li>
+                                <li>OpenAI API integration</li>
+                                <li>Severity scoring function</li>
+                                <li>Similar incident lookup from dataset</li>
+                                
+                                
+                            </ul>
+                        </div>
+                        <!-- The Philosophy -->
+                        <div class="p-8 md:p-12 space-y-6 bg-[#050505]">
+                            <div class="w-10 h-10 border border-white/10 bg-black flex items-center justify-center text-white">
+                                <iconify-icon icon="solar:cpu-bolt-linear" width="20" stroke-width="1.5"></iconify-icon>
+                            </div>
+                            <h3 class="text-lg font-medium text-white">Strict Output Strategy</h3>
+                            <p class="text-sm text-zinc-400 font-light leading-relaxed">
+                                <strong class="text-white font-medium">Emphasize:</strong> The LLM output is strictly structured, not conversational. By stripping away chat interfaces, the system delivers deterministic-feeling JSON that binds directly to the dashboard, ensuring engineers read operational data, not prose.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- AI Control Strategy -->
+                <section class="grid grid-cols-1 md:grid-cols-12 border-b border-white/10 bg-[#050505] animate-fade-in" style="animation-delay: 0.1s;">
+                    <div class="col-span-1 md:col-span-4 p-8 md:p-16 border-b md:border-b-0 md:border-r border-white/10">
+                        <h2 class="text-2xl md:text-3xl text-white font-medium tracking-tight mb-4">AI Control Strategy</h2>
+                        <p class="text-sm text-zinc-500">Engineering maturity beyond "call OpenAI and hope."</p>
+                    </div>
+                    <div class="col-span-1 md:col-span-8 p-8 md:p-16 space-y-8">
+                        <div class="space-y-4 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-white/10 before:to-transparent">
+                            
+                            <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                                <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white/20 bg-black text-zinc-500 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-[0_0_0_8px_#050505]">
+                                    <span class="text-xs font-mono">01</span>
+                                </div>
+                                <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] border border-white/10 p-5 rounded-sm bg-white/[0.02]">
+                                    <h4 class="text-white text-sm font-medium mb-1">Schema Enforcement</h4>
+                                    <p class="text-xs text-zinc-400 font-light">Enforced JSON schema directly inside the system prompt to guarantee object shape before parsing.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                                <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white/20 bg-black text-zinc-500 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-[0_0_0_8px_#050505]">
+                                    <span class="text-xs font-mono">02</span>
+                                </div>
+                                <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] border border-white/10 p-5 rounded-sm bg-white/[0.02]">
+                                    <h4 class="text-white text-sm font-medium mb-1">Resilient Parsing</h4>
+                                    <p class="text-xs text-zinc-400 font-light">Try/catch parsing guardrails and a default fallback structure ensure the dashboard never crashes on a hallucinated key.</p>
+                                </div>
+                            </div>
+
+                            <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                                <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white/20 bg-black text-zinc-500 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-[0_0_0_8px_#050505]">
+                                    <span class="text-xs font-mono">03</span>
+                                </div>
+                                <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] border border-white/10 p-5 rounded-sm bg-white/[0.02]">
+                                    <h4 class="text-white text-sm font-medium mb-1">Trust Metrics</h4>
+                                    <p class="text-xs text-zinc-400 font-light">Confidence scoring visualization paired with a deterministic severity score overlay grounds the AI reasoning.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Tradeoffs & Design Decisions -->
+                <section class="grid grid-cols-1 md:grid-cols-12 border-b border-white/10 animate-fade-in" style="animation-delay: 0.2s;">
+                    <div class="col-span-1 md:col-span-4 p-8 md:p-16 border-b md:border-b-0 md:border-r border-white/10">
+                        <h2 class="text-xl md:text-2xl text-white font-medium tracking-tight mb-4">Tradeoffs &amp; Decisions</h2>
+                        <p class="text-sm text-zinc-500 leading-relaxed">
+                            Balancing the constraints of a 36-hour build with the strict demands of an operational dashboard.
+                        </p>
+                    </div>
+                    <div class="col-span-1 md:col-span-8 p-8 md:p-16">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                            <div class="space-y-2">
+                                <span class="text-xs font-mono text-zinc-500 uppercase">Architecture Constraints</span>
+                                <p class="text-white text-sm font-medium">No Vector Database</p>
+                                <p class="text-xs text-zinc-400 leading-relaxed">Relied on keyword-based similarity matching and local deployment with a single-agent workflow. The priority was validating triage structure and reliability, not scaling infrastructure.</p>
+                            </div>
+                            <div class="space-y-2">
+                                <span class="text-xs font-mono text-zinc-500 uppercase">Interface Design</span>
+                                <p class="text-white text-sm font-medium">Dashboard Over Chat</p>
+                                <p class="text-xs text-zinc-400 leading-relaxed">Operators don't have time to converse during an outage. The UI reconstructs timelines and visualizes insights immediately upon load.</p>
+                            </div>
+                            <div class="space-y-2">
+                                <span class="text-xs font-mono text-zinc-500 uppercase">Interpretability</span>
+                                <p class="text-white text-sm font-medium">Quantifiable Trust</p>
+                                <p class="text-xs text-zinc-400 leading-relaxed">Implemented numeric severity scores and visual confidence bars so engineers can calibrate how much to trust the generated hypothesis.</p>
+                            </div>
+                            <div class="space-y-2">
+                                <span class="text-xs font-mono text-zinc-500 uppercase">Actionability</span>
+                                <p class="text-white text-sm font-medium">Structured Runbooks</p>
+                                <p class="text-xs text-zinc-400 leading-relaxed">Instead of paragraphs of advice, the system outputs explicit, step-by-step runbook actions to immediately begin mitigation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Closing Note (Lessons) -->
+                <section class="md:p-16 text-center bg-gradient-to-b from-black to-zinc-900/40 border-white/10 border-t pt-8 pr-8 pb-8 pl-8 animate-fade-in" style="animation-delay: 0.3s;">
+                    <div class="max-w-3xl mr-auto ml-auto">
+                        <div class="md:p-12 border-white/10 border rounded-sm pt-8 pr-8 pb-8 pl-8 space-y-6">
+                            <div class="flex items-center gap-3 mb-2 justify-center">
+                                <div class="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500 shrink-0">
+                                    <iconify-icon icon="solar:lightbulb-bolt-linear" width="16" stroke-width="1.5"></iconify-icon>
+                                </div>
+                                <span class="text-xs font-medium uppercase tracking-widest text-emerald-500">Lessons from 36 Hours</span>
+                            </div>
+                            <p class="md:text-xl text-lg font-medium text-white tracking-tight">Scope discipline matters more than feature volume.</p>
+                            <div class="space-y-3 pt-2">
+                                <p class="leading-relaxed text-sm font-light text-zinc-400">
+                                    <strong class="text-white font-medium">Deterministic layers increase AI trust.</strong> Without strict parsing and scoring rules, the tool would be too volatile for incident response.
+                                </p>
+                                <p class="leading-relaxed text-sm font-light text-zinc-400">
+                                    <strong class="text-white font-medium">Structured outputs outperform conversational UI.</strong> In operational contexts, parsing AI data into dashboards is exponentially more valuable than chatbot interfaces. Hybrid reasoning improves baseline reliability.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="border-t relative overflow-hidden border-white/10 bg-black">
+             <div class="absolute inset-0 bg-[linear-gradient(to_right,#222_1px,transparent_1px),linear-gradient(to_bottom,#222_1px,transparent_1px)] bg-[size:24px_24px] opacity-20"></div>
+            <div class="grid grid-cols-1 md:grid-cols-12 divide-y md:divide-y-0 md:divide-x relative z-10 divide-white/10">
+                <div class="col-span-1 md:col-span-9 p-8 md:p-12 flex flex-col justify-center items-start">
+                    <h2 class="md:text-3xl text-2xl font-medium text-white tracking-tight mb-2">This is one example of how I build.</h2>
+                    <p class="text-sm font-light text-zinc-500 mb-6">If it resonates, let's talk.</p>
+                    <a href="mailto:kandregulaomesh@gmail.com" class="px-5 py-2 border text-xs font-medium uppercase tracking-widest transition-all duration-300 border-zinc-700 bg-zinc-900/50 text-white hover:bg-white hover:text-black hover:border-white flex items-center gap-2">
+                        <iconify-icon icon="solar:letter-linear" width="16" stroke-width="1.5"></iconify-icon>
+                        Contact Me
+                    </a>
+                </div>
+                <div class="col-span-1 md:col-span-3 md:p-12 flex flex-col bg-black/50 pt-8 pr-8 pb-8 pl-8 justify-end">
+                    <div class="mt-auto font-mono text-xs space-y-6 text-zinc-600">
+                        <div class="text-xs text-zinc-600 font-mono mt-auto space-y-3">
+                            <div class="flex items-center gap-2 text-zinc-400">
+                                <iconify-icon icon="solar:map-point-linear" width="14" stroke-width="1.5"></iconify-icon>
+                                <span>PITTSBURGH, PA</span>
+                            </div>
+                            <div class="flex items-center gap-4 border-t pt-4 border-white/10">
+                                <div><span class="block text-zinc-500">40.4406° N</span></div>
+                                <div><span class="block text-zinc-500">79.9959° W</span></div>
+                            </div>
+                            <div class="pt-6 text-zinc-700">
+                                © 2026 OMESH KANDREGULA
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('read-more-btn').addEventListener('click', function() {
+            const expandedContent = document.getElementById('expanded-content');
+            const buttonContainer = document.getElementById('read-more-container');
+            
+            // Show content with animation
+            expandedContent.classList.remove('hidden');
+            expandedContent.classList.add('animate-fade-in');
+            
+            // Hide the button container smoothly
+            buttonContainer.style.display = 'none';
+        });
+    </script>
+
+
+</body></html>
