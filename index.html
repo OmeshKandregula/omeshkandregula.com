@@ -2,6 +2,11 @@
 <html lang="en" class="scroll-smooth"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Omesh Kandregula - Product Builder</title>
+
+<!-- Favicon -->
+<link rel="icon" type="image/jpeg" href="/assets/images/omesh.jpg">
+<link rel="apple-touch-icon" href="/assets/images/omesh.jpg">
+
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -154,14 +159,36 @@ color: #a1a1aa !important;
                         </p>
 
                         <div class="pt-4 flex flex-wrap gap-4">
-                            <a href="#" class="inline-flex items-center gap-2 px-5 py-2.5 text-xs font-medium uppercase tracking-wide transition-colors bg-white text-black hover:bg-zinc-300">
-                                <iconify-icon icon="solar:download-linear" width="16" stroke-width="1.5"></iconify-icon>
-                                Download Resume
+                            <!-- View Resume -->
+                            <a
+                                href="/assets/resume/Omesh_Resume.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="inline-flex items-center gap-2 px-5 py-2.5 text-xs font-medium uppercase tracking-wide transition-colors bg-white text-black hover:bg-zinc-300"
+                            >
+                                <iconify-icon icon="solar:eye-linear" width="16" stroke-width="1.5"></iconify-icon>
+                                View Resume
                             </a>
-                            <a href="#about" class="inline-flex items-center gap-2 px-5 py-2.5 border text-xs font-medium uppercase tracking-wide transition-colors border-white/10 text-zinc-300 hover:border-white/30 hover:text-white hover:bg-white/[0.02]">
+
+                            <!-- Download Resume -->
+                            <a
+                                href="/assets/resume/Omesh_Resume.pdf"
+                                download
+                                class="inline-flex items-center gap-2 px-5 py-2.5 border text-xs font-medium uppercase tracking-wide transition-colors border-white/10 text-zinc-300 hover:border-white/30 hover:text-white hover:bg-white/[0.02]"
+                            >
+                                <iconify-icon icon="solar:download-linear" width="16" stroke-width="1.5"></iconify-icon>
+                                Download
+                            </a>
+
+                            <!-- Read More -->
+                            <a
+                                href="#about"
+                                class="inline-flex items-center gap-2 px-5 py-2.5 border text-xs font-medium uppercase tracking-wide transition-colors border-white/10 text-zinc-300 hover:border-white/30 hover:text-white hover:bg-white/[0.02]"
+                            >
                                 Read More
                             </a>
                         </div>
+
                     </div>
                 </section>
 
@@ -172,8 +199,9 @@ color: #a1a1aa !important;
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-x divide-white/10">
     
-    <!-- Row 1: Project 1 (Arcane) -->
-    <a href="arcane-work.html" class="group md:p-12 hover:bg-white/[0.04] hover:scale-[1.02] hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,1)] hover:z-10 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] cursor-pointer flex flex-col overflow-hidden active:scale-[0.98] active:duration-150 hover:border-white/10 h-full border-transparent border pt-8 pr-8 pb-8 pl-8 relative">
+    <!-- Project 1 -->
+    <!-- Project: Arcane -->
+    <div onclick="window.location.href='arcane-work.html'" class="group md:p-12 hover:bg-white/[0.04] hover:scale-[1.02] hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,1)] hover:z-10 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] cursor-pointer flex flex-col overflow-hidden active:scale-[0.98] active:duration-150 hover:border-white/10 h-full border-transparent border pt-8 pr-8 pb-8 pl-8 relative">
         <div class="absolute inset-0 bg-gradient-to-br from-white/[0.05] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
         
         <div class="flex mb-10 items-start justify-between relative z-10">
@@ -196,10 +224,11 @@ color: #a1a1aa !important;
             <span class="text-[10px] text-zinc-500 border border-white/10 px-2 py-1 group-hover:border-white/20 group-hover:bg-white/5 group-hover:text-zinc-300 transition-all duration-300">Product Strategy</span>
             <span class="text-[10px] text-zinc-500 border border-white/10 px-2 py-1 group-hover:border-white/20 group-hover:bg-white/5 group-hover:text-zinc-300 transition-all duration-300">Personalization</span>
         </div>
-    </a>
+    </div>
 
-    <!-- Row 1: Project 2 (Incident Copilot) -->
-    <a href="incident-copilot-work.html" class="group md:p-12 hover:bg-white/[0.04] hover:scale-[1.02] hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,1)] hover:z-10 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] cursor-pointer flex flex-col overflow-hidden active:scale-[0.98] active:duration-150 hover:border-white/10 h-full border-transparent border pt-8 pr-8 pb-8 pl-8 relative md:border-t-0">
+
+    <!-- Project: Incident Copilot -->
+    <div onclick="window.location.href='incident-copilot-work.html'" class="group md:p-12 hover:bg-white/[0.04] hover:scale-[1.02] hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,1)] hover:z-10 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] cursor-pointer flex flex-col overflow-hidden active:scale-[0.98] active:duration-150 hover:border-white/10 h-full border-transparent border pt-8 pr-8 pb-8 pl-8 relative md:border-t-0">
         <div class="absolute inset-0 bg-gradient-to-br from-white/[0.05] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
 
         <div class="flex justify-between items-start mb-10 relative z-10">
@@ -223,15 +252,21 @@ color: #a1a1aa !important;
             <span class="text-[10px] text-zinc-500 border border-white/10 px-2 py-1 group-hover:border-white/20 group-hover:bg-white/5 group-hover:text-zinc-300 transition-all duration-300">Full-Stack</span>
             <span class="text-[10px] text-zinc-500 border border-white/10 px-2 py-1 group-hover:border-white/20 group-hover:bg-white/5 group-hover:text-zinc-300 transition-all duration-300">Operational Intelligence</span>
         </div>
-    </a>
+    </div>
 
-    <!-- Row 2: Project 3 (PeerfectCV) -->
-    <a href="peerfectcv-work.html" class="group md:p-12 hover:bg-white/[0.04] hover:scale-[1.02] hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,1)] hover:z-10 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] cursor-pointer flex flex-col overflow-hidden active:scale-[0.98] active:duration-150 hover:border-white/10 h-full border-transparent border pt-8 pr-8 pb-8 pl-8 relative md:border-l-0">
+    
+    <div onclick="window.location.href='peerfectcv-work.html'" class="group md:p-12 hover:bg-white/[0.04] hover:scale-[1.02] hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,1)] hover:z-10 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] cursor-pointer flex flex-col overflow-hidden active:scale-[0.98] active:duration-150 hover:border-white/10 h-full border-transparent border pt-8 pr-8 pb-8 pl-8 relative">
+        <!-- Hover Gradient Effect -->
         <div class="absolute inset-0 bg-gradient-to-br from-white/[0.05] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
 
         <div class="flex justify-between items-start mb-10 relative z-10">
             <div class="w-12 h-12 text-white bg-[#050505] border-white/10 border rounded-sm flex items-center justify-center overflow-hidden shrink-0 group-hover:border-white/30 group-hover:shadow-[0_0_15px_rgba(255,255,255,0.1)] transition-all duration-500">
-                <img src="https://ui-avatars.com/api/?name=Peerfect+CV&amp;background=18181b&amp;color=ffffff&amp;size=128&amp;font-size=0.45&amp;bold=true" alt="PeerfectCV Logo" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-300">
+                <img
+                  src="assets/images/peerfectcv-logo.png"
+                  alt="PeerfectCV Logo"
+                  class="w-full h-full object-contain opacity-90 group-hover:opacity-100 transition-opacity duration-300"
+                />
+
             </div>
             <iconify-icon icon="solar:arrow-right-up-linear" width="20" class="text-zinc-600 group-hover:text-white group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]" stroke-width="1.5"></iconify-icon>
         </div>
@@ -249,15 +284,22 @@ color: #a1a1aa !important;
             <span class="text-[10px] text-zinc-500 border border-white/10 px-2 py-1 group-hover:border-white/20 group-hover:bg-white/5 group-hover:text-zinc-300 transition-all duration-300">MVP Execution</span>
             <span class="text-[10px] text-zinc-500 border border-white/10 px-2 py-1 group-hover:border-white/20 group-hover:bg-white/5 group-hover:text-zinc-300 transition-all duration-300">Analytics</span>
         </div>
-    </a>
+    </div>
 
-    <!-- Row 2: Project 4 (Tvasta) -->
-    <a href="tvasta-work.html" class="group md:p-12 hover:bg-white/[0.04] hover:scale-[1.02] hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,1)] hover:z-10 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] cursor-pointer flex flex-col overflow-hidden active:scale-[0.98] active:duration-150 hover:border-white/10 h-full border-transparent border pt-8 pr-8 pb-8 pl-8 relative">
+    <!-- Project 2 -->
+    <div onclick="window.location.href='tvasta-work.html'" class="group md:p-12 hover:bg-white/[0.04] hover:scale-[1.02] hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,1)] hover:z-10 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] cursor-pointer flex flex-col overflow-hidden active:scale-[0.98] active:duration-150 hover:border-white/10 h-full border-transparent border pt-8 pr-8 pb-8 pl-8 relative md:border-t-0">
+        <!-- Hover Gradient Effect -->
         <div class="absolute inset-0 bg-gradient-to-br from-white/[0.05] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
         
         <div class="flex mb-10 items-start justify-between relative z-10">
             <div class="group-hover:border-white/30 group-hover:shadow-[0_0_15px_rgba(255,255,255,0.1)] transition-all duration-500 text-white bg-[#050505] border-white/10 border rounded-sm w-12 h-12 flex items-center justify-center overflow-hidden shrink-0">
-                <img src="https://ui-avatars.com/api/?name=Tvasta&amp;background=050505&amp;color=ffffff&amp;size=128&amp;font-size=0.35&amp;bold=true" alt="Tvasta Logo" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-300">
+                <img
+                  src="assets/images/tvasta-logo.jpg"
+                  alt="Tvasta Logo"
+                  class="w-full h-full object-contain opacity-90 group-hover:opacity-100 transition-opacity duration-300"
+                />
+
+
             </div>
             <iconify-icon icon="solar:arrow-right-up-linear" width="20" class="text-zinc-600 group-hover:text-white group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]" stroke-width="1.5"></iconify-icon>
         </div>
@@ -273,10 +315,11 @@ color: #a1a1aa !important;
             <span class="text-[10px] text-zinc-500 border border-white/10 px-2 py-1 group-hover:border-white/20 group-hover:bg-white/5 group-hover:text-zinc-300 transition-all duration-300">Product Engineering</span>
             <span class="text-[10px] text-zinc-500 border border-white/10 px-2 py-1 group-hover:border-white/20 group-hover:bg-white/5 group-hover:text-zinc-300 transition-all duration-300">Hardware</span>
         </div>
-    </a>
+    </div>
 
-    <!-- Row 3: Project 5 (ScreenSage) -->
-    <a href="screensage-work.html" class="group md:p-12 hover:bg-white/[0.04] hover:scale-[1.02] hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,1)] hover:z-10 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] cursor-pointer flex flex-col overflow-hidden active:scale-[0.98] active:duration-150 hover:border-white/10 h-full border-transparent border pt-8 pr-8 pb-8 pl-8 relative md:border-l-0">
+    <!-- Project 3 -->
+    <div onclick="window.location.href='screensage-work.html'" class="group md:p-12 hover:bg-white/[0.04] hover:scale-[1.02] hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,1)] hover:z-10 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] cursor-pointer flex flex-col overflow-hidden active:scale-[0.98] active:duration-150 hover:border-white/10 h-full border-transparent border pt-8 pr-8 pb-8 pl-8 relative md:border-l-0">
+        <!-- Hover Gradient Effect -->
         <div class="absolute inset-0 bg-gradient-to-br from-white/[0.05] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
 
         <div class="flex justify-between items-start mb-10 relative z-10">
@@ -295,9 +338,9 @@ color: #a1a1aa !important;
             <span class="text-[10px] text-zinc-500 border border-white/10 px-2 py-1 group-hover:border-white/20 group-hover:bg-white/5 group-hover:text-zinc-300 transition-all duration-300">Product Ideation</span>
             <span class="text-[10px] text-zinc-500 border border-white/10 px-2 py-1 group-hover:border-white/20 group-hover:bg-white/5 group-hover:text-zinc-300 transition-all duration-300">User Research</span>
         </div>
-    </a>
+    </div>
 
-    <!-- Row 3: Empty Slot / Contact Prompt -->
+    <!-- Empty Slot / Contact Prompt -->
     <div class="group md:p-12 flex flex-col text-center h-full border-white/10 border-t pt-8 pr-8 pb-8 pl-8 relative items-center justify-center">
         <p class="text-sm text-zinc-500 mb-4">Learning by Building.</p>
         <a href="mailto:kandregulaomesh@gmail.com" class="uppercase hover:border-zinc-300 transition-colors text-xs font-medium text-zinc-300 tracking-wide border-zinc-700 border-b pb-1">If this is relevant, let's talk</a>
@@ -340,7 +383,11 @@ color: #a1a1aa !important;
     
     <!-- Profile Image Container -->
     <div class="mb-4 w-full aspect-square overflow-hidden border border-white/10 relative group bg-black">
-        <img src="https://ui-avatars.com/api/?name=Omesh+Kandregula&amp;background=18181b&amp;color=71717a&amp;size=500" alt="Omesh Kandregula" class="contrast-110 hover:grayscale-0 hover:brightness-100 transition-all duration-700 ease-out w-full h-full object-cover grayscale brightness-90">
+        <img
+          src="assets/images/omesh.jpg"
+          alt="Omesh Kandregula"
+          class="contrast-110 hover:grayscale-0 hover:brightness-100 transition-all duration-700 ease-out w-full h-full object-cover grayscale brightness-90"
+        />
         <div class="absolute inset-0 ring-1 ring-inset ring-white/10 pointer-events-none"></div>
     </div>
 
@@ -396,8 +443,8 @@ color: #a1a1aa !important;
             </div>
 
             <!-- RIGHT COLUMN (Experience Sidebar) -->
-            <div id="experience" class="col-span-1 md:col-span-3 relative bg-black/40 transition-all duration-500">
-                <div class="sticky top-16">
+            <div id="experience" class="col-span-1 md:col-span-3 relative transition-all duration-500">
+                <div class="md:sticky md:top-16">
                     <div id="experience-header" class="p-6 border-b flex items-center justify-between border-white/10 bg-black/90 backdrop-blur-sm transition-all duration-500">
                         <h3 class="text-xs font-medium uppercase tracking-widest text-white transition-colors duration-500">
                             Experience
@@ -405,7 +452,7 @@ color: #a1a1aa !important;
                         <iconify-icon icon="solar:case-linear" width="16" class="text-zinc-600 transition-colors duration-500" stroke-width="1.5"></iconify-icon>
                     </div>
 
-                    <div id="experience-content" class="divide-y divide-white/10 max-h-[calc(100vh-8rem)] overflow-y-auto no-scrollbar transition-all duration-500">
+                    <div id="experience-content" class="divide-y divide-white/10 transition-all duration-500">
                         
                         <!-- Role 1: PeerfectCV -->
                         <div class="experience-group">
@@ -468,7 +515,7 @@ color: #a1a1aa !important;
                                     <h4 class="text-sm font-medium text-zinc-300 group-hover:text-white transition-colors">Synthara AG</h4>
                                 </div>
                                 <div class="flex items-baseline justify-between w-full">
-                                    <p class="text-xs text-zinc-500 group-hover:text-zinc-400 transition-colors">Market Research Intern</p>
+                                    <p class="text-xs text-zinc-500 group-hover:text-zinc-400 transition-colors">Market Intelligence Research Intern</p>
                                     <p class="text-[10px] text-zinc-600 font-mono">2020</p>
                                 </div>
                             </button>
@@ -597,27 +644,6 @@ color: #a1a1aa !important;
                 });
             }, 1500);
         }
-
-        // Smart scroll handling for experience section
-        const experienceContent = document.getElementById('experience-content');
-        
-        experienceContent.addEventListener('wheel', function(e) {
-            const isScrollable = this.scrollHeight > this.clientHeight;
-            const isAtTop = this.scrollTop === 0;
-            const isAtBottom = Math.abs(this.scrollHeight - this.clientHeight - this.scrollTop) < 1;
-            
-            if (isScrollable) {
-                // Scrolling down and not at bottom - prevent page scroll
-                if (e.deltaY > 0 && !isAtBottom) {
-                    e.stopPropagation();
-                }
-                // Scrolling up and not at top - prevent page scroll
-                else if (e.deltaY < 0 && !isAtTop) {
-                    e.stopPropagation();
-                }
-                // At boundaries - allow page scroll
-            }
-        }, { passive: true });
     </script>
 
 </body></html>

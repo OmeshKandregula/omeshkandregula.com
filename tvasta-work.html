@@ -2,6 +2,11 @@
 <html lang="en" class="scroll-smooth"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tekton - Omesh Kandregula</title>
+
+<!-- Favicon -->
+<link rel="icon" type="image/jpeg" href="/assets/images/omesh.jpg">
+<link rel="apple-touch-icon" href="/assets/images/omesh.jpg">
+
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -56,14 +61,35 @@ animation: fadeIn 0.8s ease-out forwards;
             <!-- Hero Section -->
             <section class="border-b border-white/10 p-8 md:p-16 lg:p-24 bg-white/[0.01]">
                 <div class="max-w-4xl">
-                    <h1 class="text-5xl md:text-6xl lg:text-7xl tracking-tight leading-[0.95] text-white font-medium mb-6">
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl tracking-tight leading-[0.95] text-white font-medium mb-4">
                         Tekton
                     </h1>
-                    <p class="text-xl md:text-2xl text-zinc-400 font-light tracking-tight">
+
+                    <p class="text-xl md:text-2xl text-zinc-400 font-light tracking-tight mb-6">
                         Miniature Concrete 3D Printer for Material Research
                     </p>
+
+                    <a
+                      href="https://www.tvasta.construction/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="inline-flex items-center gap-3 text-zinc-400 opacity-80 hover:text-white hover:opacity-100 transition-colors"
+                    >
+                        <img
+                            src="assets/images/tvasta-logo.jpg"
+                            alt="Tvasta Manufacturing Solutions logo"
+                            class="h-5 w-auto object-contain opacity-70 translate-y-[1px]"
+                        />
+                        <span class="text-sm font-light flex items-center gap-1">
+                            Tvasta Manufacturing Solutions
+                            <iconify-icon icon="solar:arrow-up-right-linear" width="12" class="opacity-60"></iconify-icon>
+                        </span>
+
+                    </a>
+
                 </div>
             </section>
+
 
             <!-- SKIM VIEW (Always Visible) -->
             <div id="skim-view" class="grid grid-cols-1 md:grid-cols-12 divide-y md:divide-y-0 md:divide-x divide-white/10 border-b border-white/10">
@@ -340,28 +366,35 @@ animation: fadeIn 0.8s ease-out forwards;
                     <h3 class="text-xs font-medium uppercase tracking-widest text-zinc-500 mb-8">System Visualization</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         <!-- Placeholder 1 -->
-                        <div class="group relative aspect-video bg-zinc-900 border border-white/10 overflow-hidden">
-                            <div class="absolute inset-0 flex flex-col items-center justify-center text-zinc-600 transition-colors group-hover:text-zinc-400">
-                                <iconify-icon icon="solar:printer-linear" width="32" class="mb-2"></iconify-icon>
-                                <span class="text-xs font-mono uppercase">Full Printer Setup</span>
-                            </div>
+                        <div class="group relative aspect-video border border-white/10 overflow-hidden">
+                            <img
+                                src="assets/images/tekton-full-setup.jpeg"
+                                alt="Tekton full printer setup"
+                                class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
+                            />
                         </div>
+
                          <!-- Placeholder 2 -->
-                        <div class="group relative aspect-video bg-zinc-900 border border-white/10 overflow-hidden">
-                            <div class="absolute inset-0 flex flex-col items-center justify-center text-zinc-600 transition-colors group-hover:text-zinc-400">
-                                <iconify-icon icon="solar:box-minimalistic-linear" width="32" class="mb-2"></iconify-icon>
-                                <span class="text-xs font-mono uppercase">Printed Samples</span>
-                            </div>
+                        <div class="group relative aspect-video border border-white/10 overflow-hidden">
+                            <img
+                                src="assets/images/tekton-printed-sample.jpeg"
+                                alt="Clay printed sample from Tekton"
+                                class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
+                            />
                         </div>
+
                          <!-- Placeholder 3 -->
-                        <div class="group relative aspect-video bg-zinc-900 border border-white/10 overflow-hidden md:col-span-3 lg:col-span-3 flex items-center justify-center bg-black">
-                            <div class="text-zinc-500 flex flex-col items-center gap-3 transition-colors group-hover:text-zinc-400">
-                                <div class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white">
-                                    <iconify-icon icon="solar:play-linear" width="24"></iconify-icon>
-                                </div>
-                                <span class="text-xs font-mono uppercase">System Operation Demo</span>
-                            </div>
+                        <div class="relative aspect-video border border-white/10 overflow-hidden md:col-span-3 lg:col-span-3 bg-black">
+                            <video
+                              src="assets/videos/tekton-operation.mp4"
+                              controls
+                              preload="metadata"
+                              controlslist="nodownload noplaybackrate"
+                              class="w-full h-full object-cover"
+                            ></video>
+
                         </div>
+
                     </div>
                     <div class="mt-4 text-center">
                         <p class="text-[10px] uppercase text-zinc-600 tracking-widest">Confidential / Non-Proprietary Views Only</p>
