@@ -80,7 +80,7 @@ animation: fadeIn 0.8s ease-out forwards;
                         <!-- Read More / Expandable Content -->
                         <div id="hero-expanded" class="hidden overflow-hidden transition-all duration-500 ease-in-out">
                             <p class="text-base text-zinc-400 font-light leading-relaxed mt-6 pr-4 border-l border-white/10 pl-6">
-                                ScreenSage isn't just a tracker; it's a social contract. By analyzing the failures of passive monitoring tools, we identified that users ignore data but react to social friction. The resulting prototype gamified the 'unplugging' experience, turning digital detox into a team sport rather than a solitary punishment.
+                                ScreenSage isn't just a tracker. It's a social contract. By studying why passive monitoring tools fail, we found the real blocker: people don't respond to data about themselves, they respond to how they compare to people they care about. The prototype turned digital detox into a team sport, not a solitary punishment.
                             </p>
                         </div>
                         
@@ -357,8 +357,8 @@ animation: fadeIn 0.8s ease-out forwards;
                                 </div>
                                 <span class="text-xs font-medium uppercase tracking-widest text-emerald-500">Key Takeaway</span>
                             </div>
-                            <p class="md:text-xl text-lg font-medium text-white tracking-tight">This project was about testing assumptions early.</p>
-                            <p class="leading-relaxed text-sm font-light text-zinc-400">Small experiments revealed what actually changed behavior.</p>
+                            <p class="md:text-xl text-lg font-medium text-white tracking-tight">The right insight unlocks the right product.</p>
+                            <p class="leading-relaxed text-sm font-light text-zinc-400">Every passive screen time tool had already tried limits, notifications, and graphs. None of it worked. One interview question uncovered why: the problem wasn't information, it was motivation. That single insight reshaped the entire product direction.</p>
                         </div>
                     </div>
                 </section>
@@ -375,7 +375,7 @@ animation: fadeIn 0.8s ease-out forwards;
                 <div class="col-span-1 md:col-span-9 p-8 md:p-12 flex flex-col justify-center items-start">
                     <h2 class="md:text-3xl text-2xl font-medium text-white tracking-tight mb-2">This is how I think, test, and decide what to build.</h2>
                     <p class="text-sm font-light text-zinc-500 mb-6">Curious to go deeper? Let's talk.</p>
-                    <a href="mailto:kandregulaomesh@gmail.com" class="px-5 py-2 border text-xs font-medium uppercase tracking-widest transition-all duration-300 border-zinc-700 bg-zinc-900/50 text-white hover:bg-white hover:text-black hover:border-white flex items-center gap-2">
+                    <a href="/cdn-cgi/l/email-protection#650e040b011700021009040a0800160d250208040c094b060a08" class="px-5 py-2 border text-xs font-medium uppercase tracking-widest transition-all duration-300 border-zinc-700 bg-zinc-900/50 text-white hover:bg-white hover:text-black hover:border-white flex items-center gap-2">
                         <iconify-icon icon="solar:letter-linear" width="16" stroke-width="1.5"></iconify-icon>
                         Contact Me
                     </a>
@@ -401,18 +401,14 @@ animation: fadeIn 0.8s ease-out forwards;
         </footer>
     </div>
     
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         document.getElementById('read-more-btn').addEventListener('click', function() {
             const expandedContent = document.getElementById('expanded-content');
             const buttonContainer = document.getElementById('read-more-container');
-            
-            // Show content with animation
+
             expandedContent.classList.remove('hidden');
             expandedContent.classList.add('animate-fade-in');
-            
-            // Hide the button container smoothly
-            buttonContainer.style.display = 'none';
+            buttonContainer.classList.add('hidden');
+            expandedContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
     </script>
-
-</body></html>
