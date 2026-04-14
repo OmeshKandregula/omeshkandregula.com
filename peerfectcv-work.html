@@ -406,7 +406,7 @@ animation: fadeIn 0.8s ease-out forwards;
         </footer>
     </div>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         document.getElementById('read-more-btn').addEventListener('click', function() {
             const expandedContent = document.getElementById('expanded-content');
             const buttonContainer = document.getElementById('read-more-container');
@@ -414,10 +414,3 @@ animation: fadeIn 0.8s ease-out forwards;
             // Show content with animation
             expandedContent.classList.remove('hidden');
             expandedContent.classList.add('animate-fade-in');
-            
-            // Hide the button container smoothly
-            buttonContainer.style.display = 'none';
-        });
-    </script>
-
-</body></html>
