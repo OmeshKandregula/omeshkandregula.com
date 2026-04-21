@@ -281,7 +281,7 @@ body {
 
       <!-- Logo -->
       <div class="col-span-1 md:col-span-3 flex items-center px-6 justify-between md:justify-start">
-        <a href="#" class="font-medium tracking-widest text-xs uppercase hover:opacity-60 transition-opacity text-white">
+        <a href="#" id="site-name" class="font-medium tracking-widest text-xs uppercase hover:opacity-60 transition-opacity text-white">
           Omesh Kandregula
         </a>
         <button id="hamburger-btn" class="md:hidden text-zinc-300 p-1.5 hover:text-white transition-colors" aria-label="Open navigation">
@@ -291,10 +291,10 @@ body {
 
       <!-- Nav -->
       <nav class="col-span-1 md:col-span-6 hidden md:flex items-center px-6 space-x-8">
-        <a href="#work"     class="text-xs font-medium uppercase tracking-widest hover:text-white transition-colors link-hover">Work</a>
-        <a href="#about"    class="text-xs font-medium uppercase tracking-widest hover:text-white transition-colors link-hover">About</a>
-        <a href="javascript:void(0)" onclick="highlightExperience(event)" class="text-xs font-medium uppercase tracking-widest hover:text-white transition-colors link-hover">Experience</a>
-        <a href="https://linkedin.com/in/omesh-kandregula" target="_blank" rel="noopener noreferrer" class="text-xs font-medium uppercase tracking-widest hover:text-white transition-colors link-hover">LinkedIn</a>
+        <a href="#work"     data-scramble class="nav-link text-xs font-medium uppercase tracking-widest text-zinc-400 hover:text-white transition-colors duration-150">Work</a>
+        <a href="#about"    data-scramble class="nav-link text-xs font-medium uppercase tracking-widest text-zinc-400 hover:text-white transition-colors duration-150">About</a>
+        <a href="javascript:void(0)" onclick="highlightExperience(event)" data-scramble class="nav-link text-xs font-medium uppercase tracking-widest text-zinc-400 hover:text-white transition-colors duration-150">Experience</a>
+        <a href="https://linkedin.com/in/omesh-kandregula" target="_blank" rel="noopener noreferrer" data-scramble class="nav-link text-xs font-medium uppercase tracking-widest text-zinc-400 hover:text-white transition-colors duration-150">LinkedIn</a>
       </nav>
 
       <!-- Status -->
@@ -823,6 +823,48 @@ if (!isTouch) {
   document.addEventListener('mouseenter', () => { dot.style.opacity = '1'; ring.style.opacity = '1'; });
 }
 
+// ── Scramble Utility ───────────────────────────────────────
+const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+function scrambleOnce(el, duration) {
+  const original = el.textContent.trim();
+  const start = performance.now();
+  (function step() {
+    const progress = Math.min((performance.now() - start) / duration, 1);
+    const resolved  = Math.floor(progress * original.length);
+    el.textContent  = original.split('').map((ch, i) => {
+      if (ch === ' ' || ch === "'") return ch;
+      if (i < resolved) return original[i];
+      return CHARS[Math.floor(Math.random() * CHARS.length)];
+    }).join('');
+    if (progress < 1) requestAnimationFrame(step);
+    else el.textContent = original;
+  })();
+}
+
+// ── Nav Scramble (hover) ───────────────────────────────────
+document.querySelectorAll('[data-scramble]').forEach(el => {
+  const original = el.textContent;
+  let raf;
+  el.addEventListener('mouseenter', () => {
+    cancelAnimationFrame(raf);
+    const start = performance.now();
+    const duration = 400;
+    (function step() {
+      const progress = Math.min((performance.now() - start) / duration, 1);
+      const resolved  = Math.floor(progress * original.length);
+      el.textContent  = original.split('').map((ch, i) => {
+        if (ch === ' ') return ' ';
+        if (i < resolved) return original[i];
+        return CHARS[Math.floor(Math.random() * CHARS.length)];
+      }).join('');
+      if (progress < 1) raf = requestAnimationFrame(step);
+      else el.textContent = original;
+    })();
+  });
+  el.addEventListener('mouseleave', () => { cancelAnimationFrame(raf); el.textContent = original; });
+});
+
 // ── Scroll Progress ────────────────────────────────────────
 const progressBar = document.getElementById('scroll-progress');
 window.addEventListener('scroll', () => {
@@ -849,14 +891,18 @@ mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMo
 // ── Reveal on Scroll ───────────────────────────────────────
 const revealObserver = new IntersectionObserver(entries => {
   entries.forEach(e => {
-    if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); }
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      revealObserver.unobserve(e.target);
+    }
   });
 }, { threshold: 0.07 });
 
 document.querySelectorAll('.reveal').forEach(el => {
   const r = el.getBoundingClientRect();
-  if (r.top < window.innerHeight * 1.05) { el.classList.add('visible'); }
-  else { revealObserver.observe(el); }
+  if (r.top < window.innerHeight * 1.05) {
+    el.classList.add('visible');
+  } else { revealObserver.observe(el); }
 });
 
 // ── Card Spotlight ─────────────────────────────────────────
@@ -884,6 +930,12 @@ const statObs = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.6 });
 document.querySelectorAll('.stat-value').forEach(el => statObs.observe(el));
+
+// ── Name scramble on load ──────────────────────────────────
+window.addEventListener('load', () => {
+  const nameEl = document.getElementById('site-name');
+  if (nameEl) setTimeout(() => scrambleOnce(nameEl, 600), 120);
+});
 
 // ── Accordion ──────────────────────────────────────────────
 function toggleExperience(id) {
