@@ -228,23 +228,24 @@ body {
   50%  { box-shadow: inset 0 0 0 1px rgba(255,255,255,0.3), inset 0 0 30px rgba(255,255,255,0.05); }
   100% { box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1); }
 }
-@keyframes header-pulse {
-  0%   { background-color: rgba(0,0,0,0.9); }
-  50%  { background-color: rgba(255,255,255,0.08); }
-  100% { background-color: rgba(0,0,0,0.9); }
+@keyframes border-sweep {
+  0%   { opacity: 0; transform: scaleY(0); }
+  15%  { opacity: 1; transform: scaleY(1); }
+  70%  { opacity: 1; }
+  100% { opacity: 0; transform: scaleY(1); }
 }
-@keyframes item-flash {
-  0%   { background-color: transparent; }
-  50%  { background-color: rgba(255,255,255,0.06); }
-  100% { background-color: transparent; }
+.experience-group-highlight {
+  position: relative;
 }
-.experience-highlight        { animation: experience-glow 1.5s ease-in-out; }
-.experience-header-highlight { animation: header-pulse 1.5s ease-in-out; }
-.experience-header-highlight h3         { color: white !important; }
-.experience-header-highlight iconify-icon { color: white !important; }
-.experience-item-highlight              { animation: item-flash 1.5s ease-in-out; }
-.experience-item-highlight h4           { color: white !important; }
-.experience-item-highlight p            { color: #a1a1aa !important; }
+.experience-group-highlight::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 2px;
+  background: white;
+  transform-origin: top center;
+  animation: border-sweep 800ms ease-out forwards;
+}
 
 /* ── Stat counter tabular nums ── */
 .stat-value { font-variant-numeric: tabular-nums; display: inline-block; }
@@ -590,7 +591,7 @@ body {
               I've worked across startups, deep-tech manufacturing, market strategy, and student-led teams. That mix taught me how products fail, what actually moves metrics, and why shipping matters.
             </p>
             <p class="reveal" style="transition-delay:0.15s">
-              Previously founded <a href="https://peerfectcv.com" target="_blank" rel="noopener noreferrer" class="text-zinc-300 underline underline-offset-4 decoration-white/20 hover:text-white hover:decoration-white/50 transition-all duration-200">PeerfectCV</a>, a peer-based resume feedback platform, and worked in product engineering at a deep-tech manufacturing startup. Currently building <a href="https://readbulletyn.com" target="_blank" rel="noopener noreferrer" class="text-zinc-300 underline underline-offset-4 decoration-white/20 hover:text-white hover:decoration-white/50 transition-all duration-200">Bulletyn</a>, an AI-curated daily news brief.
+              Previously founded <a href="https://peerfectcv.com" target="_blank" rel="noopener noreferrer" class="text-zinc-300 underline underline-offset-4 decoration-white/20 hover:text-white hover:decoration-white/50 transition-all duration-200">PeerfectCV</a>, a peer-based resume feedback platform. Currently building <a href="https://readbulletyn.com" target="_blank" rel="noopener noreferrer" class="text-zinc-300 underline underline-offset-4 decoration-white/20 hover:text-white hover:decoration-white/50 transition-all duration-200">Bulletyn</a>, an AI-curated daily news brief.
             </p>
             <p class="reveal" style="transition-delay:0.20s">
               Outside of work, I play tennis and run. Current half marathon PB is 2:32 and I am working on getting that down.
@@ -888,6 +889,15 @@ function closeMobileNav() {
 closeBtn.addEventListener('click', closeMobileNav);
 mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobileNav));
 
+// ── Scroll offset (nav height) ────────────────────────────
+(function applyScrollMargins() {
+  const h = document.getElementById('site-header').getBoundingClientRect().height;
+  ['work', 'about', 'experience'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.style.scrollMarginTop = h + 'px';
+  });
+})();
+
 // ── Reveal on Scroll ───────────────────────────────────────
 const revealObserver = new IntersectionObserver(entries => {
   entries.forEach(e => {
@@ -953,17 +963,13 @@ function toggleExperience(id) {
 // ── Highlight Experience ───────────────────────────────────
 function highlightExperience(event) {
   if (event) event.preventDefault();
-  document.getElementById('experience').scrollIntoView({ behavior: 'smooth', block: 'start' });
-  setTimeout(() => {
-    const header = document.getElementById('experience-header');
-    const items  = document.querySelectorAll('.experience-item');
-    header.classList.add('experience-header-highlight');
-    items.forEach(i => i.classList.add('experience-item-highlight'));
+  const groups = document.querySelectorAll('.experience-group');
+  groups.forEach((group, i) => {
     setTimeout(() => {
-      header.classList.remove('experience-header-highlight');
-      items.forEach(i => i.classList.remove('experience-item-highlight'));
-    }, 1500);
-  }, 500);
+      group.classList.add('experience-group-highlight');
+      setTimeout(() => group.classList.remove('experience-group-highlight'), 850);
+    }, i * 60);
+  });
 }
 </script>
 </body>
