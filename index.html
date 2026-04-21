@@ -643,12 +643,12 @@ body {
 
     <!-- ── RIGHT COLUMN: EXPERIENCE SIDEBAR ── -->
     <div id="experience" class="col-span-1 md:col-span-3 relative">
-      <div class="md:sticky md:top-16">
-        <div id="experience-header" class="p-6 border-b flex items-center justify-between border-white/10 bg-black/90 backdrop-blur-sm transition-all duration-500">
+      <div class="md:sticky md:top-16 md:max-h-[calc(100vh-64px)] md:flex md:flex-col">
+        <div id="experience-header" class="p-6 border-b flex items-center justify-between border-white/10 bg-black/90 backdrop-blur-sm transition-all duration-500 shrink-0">
           <h3 class="text-xs font-medium uppercase tracking-widest text-white transition-colors duration-500">Experience</h3>
           <iconify-icon icon="solar:case-linear" width="16" class="text-zinc-700 transition-colors duration-500" stroke-width="1.5"></iconify-icon>
         </div>
-        <div id="experience-content" class="divide-y divide-white/10">
+        <div id="experience-content" class="divide-y divide-white/10 overflow-y-auto flex-1">
 
           <!-- PeerfectCV -->
           <div class="experience-group">
