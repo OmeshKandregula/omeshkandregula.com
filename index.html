@@ -35,7 +35,7 @@ body {
 
 /* Desktop-only cursor (hidden on touch) */
 @media (hover: hover) and (pointer: fine) {
-  body { cursor: none; }
+  *, *::before, *::after { cursor: none !important; }
 }
 
 /* ── Scroll progress bar ── */
