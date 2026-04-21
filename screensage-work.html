@@ -20,7 +20,7 @@ background-image:
 linear-gradient(to right, #111111 1px, transparent 1px),
 linear-gradient(to bottom, #111111 1px, transparent 1px);
 background-size: 24px 24px;
-background-attachment: fixed;
+
 }
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
@@ -36,7 +36,7 @@ animation: fadeIn 0.8s ease-out forwards;
 <body class="antialiased selection:bg-white/20 selection:text-white flex flex-col min-h-screen text-zinc-400">
 
     <!-- Main Grid Wrapper -->
-    <div class="max-w-[1400px] mx-auto w-full border-x relative bg-black/40 min-h-screen flex flex-col border-white/10 backdrop-blur-[2px]">
+    <div class="max-w-[1400px] mx-auto w-full border-x relative bg-black/90 min-h-screen flex flex-col border-white/10">
         
         <!-- Header -->
         <header class="sticky top-0 z-50 border-b bg-black/80 backdrop-blur-md border-white/10">
@@ -160,12 +160,12 @@ animation: fadeIn 0.8s ease-out forwards;
                          </div>
 
                          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-auto">
-                            <div class="p-5 border border-white/10 bg-black/40 rounded-sm">
+                            <div class="p-5 border border-white/10 bg-black/90 rounded-sm">
                                 <iconify-icon icon="solar:users-group-two-rounded-linear" class="text-blue-400 mb-3" width="20" stroke-width="1.5"></iconify-icon>
                                 <h4 class="text-sm font-medium text-white mb-1">Weekly Leagues</h4>
                                 <p class="text-xs text-zinc-500 leading-relaxed">Small groups (3-5 friends) reset every Monday. Low stakes, high engagement.</p>
                             </div>
-                            <div class="p-5 border border-white/10 bg-black/40 rounded-sm">
+                            <div class="p-5 border border-white/10 bg-black/90 rounded-sm">
                                 <iconify-icon icon="solar:chart-square-linear" class="text-blue-400 mb-3" width="20" stroke-width="1.5"></iconify-icon>
                                 <h4 class="text-sm font-medium text-white mb-1">Cumulative Scoring</h4>
                                 <p class="text-xs text-zinc-500 leading-relaxed">Total screen time determines rank. Lower is better. Live updates create urgency.</p>
