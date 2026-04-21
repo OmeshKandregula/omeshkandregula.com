@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="3" fill="#0a0a0a"/>
+  <!-- Open ring: 320° arc (~40° gap), centered at 10 o'clock -->
+  <circle cx="16" cy="16" r="9.5"
+    fill="none" stroke="#ffffff" stroke-width="3"
+    stroke-dasharray="53.06 6.63"
+    stroke-linecap="round"
+    transform="rotate(230, 16, 16)"/>
+</svg>
