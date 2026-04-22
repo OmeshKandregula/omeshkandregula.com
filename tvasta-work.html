@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tekton / Tvasta - Omesh Kandregula</title>
+<title>Tekton - Omesh Kandregula</title>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" href="/favicon.svg">
 <script src="https://cdn.tailwindcss.com"></script>
@@ -17,6 +17,8 @@ html { font-size: 87.5%; }
 body { font-family: 'Inter', sans-serif; background-color: #000; background-image: linear-gradient(to right, #1a1a1a 1px, transparent 1px), linear-gradient(to bottom, #1a1a1a 1px, transparent 1px); background-size: 40px 40px; -webkit-font-smoothing: antialiased; }
 .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.animate-fade-in { animation: fadeIn 0.8s ease-out forwards; }
 @media (hover: hover) and (pointer: fine) { *, *::before, *::after { cursor: none !important; } }
 #cursor-dot { position: fixed; width: 6px; height: 6px; background: #fff; border-radius: 50%; pointer-events: none; z-index: 99999; top: 0; left: 0; will-change: transform; }
 #cursor-ring { position: fixed; width: 32px; height: 32px; border: 1px solid rgba(255,255,255,0.5); border-radius: 50%; pointer-events: none; z-index: 99998; top: 0; left: 0; transition: width 0.2s ease, height 0.2s ease, border-color 0.2s ease; will-change: transform; }
@@ -24,7 +26,7 @@ body { font-family: 'Inter', sans-serif; background-color: #000; background-imag
 #scroll-progress { position: fixed; top: 0; left: 0; width: 0%; height: 1px; background: linear-gradient(90deg, rgba(255,255,255,0.7), rgba(16,185,129,0.9)); z-index: 9999; transition: width 0.04s linear; }
 </style>
 </head>
-<body class="text-zinc-400 selection:bg-white/20 selection:text-white">
+<body class="antialiased selection:bg-white/20 selection:text-white flex flex-col min-h-screen text-zinc-400">
 <div id="cursor-dot" aria-hidden="true"></div>
 <div id="cursor-ring" aria-hidden="true"></div>
 <div id="scroll-progress" aria-hidden="true"></div>
@@ -41,179 +43,367 @@ body { font-family: 'Inter', sans-serif; background-color: #000; background-imag
         </a>
       </div>
       <div class="col-span-1 md:col-span-9 flex items-center px-6 justify-end">
-        <span class="text-xs font-mono text-zinc-600 uppercase tracking-widest">Project: Tekton / Tvasta</span>
+        <span class="text-xs font-mono text-zinc-600 uppercase tracking-widest">Project: Tekton</span>
       </div>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="border-b border-white/10">
-    <div class="grid grid-cols-1 md:grid-cols-12 divide-y md:divide-y-0 md:divide-x divide-white/10">
-      <div class="col-span-1 md:col-span-8 p-8 md:p-16 flex flex-col gap-8">
-        <div>
-          <div class="flex items-center gap-4 mb-4 reveal">
-            <img src="assets/images/tvasta-logo.jpg" alt="Tvasta" class="h-12 w-12 object-contain rounded">
-            <div>
-              <h1 class="text-5xl md:text-6xl lg:text-7xl font-medium text-white tracking-tight leading-[0.95]">Tekton</h1>
-              <p class="text-xs text-zinc-600 uppercase tracking-widest mt-1">Tvasta Manufacturing Solutions</p>
+  <main class="flex-grow">
+
+    <!-- Hero -->
+    <section class="border-b border-white/10 p-8 md:p-16 lg:p-24 bg-white/[0.01]">
+      <div class="max-w-4xl">
+        <h1 class="text-5xl md:text-6xl lg:text-7xl tracking-tight leading-[0.95] text-white font-medium mb-4 reveal">
+          Tekton
+        </h1>
+        <p class="text-xl md:text-2xl text-zinc-400 font-light tracking-tight mb-6 reveal" style="transition-delay:0.06s">
+          Miniature Concrete 3D Printer for Material Research
+        </p>
+        <a href="https://www.tvasta.construction/" target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-3 text-zinc-400 opacity-80 hover:text-white hover:opacity-100 transition-colors reveal" style="transition-delay:0.12s">
+          <img src="assets/images/tvasta-logo.jpg" alt="Tvasta Manufacturing Solutions logo" class="h-5 w-auto object-contain opacity-70 translate-y-[1px]" />
+          <span class="text-sm font-light flex items-center gap-1">
+            Tvasta Manufacturing Solutions
+            <iconify-icon icon="solar:arrow-up-right-linear" width="12" class="opacity-60"></iconify-icon>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Skim View -->
+    <div class="grid grid-cols-1 md:grid-cols-12 divide-y md:divide-y-0 md:divide-x divide-white/10 border-b border-white/10">
+
+      <!-- Left Column -->
+      <div class="col-span-1 md:col-span-7 p-8 md:p-16 space-y-12">
+
+        <div class="space-y-4 reveal">
+          <h3 class="uppercase flex items-center gap-2 text-xs font-medium text-blue-400 tracking-widest">
+            <iconify-icon icon="solar:bolt-linear" width="14"></iconify-icon>
+            Summary
+          </h3>
+          <p class="text-lg md:text-xl text-white font-light leading-relaxed">
+            Worked on a miniature concrete 3D printer at a construction-tech startup. The research team knew what experiments they wanted to run. My job was to figure out what the system needed to do, and then get it built and working.
+          </p>
+        </div>
+
+        <div class="space-y-4 reveal" style="transition-delay:0.06s">
+          <h3 class="text-xs font-medium uppercase tracking-widest text-zinc-500">Context</h3>
+          <div class="p-6 border border-white/10 bg-white/[0.02] rounded-sm">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-white font-medium text-sm">Product Engineering Intern</span>
+              <span class="text-zinc-600 text-[10px] font-mono">Tvasta Manufacturing Solutions</span>
+            </div>
+            <p class="text-sm text-zinc-400 font-light">Construction-tech startup working on concrete 3D printing systems.</p>
+          </div>
+        </div>
+
+        <div class="space-y-4 reveal" style="transition-delay:0.12s">
+          <h3 class="text-xs font-medium uppercase tracking-widest text-zinc-500">The Problem</h3>
+          <ul class="space-y-3 text-sm font-light text-zinc-400 leading-relaxed list-disc list-inside marker:text-zinc-700">
+            <li>Most concrete 3D printers are designed for large-scale construction; they are expensive and poorly suited for research.</li>
+            <li>Existing desktop printers struggle with construction materials due to clogging, abrasion, and inconsistent flow.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Right Column -->
+      <div class="col-span-1 md:col-span-5 divide-y divide-white/10 bg-white/[0.005]">
+
+        <div class="p-8 md:p-12 space-y-4">
+          <h3 class="text-xs font-medium uppercase tracking-widest text-zinc-500 flex items-center gap-2">
+            <iconify-icon icon="solar:box-linear" width="14"></iconify-icon>
+            What I Worked On
+          </h3>
+          <p class="text-sm text-white font-medium mb-2">A research-focused concrete 3D printer.</p>
+          <ul class="space-y-2 text-sm text-zinc-400 font-light">
+            <li class="flex items-start gap-2">
+              <iconify-icon icon="solar:check-read-linear" class="text-emerald-500 mt-0.5 min-w-[14px]"></iconify-icon>
+              <span>Supports printing with concrete &amp; other paste-type materials</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <iconify-icon icon="solar:check-read-linear" class="text-emerald-500 mt-0.5 min-w-[14px]"></iconify-icon>
+              <span>Prioritizes modularity &amp; ease of cleaning</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="p-8 md:p-12 space-y-4">
+          <h3 class="text-xs font-medium uppercase tracking-widest text-zinc-500">My Role</h3>
+          <div class="space-y-3">
+            <p class="text-sm text-zinc-400 font-light">Worked across requirements, mechanical design, integration, and testing. Involved at every stage where decisions got made, not siloed into one area.</p>
+            <p class="text-sm text-zinc-400 font-light">When something failed during testing, the question was always: is this fixable, is there a workaround, or is this a constraint we accept? Iterated quickly and shipped a system that researchers could actually use.</p>
+          </div>
+        </div>
+
+        <div class="p-8 md:p-12 space-y-4 bg-white/[0.02]">
+          <h3 class="text-xs font-medium uppercase tracking-widest text-emerald-500">Outcomes</h3>
+          <div class="space-y-4">
+            <div class="flex gap-3">
+              <div class="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500 shrink-0">
+                <iconify-icon icon="solar:chart-2-linear" width="16"></iconify-icon>
+              </div>
+              <div>
+                <p class="text-sm text-white font-medium">20% accuracy improvement</p>
+                <p class="text-xs text-zinc-500 mt-1">Print precision improved through iterative material flow tuning across multiple test cycles.</p>
+              </div>
+            </div>
+            <div class="flex gap-3">
+              <div class="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500 shrink-0">
+                <iconify-icon icon="solar:test-tube-linear" width="16"></iconify-icon>
+              </div>
+              <div>
+                <p class="text-sm text-white font-medium">15% waste reduction</p>
+                <p class="text-xs text-zinc-500 mt-1">Modular extrusion design reduced material waste during setup and between experiment runs.</p>
+              </div>
+            </div>
+            <div class="flex gap-3">
+              <div class="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500 shrink-0">
+                <iconify-icon icon="solar:dollar-linear" width="16"></iconify-icon>
+              </div>
+              <div>
+                <p class="text-sm text-white font-medium">Research-grade at lab budget</p>
+                <p class="text-xs text-zinc-500 mt-1">Delivered a fully functional research instrument at a fraction of the cost of commercial alternatives.</p>
+              </div>
             </div>
           </div>
-          <p class="text-xl md:text-2xl text-zinc-400 font-light tracking-tight reveal" style="transition-delay:0.08s">Precision parameter control for large-format 3D printing at scale.</p>
         </div>
-        <div class="flex flex-wrap gap-2 reveal" style="transition-delay:0.16s">
-          <span class="px-2.5 py-1 border border-white/10 text-[10px] text-zinc-500 tracking-widest uppercase">Deep Tech</span>
-          <span class="px-2.5 py-1 border border-white/10 text-[10px] text-zinc-500 tracking-widest uppercase">Manufacturing</span>
-          <span class="px-2.5 py-1 border border-white/10 text-[10px] text-zinc-500 tracking-widest uppercase">3D Printing</span>
-          <span class="px-2.5 py-1 border border-white/10 text-[10px] text-zinc-500 tracking-widest uppercase">Hardware + Software</span>
-          <span class="px-2.5 py-1 border border-white/10 text-[10px] text-zinc-500 tracking-widest uppercase">Research</span>
-        </div>
+
       </div>
-      <div class="col-span-1 md:col-span-4 divide-y divide-white/10">
-        <div class="p-8 reveal">
-          <p class="text-[10px] uppercase tracking-widest text-zinc-600 mb-2">Role</p>
-          <p class="text-sm text-white font-medium">Product Engineering Intern</p>
+    </div>
+
+    <!-- Focus Areas Bar -->
+    <div class="border-b border-white/10 p-6 md:px-16 flex flex-wrap items-center gap-4 bg-[#050505]">
+      <span class="text-[10px] uppercase tracking-widest text-zinc-600 mr-2">Focus Areas:</span>
+      <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] text-zinc-400 bg-white/[0.02]">System Design</span>
+      <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] text-zinc-400 bg-white/[0.02]">Prototyping</span>
+      <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] text-zinc-400 bg-white/[0.02]">Testing</span>
+      <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] text-zinc-400 bg-white/[0.02]">Iteration</span>
+      <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] text-zinc-400 bg-white/[0.02]">Tradeoff Analysis</span>
+    </div>
+
+    <!-- Read More Toggle -->
+    <div id="read-more-container" class="py-24 flex flex-col items-center justify-center border-b border-white/10 bg-gradient-to-b from-black to-zinc-900/20">
+      <button id="read-more-btn" class="group flex items-center gap-3 hover:bg-zinc-200 transition-colors uppercase text-xs font-medium text-black tracking-widest bg-white rounded-sm px-8 py-3">
+        <span>Read More</span>
+        <iconify-icon icon="solar:arrow-down-linear" width="16" class="group-hover:translate-y-0.5 transition-transform"></iconify-icon>
+      </button>
+    </div>
+
+    <!-- Expanded Content -->
+    <div id="expanded-content" class="hidden">
+
+      <!-- Problem Context -->
+      <section class="grid grid-cols-1 md:grid-cols-12 border-b border-white/10 animate-fade-in">
+        <div class="col-span-1 md:col-span-4 p-8 md:p-16 border-b md:border-b-0 md:border-r border-white/10">
+          <h2 class="text-2xl md:text-3xl text-white font-medium tracking-tight mb-4">Problem Context</h2>
+          <p class="text-sm text-zinc-500">Output scale vs. Learning speed</p>
         </div>
-        <div class="p-8 reveal" style="transition-delay:0.06s">
-          <p class="text-[10px] uppercase tracking-widest text-zinc-600 mb-2">Type</p>
-          <p class="text-sm text-zinc-300">Deep-Tech Startup, Hardware</p>
-        </div>
-        <div class="p-8 reveal" style="transition-delay:0.12s">
-          <p class="text-[10px] uppercase tracking-widest text-zinc-600 mb-2">Status</p>
-          <div class="flex items-center gap-2">
-            <span class="w-1.5 h-1.5 bg-zinc-500 rounded-full"></span>
-            <p class="text-sm text-zinc-400">Completed</p>
+        <div class="col-span-1 md:col-span-8 p-8 md:p-16 space-y-6">
+          <p class="leading-relaxed text-lg font-light text-zinc-300">Concrete printing systems are typically optimized for output scale, not learning speed. For research teams, the real challenge is repeatability, ease of iteration, and system maintainability.</p>
+          <p class="text-base text-zinc-400 font-light leading-relaxed">
+            This project focused on rethinking the printer as a research instrument, not a production machine.
+          </p>
+          <div class="mt-8 pt-8 border-t border-white/10">
+            <h4 class="text-sm font-medium text-white mb-4">Product Goals</h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-zinc-400 font-light">
+              <div class="flex items-center gap-3">
+                <div class="w-1.5 h-1.5 bg-zinc-600 rounded-full"></div>
+                <span>Fits into a lab or workshop environment</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-1.5 h-1.5 bg-zinc-600 rounded-full"></div>
+                <span>Supports construction material experiments</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-1.5 h-1.5 bg-zinc-600 rounded-full"></div>
+                <span>Easy to disassemble, clean, reconfigure</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-1.5 h-1.5 bg-zinc-600 rounded-full"></div>
+                <span>Encourages fast iteration cycles</span>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="p-8 reveal" style="transition-delay:0.18s">
-          <p class="text-[10px] uppercase tracking-widest text-zinc-600 mb-2">Company</p>
-          <p class="text-sm text-zinc-400">Tvasta Manufacturing Solutions</p>
+      </section>
+
+      <!-- System Architecture -->
+      <section class="border-b border-white/10 bg-white/[0.01] animate-fade-in" style="animation-delay:0.1s">
+        <div class="p-8 md:p-16 border-b border-white/10">
+          <h2 class="text-2xl md:text-3xl text-white font-medium tracking-tight">System Architecture</h2>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Stats -->
-  <div class="border-b border-white/10 grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/10">
-    <div class="p-8 md:p-12 reveal">
-      <p class="text-3xl md:text-4xl font-medium text-white tracking-tight mb-1">+20%</p>
-      <p class="text-xs text-zinc-600 uppercase tracking-widest">Dimensional accuracy improvement</p>
-    </div>
-    <div class="p-8 md:p-12 reveal" style="transition-delay:0.06s">
-      <p class="text-3xl md:text-4xl font-medium text-white tracking-tight mb-1">-15%</p>
-      <p class="text-xs text-zinc-600 uppercase tracking-widest">Material waste reduction</p>
-    </div>
-    <div class="p-8 md:p-12 reveal" style="transition-delay:0.12s">
-      <p class="text-3xl md:text-4xl font-medium text-white tracking-tight mb-1">Lab</p>
-      <p class="text-xs text-zinc-600 uppercase tracking-widest">Research-grade budget constraints</p>
-    </div>
-  </div>
-
-  <!-- Problem + Built -->
-  <section class="border-b border-white/10 grid grid-cols-1 md:grid-cols-12 divide-y md:divide-y-0 md:divide-x divide-white/10">
-    <div class="col-span-1 md:col-span-7 p-8 md:p-16 space-y-10">
-      <div class="space-y-3 reveal">
-        <p class="text-[10px] uppercase tracking-widest text-zinc-600">Summary</p>
-        <p class="text-lg md:text-xl text-white font-light leading-relaxed">Built a parameter control and monitoring system for Tvasta's large-format concrete 3D printer to improve dimensional accuracy and reduce material waste during construction-scale print runs.</p>
-      </div>
-      <div class="space-y-4 reveal">
-        <p class="text-[10px] uppercase tracking-widest text-zinc-600">The Problem</p>
-        <p class="text-sm text-zinc-400 font-light leading-relaxed">Large-format construction printing operates at the edge of what's controllable. Concrete is not a forgiving material. Slight deviations in extrusion rate, nozzle speed, or layer timing compound across meters of structure — producing waste, rework, or failed prints that cost far more than the materials alone.</p>
-        <ul class="space-y-2.5 mt-2">
-          <li class="flex items-start gap-3 text-sm text-zinc-500 font-light"><span class="w-1 h-1 bg-zinc-700 rounded-full mt-2 shrink-0"></span>Manual parameter tuning was inconsistent between operators and print runs.</li>
-          <li class="flex items-start gap-3 text-sm text-zinc-500 font-light"><span class="w-1 h-1 bg-zinc-700 rounded-full mt-2 shrink-0"></span>No real-time feedback loop between sensor readings and print adjustments.</li>
-          <li class="flex items-start gap-3 text-sm text-zinc-500 font-light"><span class="w-1 h-1 bg-zinc-700 rounded-full mt-2 shrink-0"></span>Dimensional errors only visible post-print — too late to correct mid-layer.</li>
-        </ul>
-      </div>
-      <div class="space-y-3 reveal">
-        <p class="text-[10px] uppercase tracking-widest text-zinc-600">Context</p>
-        <div class="border border-white/10 p-6 bg-white/[0.02]">
-          <div class="flex items-center justify-between mb-2">
-            <span class="text-sm font-medium text-white">Product Engineering Intern</span>
-            <span class="text-[10px] font-mono text-zinc-600">Tvasta, 2023</span>
+        <div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/10">
+          <div class="p-8 md:p-12 space-y-6">
+            <div class="w-10 h-10 border border-white/10 bg-black flex items-center justify-center text-white">
+              <iconify-icon icon="solar:move-to-folder-linear" width="20"></iconify-icon>
+            </div>
+            <h3 class="text-lg font-medium text-white">Motion System</h3>
+            <ul class="space-y-3 text-sm text-zinc-400 font-light">
+              <li>Cartesian-style motion for predictable and accurate positioning.</li>
+              <li>Chosen for simplicity, stability, and ease of maintenance.</li>
+            </ul>
           </div>
-          <p class="text-xs text-zinc-500 font-light leading-relaxed">Tvasta builds large-format 3D printers for construction. Working at the intersection of hardware, software, and material science — at lab scale with production ambitions.</p>
+          <div class="p-8 md:p-12 space-y-6">
+            <div class="w-10 h-10 border border-white/10 bg-black flex items-center justify-center text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                <path d="M3 5v14a9 3 0 0 0 18 0V5"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-medium text-white">Material Handling</h3>
+            <ul class="space-y-3 text-sm text-zinc-400 font-light">
+              <li>Batch-based material storage and delivery system.</li>
+              <li>Designed to minimize clogging and simplify cleanup after experiments.</li>
+            </ul>
+          </div>
+          <div class="p-8 md:p-12 space-y-6">
+            <div class="w-10 h-10 border border-white/10 bg-black flex items-center justify-center text-white">
+              <iconify-icon icon="solar:layers-linear" width="20"></iconify-icon>
+            </div>
+            <h3 class="text-lg font-medium text-white">Extrusion System</h3>
+            <ul class="space-y-3 text-sm text-zinc-400 font-light">
+              <li>Mechanically driven extrusion to handle dense materials.</li>
+              <li>Interchangeable components to support different material types.</li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="col-span-1 md:col-span-5 divide-y divide-white/10 bg-white/[0.01]">
-      <div class="p-8 md:p-12 space-y-4 reveal">
-        <p class="text-[10px] uppercase tracking-widest text-zinc-500">What I Built</p>
-        <p class="text-sm text-white font-medium">Parameter control system with real-time monitoring and feedback.</p>
-        <ul class="space-y-3 mt-2">
-          <li class="flex items-start gap-3"><iconify-icon icon="solar:check-read-linear" class="text-emerald-500 mt-0.5 shrink-0" width="14"></iconify-icon><span class="text-xs text-zinc-400 font-light">Sensor integration for real-time extrusion rate and nozzle position tracking</span></li>
-          <li class="flex items-start gap-3"><iconify-icon icon="solar:check-read-linear" class="text-emerald-500 mt-0.5 shrink-0" width="14"></iconify-icon><span class="text-xs text-zinc-400 font-light">Automated parameter adjustment logic based on deviation thresholds</span></li>
-          <li class="flex items-start gap-3"><iconify-icon icon="solar:check-read-linear" class="text-emerald-500 mt-0.5 shrink-0" width="14"></iconify-icon><span class="text-xs text-zinc-400 font-light">Operator dashboard for live monitoring and manual override during runs</span></li>
-          <li class="flex items-start gap-3"><iconify-icon icon="solar:check-read-linear" class="text-emerald-500 mt-0.5 shrink-0" width="14"></iconify-icon><span class="text-xs text-zinc-400 font-light">Print log analysis tooling for identifying root causes of dimensional errors</span></li>
-        </ul>
-      </div>
-      <div class="p-8 md:p-12 space-y-4 reveal">
-        <p class="text-[10px] uppercase tracking-widest text-emerald-600">Outcomes</p>
-        <div class="space-y-4">
-          <div><p class="text-sm text-white font-medium">+20% dimensional accuracy</p><p class="text-xs text-zinc-600 mt-1">Measurable improvement in print precision across repeated layer runs.</p></div>
-          <div><p class="text-sm text-white font-medium">-15% material waste</p><p class="text-xs text-zinc-600 mt-1">Fewer failed layers and corrective reprints — less concrete, less time lost.</p></div>
-          <div><p class="text-sm text-white font-medium">Research-informed design</p><p class="text-xs text-zinc-600 mt-1">Constraints imposed by lab budget drove modular decisions that generalize better than over-engineered alternatives.</p></div>
+      </section>
+
+      <!-- Key Design Decisions -->
+      <section class="grid grid-cols-1 md:grid-cols-12 border-b border-white/10 animate-fade-in" style="animation-delay:0.2s">
+        <div class="col-span-1 md:col-span-4 p-8 md:p-16 border-b md:border-b-0 md:border-r border-white/10 bg-[#050505]">
+          <h2 class="text-xl md:text-2xl text-white font-medium tracking-tight mb-4">Key Design Decisions</h2>
+          <p class="text-sm text-zinc-500 leading-relaxed">
+            Tradeoffs were made intentionally based on research workflows.
+          </p>
         </div>
-      </div>
-    </div>
-  </section>
+        <div class="col-span-1 md:col-span-8 p-8 md:p-16">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            <div class="space-y-2">
+              <span class="text-xs font-mono text-zinc-500 uppercase">Architecture</span>
+              <p class="text-white text-sm font-medium">Modularity over Coupling</p>
+              <p class="text-xs text-zinc-400 leading-relaxed">Prioritized modular designs to ensure subsystems could be independently serviced or upgraded.</p>
+            </div>
+            <div class="space-y-2">
+              <span class="text-xs font-mono text-zinc-500 uppercase">Workflow</span>
+              <p class="text-white text-sm font-medium">Research over Throughput</p>
+              <p class="text-xs text-zinc-400 leading-relaxed">Optimized for reliability during experiments rather than raw printing speed.</p>
+            </div>
+            <div class="space-y-2">
+              <span class="text-xs font-mono text-zinc-500 uppercase">Constraints</span>
+              <p class="text-white text-sm font-medium">Accepted Limits</p>
+              <p class="text-xs text-zinc-400 leading-relaxed">Accepted known constraints in exchange for higher reliability and usability for researchers.</p>
+            </div>
+            <div class="space-y-2">
+              <span class="text-xs font-mono text-zinc-500 uppercase">Learning</span>
+              <p class="text-white text-sm font-medium">Real-world Focus</p>
+              <p class="text-xs text-zinc-400 leading-relaxed">Focused on learning from real prints rather than theoretical performance metrics.</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-  <!-- Media -->
-  <section class="border-b border-white/10">
-    <div class="p-8 md:p-12 md:px-16 border-b border-white/10">
-      <h2 class="text-2xl font-medium text-white tracking-tight reveal">In Operation</h2>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-white/10">
-      <div class="p-8 md:p-12 reveal">
-        <video
-          class="w-full border border-white/10 bg-black"
-          controls
-          preload="metadata">
-          <source src="assets/videos/tekton-operation.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <p class="text-[10px] text-zinc-600 uppercase tracking-widest mt-4">Live print run with parameter monitoring active</p>
-      </div>
-      <div class="p-8 md:p-12 reveal" style="transition-delay:0.08s">
-        <img src="assets/images/tekton-printed-sample.jpeg" alt="Tekton printed sample" class="w-full border border-white/10 object-cover">
-        <p class="text-[10px] text-zinc-600 uppercase tracking-widest mt-4">Concrete sample printed with improved accuracy parameters</p>
-      </div>
-    </div>
-  </section>
+      <!-- Testing & Learnings -->
+      <section class="grid grid-cols-1 md:grid-cols-2 border-b border-white/10 animate-fade-in" style="animation-delay:0.3s">
+        <div class="p-8 md:p-16 border-b md:border-b-0 md:border-r border-white/10">
+          <div class="flex items-center gap-3 mb-6">
+            <iconify-icon icon="solar:tuning-square-2-linear" class="text-emerald-500" width="20"></iconify-icon>
+            <h3 class="text-lg font-medium text-white">Testing &amp; Results</h3>
+          </div>
+          <ul class="space-y-4 text-sm text-zinc-400 font-light list-disc list-inside">
+            <li>Conducted subsystem-level testing to validate basic functionality.</li>
+            <li>Iterated on material flow and extrusion consistency.</li>
+          </ul>
+        </div>
+        <div class="p-8 md:p-16 bg-white/[0.01]">
+          <div class="flex items-center gap-3 mb-6">
+            <iconify-icon icon="solar:lightbulb-linear" class="text-amber-500" width="20"></iconify-icon>
+            <h3 class="text-lg font-medium text-white">Learnings</h3>
+          </div>
+          <ul class="space-y-4 text-sm text-zinc-400 font-light list-disc list-inside">
+            <li>Material handling is the dominant constraint in concrete printing.</li>
+            <li>Maintainability matters as much as print quality in research setups.</li>
+          </ul>
+        </div>
+      </section>
 
-  <!-- Key Decisions -->
-  <section class="border-b border-white/10">
-    <div class="p-8 md:p-12 md:px-16 border-b border-white/10">
-      <h2 class="text-2xl font-medium text-white tracking-tight reveal">Key Decisions</h2>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-white/10">
-      <div class="p-8 md:p-12 space-y-3 reveal"><p class="text-[10px] uppercase tracking-widest text-zinc-600">Architecture</p><p class="text-sm font-medium text-white">Modularity over coupling</p><p class="text-xs text-zinc-500 font-light leading-relaxed">Sensor modules, control logic, and dashboards built as separate layers. Any part can be swapped without rebuilding the stack.</p></div>
-      <div class="p-8 md:p-12 space-y-3 reveal" style="transition-delay:0.06s"><p class="text-[10px] uppercase tracking-widest text-zinc-600">Priority</p><p class="text-sm font-medium text-white">Research over throughput</p><p class="text-xs text-zinc-500 font-light leading-relaxed">Understanding why deviations happen matters more than printing faster. Instrumentation before optimization.</p></div>
-      <div class="p-8 md:p-12 space-y-3 reveal" style="transition-delay:0.12s"><p class="text-[10px] uppercase tracking-widest text-zinc-600">Constraints</p><p class="text-sm font-medium text-white">Accepted the limits</p><p class="text-xs text-zinc-500 font-light leading-relaxed">Lab budget and materials defined the playing field. Working within real constraints produced more honest and durable solutions.</p></div>
-      <div class="p-8 md:p-12 space-y-3 reveal" style="transition-delay:0.18s"><p class="text-[10px] uppercase tracking-widest text-zinc-600">Validation</p><p class="text-sm font-medium text-white">Real-world focus</p><p class="text-xs text-zinc-500 font-light leading-relaxed">No simulations. Every parameter change tested against an actual print. Physical results only.</p></div>
-    </div>
-  </section>
+      <!-- Media Gallery -->
+      <section class="p-8 md:p-16 border-b border-white/10 animate-fade-in" style="animation-delay:0.4s">
+        <h3 class="text-xs font-medium uppercase tracking-widest text-zinc-500 mb-8">In Action</h3>
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+          <div class="md:col-span-8 relative border border-white/10 overflow-hidden bg-black">
+            <video
+              src="assets/videos/tekton-operation.mp4"
+              controls
+              preload="metadata"
+              controlslist="nodownload noplaybackrate"
+              class="w-full h-full object-cover"
+            ></video>
+            <div class="absolute bottom-0 left-0 right-0 px-4 py-2 bg-gradient-to-t from-white/80 to-transparent pointer-events-none">
+              <p class="text-[10px] text-black uppercase tracking-widest">Printer in operation</p>
+            </div>
+          </div>
+          <div class="md:col-span-4 group relative border border-white/10 overflow-hidden bg-black min-h-[220px]">
+            <img
+              src="assets/images/tekton-printed-sample.jpeg"
+              alt="Concrete printed sample"
+              class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500"
+              loading="lazy"
+            />
+            <div class="absolute bottom-0 left-0 right-0 px-4 py-2 bg-gradient-to-t from-white/80 to-transparent pointer-events-none">
+              <p class="text-[10px] text-black uppercase tracking-widest">Printed sample</p>
+            </div>
+          </div>
+        </div>
+        <div class="mt-4 text-right">
+          <p class="text-[10px] uppercase text-zinc-700 tracking-widest">Non-proprietary views only</p>
+        </div>
+      </section>
 
-  <!-- Takeaway -->
-  <section class="border-b border-white/10 p-8 md:p-16 bg-white/[0.01]">
-    <div class="max-w-3xl">
-      <p class="text-[10px] uppercase tracking-widest text-zinc-600 mb-6 reveal">Key Takeaway</p>
-      <p class="text-2xl md:text-3xl font-medium text-white tracking-tight leading-snug reveal" style="transition-delay:0.08s">In hardware, the feedback loop is physical. You can't mock a failed concrete layer. The discipline to instrument before optimizing — and to accept the constraints the material imposes — is what separates research from theater.</p>
+      <!-- Closing Note -->
+      <section class="p-8 md:p-16 text-center bg-gradient-to-b from-black to-zinc-900/40 border-t border-white/10 animate-fade-in" style="animation-delay:0.5s">
+        <div class="max-w-3xl mx-auto">
+          <div class="p-8 md:p-12 border border-white/10 rounded-sm space-y-6">
+            <div class="flex items-center justify-center gap-3 mb-2">
+              <div class="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500 shrink-0">
+                <iconify-icon icon="solar:lightbulb-bolt-linear" width="16"></iconify-icon>
+              </div>
+              <span class="text-xs font-medium uppercase tracking-widest text-emerald-500">Key Takeaway</span>
+            </div>
+            <p class="md:text-xl text-lg font-medium text-white tracking-tight">
+              Requirements don't come pre-written.
+            </p>
+            <p class="leading-relaxed text-sm font-light text-zinc-400">
+              The biggest product skill here wasn't engineering. It was translating a vague research need into a spec the team could build against, then staying close enough to the build to catch when reality diverged from the plan.
+            </p>
+          </div>
+        </div>
+      </section>
+
     </div>
-  </section>
+  </main>
 
   <!-- Footer -->
-  <footer class="border-t border-white/10 mt-auto">
-    <div class="grid grid-cols-1 md:grid-cols-12 divide-y md:divide-y-0 md:divide-x divide-white/10">
-      <div class="col-span-1 md:col-span-9 p-8 md:p-16">
-        <h2 class="text-2xl md:text-3xl font-medium text-white tracking-tight mb-2 reveal">This is how I build.</h2>
-        <p class="text-sm font-light text-zinc-500 mb-6 reveal" style="transition-delay:0.06s">If it resonates, let's talk.</p>
-        <a href="mailto:kandregulaomesh@gmail.com" class="inline-flex items-center gap-2 px-5 py-2.5 border border-zinc-700 bg-zinc-900/50 text-white text-xs font-medium uppercase tracking-widest hover:bg-white hover:text-black hover:border-white transition-all duration-200 reveal" style="transition-delay:0.12s">
-          <iconify-icon icon="solar:letter-linear" width="14"></iconify-icon>
+  <footer class="border-t relative overflow-hidden border-white/10 bg-black mt-auto">
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,#222_1px,transparent_1px),linear-gradient(to_bottom,#222_1px,transparent_1px)] bg-[size:40px_40px] opacity-20"></div>
+    <div class="grid grid-cols-1 md:grid-cols-12 divide-y md:divide-y-0 md:divide-x relative z-10 divide-white/10">
+      <div class="col-span-1 md:col-span-9 p-8 md:p-12 flex flex-col justify-center items-start">
+        <h2 class="md:text-3xl text-2xl font-medium text-white tracking-tight mb-2">Like projects that balance constraints and execution?</h2>
+        <p class="text-sm font-light text-zinc-500 mb-6">Let's connect.</p>
+        <a href="mailto:kandregulaomesh@gmail.com" class="px-5 py-2 border text-xs font-medium uppercase tracking-widest transition-all duration-300 border-zinc-700 bg-zinc-900/50 text-white hover:bg-white hover:text-black hover:border-white flex items-center gap-2">
+          <iconify-icon icon="solar:letter-linear" width="16"></iconify-icon>
           Contact Me
         </a>
       </div>
-      <div class="col-span-1 md:col-span-3 p-8 md:p-12 flex flex-col justify-end">
-        <p class="text-[10px] font-mono text-zinc-700 mt-auto">© 2026 OMESH KANDREGULA</p>
+      <div class="col-span-1 md:col-span-3 md:p-12 flex flex-col bg-black/50 pt-8 pr-8 pb-8 pl-8 justify-end">
+        <div class="mt-auto font-mono text-[10px] space-y-3 text-zinc-600">
+          <div class="flex items-center gap-2 text-zinc-400"><iconify-icon icon="solar:map-point-linear" width="14"></iconify-icon><span>PITTSBURGH, PA</span></div>
+          <div class="flex items-center gap-4 border-t pt-4 border-white/10">
+            <span class="block text-zinc-500">40.4406° N</span>
+            <span class="block text-zinc-500">79.9959° W</span>
+          </div>
+          <div class="pt-4 text-zinc-700">© 2026 OMESH KANDREGULA</div>
+        </div>
       </div>
     </div>
   </footer>
@@ -228,6 +418,14 @@ window.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; }, {
 document.querySelectorAll('a, button').forEach(el => { el.addEventListener('mouseenter', () => ring.classList.add('expanded')); el.addEventListener('mouseleave', () => ring.classList.remove('expanded')); });
 const obs = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } }); }, { threshold: 0.07 });
 document.querySelectorAll('.reveal').forEach(el => { if (el.getBoundingClientRect().top < window.innerHeight * 1.05) el.classList.add('visible'); else obs.observe(el); });
+document.getElementById('read-more-btn').addEventListener('click', function() {
+  const expandedContent = document.getElementById('expanded-content');
+  const buttonContainer = document.getElementById('read-more-container');
+  expandedContent.classList.remove('hidden');
+  expandedContent.classList.add('animate-fade-in');
+  buttonContainer.classList.add('hidden');
+  expandedContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+});
 </script>
 </body>
 </html>
