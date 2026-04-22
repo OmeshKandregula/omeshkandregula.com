@@ -224,8 +224,8 @@ body { font-family: 'Inter', sans-serif; background-color: #000; background-imag
             <div class="w-10 h-10 border border-white/10 bg-black flex items-center justify-center text-white"><iconify-icon icon="solar:chat-line-linear" width="20"></iconify-icon></div>
             <h3 class="text-lg font-medium text-white">1. Ingest &amp; Cache</h3>
             <ul class="space-y-3 text-sm text-zinc-400 font-light">
-              <li>Midnight cron scans 91 RSS feeds across 29 topic categories simultaneously.</li>
-              <li>Quality filters and topic scoring reduce to roughly 5 high-signal articles per topic.</li>
+              <li>Scheduled cron scans a curated set of RSS feeds across topic categories simultaneously.</li>
+              <li>Quality filters and topic scoring surface only high-signal articles per topic.</li>
             </ul>
           </div>
           <div class="p-8 md:p-12 space-y-6">
@@ -251,7 +251,7 @@ body { font-family: 'Inter', sans-serif; background-color: #000; background-imag
             <div><span class="text-white font-medium">Supabase</span><span class="text-zinc-600 ml-2">Backend + database</span></div>
             <div><span class="text-white font-medium">React</span><span class="text-zinc-600 ml-2">Frontend (via Lovable + Claude Code)</span></div>
             <div><span class="text-white font-medium">Claude API</span><span class="text-zinc-600 ml-2">AI enrichment layer</span></div>
-            <div><span class="text-white font-medium">Gmail SMTP</span><span class="text-zinc-600 ml-2">Email delivery (migrating to SendGrid)</span></div>
+            <div><span class="text-white font-medium">Email delivery</span><span class="text-zinc-600 ml-2">Timezone-aware SMTP pipeline</span></div>
           </div>
         </div>
       </section>
@@ -318,59 +318,54 @@ body { font-family: 'Inter', sans-serif; background-color: #000; background-imag
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
             <div class="space-y-3">
               <div class="w-8 h-8 border border-white/10 bg-black flex items-center justify-center text-xs font-mono text-zinc-500">01</div>
-              <p class="text-white text-sm font-medium">Academic Incubator</p>
-              <p class="text-xs text-zinc-400 leading-relaxed font-light">Pilot at CMU. Universities are dense with busy users already required to synthesize information from multiple sources. They also pay for NYT and WSJ subscriptions that go unused due to fragmented access.</p>
+              <p class="text-white text-sm font-medium">Community First</p>
+              <p class="text-xs text-zinc-400 leading-relaxed font-light">Start where feedback density is highest and iteration cycles are fastest. Build with users who are already required to synthesize information daily and can articulate exactly where the product fails them.</p>
             </div>
             <div class="space-y-3">
               <div class="w-8 h-8 border border-white/10 bg-black flex items-center justify-center text-xs font-mono text-zinc-500">02</div>
-              <p class="text-white text-sm font-medium">Peer-Driven Referrals</p>
-              <p class="text-xs text-zinc-400 leading-relaxed font-light">Dual-sided referral model. Advocates earn early access to new AI features. New users get a free premium month. In a high news-avoidance environment, product recommendations from colleagues beat ads every time.</p>
+              <p class="text-white text-sm font-medium">Peer-Driven Growth</p>
+              <p class="text-xs text-zinc-400 leading-relaxed font-light">In a high news-avoidance environment, product recommendations from trusted colleagues outperform any paid channel. Growth that compounds without ad spend.</p>
             </div>
             <div class="space-y-3">
               <div class="w-8 h-8 border border-white/10 bg-black flex items-center justify-center text-xs font-mono text-zinc-500">03</div>
-              <p class="text-white text-sm font-medium">Enterprise Integration</p>
-              <p class="text-xs text-zinc-400 leading-relaxed font-light">B2B2C play targeting finance and consulting firms. Information overload costs the global economy roughly $1 trillion annually in lost productivity. Bulletyn becomes an employee productivity perk at $10 to 15 per user per month.</p>
+              <p class="text-white text-sm font-medium">Enterprise Layer</p>
+              <p class="text-xs text-zinc-400 leading-relaxed font-light">Information overload costs the global economy roughly $1 trillion annually in lost productivity. A per-seat B2B model turns an individual subscription into a team-level productivity tool.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Financial Projections -->
+      <!-- Business Model -->
       <section class="border-b border-white/10 animate-fade-in" style="animation-delay: 0.4s;">
         <div class="p-8 md:p-16 border-b border-white/10">
-          <h2 class="text-2xl md:text-3xl text-white font-medium tracking-tight">Unit Economics &amp; Projections</h2>
-          <p class="text-sm text-zinc-500 mt-2">Capital-efficient model with SaaS-grade margins</p>
+          <h2 class="text-2xl md:text-3xl text-white font-medium tracking-tight">Business Model</h2>
+          <p class="text-sm text-zinc-500 mt-2">Capital-efficient with SaaS-grade margins</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/10">
           <div class="p-8 md:p-12 space-y-4">
-            <div class="flex items-center justify-between mb-2">
-              <p class="text-[10px] uppercase tracking-widest text-zinc-600">Year 1</p>
-              <span class="text-[10px] font-mono text-zinc-700">1,500 paid subscribers</span>
+            <div class="w-10 h-10 border border-white/10 bg-black flex items-center justify-center text-white">
+              <iconify-icon icon="solar:user-linear" width="20"></iconify-icon>
             </div>
-            <p class="text-3xl font-medium text-white tracking-tight">$120K</p>
-            <p class="text-xs text-zinc-500 font-light">Revenue. Focused on product validation and building the personalization loop. Net: -$396K (expected for early-stage growth).</p>
+            <p class="text-sm text-white font-medium">Free Tier</p>
+            <p class="text-xs text-zinc-500 font-light leading-relaxed">Core brief with limited topic selection. Designed to demonstrate value before asking for commitment.</p>
           </div>
           <div class="p-8 md:p-12 space-y-4">
-            <div class="flex items-center justify-between mb-2">
-              <p class="text-[10px] uppercase tracking-widest text-zinc-600">Year 2</p>
-              <span class="text-[10px] font-mono text-zinc-700">8,000 subscribers</span>
+            <div class="w-10 h-10 border border-white/10 bg-black flex items-center justify-center text-white">
+              <iconify-icon icon="solar:star-linear" width="20"></iconify-icon>
             </div>
-            <p class="text-3xl font-medium text-white tracking-tight">$752K</p>
-            <p class="text-xs text-zinc-500 font-light">Revenue. Annual plans and team subscriptions unlock. Net: +$41K. Break-even achieved.</p>
+            <p class="text-sm text-white font-medium">Premium</p>
+            <p class="text-xs text-zinc-500 font-light leading-relaxed">Full topic customization, deeper AI analysis, and multiple reading formats. Individual subscription.</p>
           </div>
           <div class="p-8 md:p-12 space-y-4 bg-white/[0.02]">
-            <div class="flex items-center justify-between mb-2">
-              <p class="text-[10px] uppercase tracking-widest text-zinc-600">Year 3</p>
-              <span class="text-[10px] font-mono text-zinc-700">25,000 subscribers</span>
+            <div class="w-10 h-10 border border-white/10 bg-black flex items-center justify-center text-white">
+              <iconify-icon icon="solar:buildings-linear" width="20"></iconify-icon>
             </div>
-            <p class="text-3xl font-medium text-white tracking-tight">$2.7M</p>
-            <p class="text-xs text-zinc-500 font-light">Revenue. Net: $1.44M profit, 53% margin. 117% cumulative ROI on initial $500K investment.</p>
+            <p class="text-sm text-white font-medium">Enterprise</p>
+            <p class="text-xs text-zinc-500 font-light leading-relaxed">Per-seat B2B model. Briefings scoped to company context, industry verticals, and team-specific signals.</p>
           </div>
         </div>
-        <div class="border-t border-white/10 p-8 md:p-12 bg-[#050505] grid grid-cols-1 sm:grid-cols-3 gap-6">
-          <div><p class="text-[10px] uppercase tracking-widest text-zinc-600 mb-2">Cost per user</p><p class="text-sm text-white font-medium">~$2/month</p><p class="text-xs text-zinc-500 font-light">AI computation, cloud, delivery</p></div>
-          <div><p class="text-[10px] uppercase tracking-widest text-zinc-600 mb-2">Gross margin</p><p class="text-sm text-white font-medium">70 to 80%</p><p class="text-xs text-zinc-500 font-light">SaaS-grade, low variable costs</p></div>
-          <div><p class="text-[10px] uppercase tracking-widest text-zinc-600 mb-2">Revenue model</p><p class="text-sm text-white font-medium">Free + $6/mo + Enterprise</p><p class="text-xs text-zinc-500 font-light">Freemium to premium to B2B2C</p></div>
+        <div class="border-t border-white/10 p-8 md:p-12 bg-[#050505]">
+          <p class="text-sm text-zinc-400 font-light max-w-2xl">The pre-render architecture keeps variable costs low regardless of subscriber count. Margins improve with scale rather than degrading, which is the structural advantage of separating AI computation from delivery.</p>
         </div>
       </section>
 
