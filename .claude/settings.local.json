@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(powershell -Command \"\\(Invoke-WebRequest -Uri http://localhost:3000/ -UseBasicParsing -TimeoutSec 4\\).StatusCode\")",
+      "Bash(npx --version)",
+      "Bash(npx --yes serve . -p 3000 -l 3000)",
+      "Bash(powershell -Command \"\\(Invoke-WebRequest -Uri http://localhost:3000/ -UseBasicParsing -TimeoutSec 5\\).StatusCode\")",
+      "Bash(npx --yes serve . -p 3000)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(sed -i 's/background-attachment: fixed;//g' arcane-work.html incident-copilot-work.html bulletyn-work.html peerfectcv-work.html screensage-work.html tvasta-work.html)",
+      "Bash(sed -i 's/border-white\\\\/10 backdrop-blur-\\\\[2px\\\\]/border-white\\\\/10/g' arcane-work.html incident-copilot-work.html bulletyn-work.html peerfectcv-work.html screensage-work.html tvasta-work.html)",
+      "Bash(sed -i 's/bg-black\\\\/40/bg-black\\\\/90/g' arcane-work.html incident-copilot-work.html bulletyn-work.html peerfectcv-work.html screensage-work.html tvasta-work.html)",
+      "Bash(powershell -Command '\\(Get-Content '\\\\''__TRACKED_VAR__'\\\\''\\) -replace '\\\\''background-attachment: fixed;'\\\\'', '\\\\'''\\\\'' -replace '\\\\''border-white/10 backdrop-blur-\\\\[2px\\\\]'\\\\'', '\\\\''border-white/10'\\\\'' -replace '\\\\''bg-black/40'\\\\'', '\\\\''bg-black/90'\\\\'' | Set-Content '\\\\''__TRACKED_VAR__'\\\\''')",
+      "Bash(powershell -Command ' *)"
+    ]
+  }
+}
