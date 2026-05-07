@@ -58,9 +58,7 @@ body { font-family: 'Inter', sans-serif; background-color: #000; background-imag
       <div class="max-w-4xl space-y-6">
         <h1 class="md:text-6xl lg:text-7xl leading-[0.95] text-5xl font-medium text-white tracking-tight reveal">
           <span class="inline-flex items-center gap-4">
-            <div class="w-[1.2em] h-[1.2em] border border-white/20 bg-white/[0.03] rounded-sm flex items-center justify-center shrink-0">
-              <iconify-icon icon="solar:dollar-minimalistic-linear" width="36" class="text-white"></iconify-icon>
-            </div>
+            <img src="assets/images/taxy-logo.svg" alt="Taxy logo" class="h-[1.2em] w-auto object-contain rounded-sm opacity-90" />
             <span>Taxy</span>
           </span>
         </h1>
@@ -509,17 +507,20 @@ body { font-family: 'Inter', sans-serif; background-color: #000; background-imag
       </section>
 
       <!-- Closing Note -->
-      <section class="border-b border-white/10 bg-[#050505] animate-fade-in" style="animation-delay:0.3s">
-        <div class="p-8 md:p-16 max-w-3xl">
-          <p class="text-lg md:text-xl font-light text-zinc-300 leading-relaxed italic">
-            "Nobody owns year-round, proactive tax intelligence at a consumer price. Every solution either lacked proactivity or was prohibitively expensive. One empty quadrant, clearly addressable today."
-          </p>
-          <p class="text-sm text-zinc-600 mt-6 font-light">
-            The most useful part of building this strategy wasn't the financial model. It was identifying that the trust barrier wasn't about the concept at all. It was about who vouches for the AI. Once that clicked, the CPA overlay stopped being a marketing feature and became the core product moat.
-          </p>
-          <div class="mt-8 pt-6 border-t border-white/10 flex items-center gap-4 flex-wrap">
-            <a href="mailto:kandregulaomesh@gmail.com" class="text-xs text-zinc-500 hover:text-white transition-colors uppercase tracking-widest border-b border-zinc-800 pb-1 hover:border-zinc-400">
-              Talk to me about this
+      <section class="p-8 md:p-16 text-center bg-gradient-to-b from-black to-zinc-900/40 border-t border-white/10 animate-fade-in" style="animation-delay:0.3s">
+        <div class="max-w-3xl mx-auto">
+          <div class="p-8 md:p-12 border border-white/10 rounded-sm space-y-6">
+            <div class="flex items-center justify-center gap-3 mb-2">
+              <div class="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500 shrink-0">
+                <iconify-icon icon="solar:lightbulb-bolt-linear" width="16"></iconify-icon>
+              </div>
+              <span class="text-xs font-medium uppercase tracking-widest text-emerald-500">Key Takeaway</span>
+            </div>
+            <p class="md:text-xl text-lg font-medium text-white tracking-tight">Nobody owns year-round, proactive tax intelligence at a consumer price. Every solution either lacked proactivity or was prohibitively expensive. One empty quadrant, clearly addressable today.</p>
+            <p class="leading-relaxed text-sm font-light text-zinc-400">The most useful part of building this strategy wasn't the financial model. It was identifying that the trust barrier wasn't about the concept at all. It was about who vouches for the AI. Once that clicked, the CPA overlay stopped being a marketing feature and became the core product moat.</p>
+            <a href="https://trytaxy.vercel.app/" target="_blank" rel="noopener noreferrer" class="uppercase hover:bg-zinc-200 transition-colors inline-flex items-center gap-2 text-xs font-medium text-black tracking-widest bg-white px-6 py-3">
+              Try the non-functional mockup
+              <iconify-icon icon="solar:arrow-right-up-linear" width="16"></iconify-icon>
             </a>
           </div>
         </div>
@@ -530,54 +531,51 @@ body { font-family: 'Inter', sans-serif; background-color: #000; background-imag
   </main>
 
   <!-- Footer -->
-  <footer class="border-t border-white/10 p-8 md:px-16 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-    <span class="text-xs font-mono text-zinc-700 uppercase tracking-widest">Omesh Kandregula · 2025</span>
-    <a href="index.html" class="text-xs text-zinc-600 hover:text-zinc-300 transition-colors uppercase tracking-widest">Back to Portfolio</a>
+  <footer class="border-t relative overflow-hidden border-white/10 bg-black mt-auto">
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,#222_1px,transparent_1px),linear-gradient(to_bottom,#222_1px,transparent_1px)] bg-[size:40px_40px] opacity-20"></div>
+    <div class="grid grid-cols-1 md:grid-cols-12 divide-y md:divide-y-0 md:divide-x relative z-10 divide-white/10">
+      <div class="col-span-1 md:col-span-9 p-8 md:p-12 flex flex-col justify-center items-start">
+        <h2 class="md:text-3xl text-2xl font-medium text-white tracking-tight mb-2">This is one example of how I build.</h2>
+        <p class="text-sm font-light text-zinc-500 mb-6">If it resonates, let's talk.</p>
+        <a href="mailto:kandregulaomesh@gmail.com" class="px-5 py-2 border text-xs font-medium uppercase tracking-widest transition-all duration-300 border-zinc-700 bg-zinc-900/50 text-white hover:bg-white hover:text-black hover:border-white flex items-center gap-2">
+          <iconify-icon icon="solar:letter-linear" width="16"></iconify-icon>
+          Contact Me
+        </a>
+      </div>
+      <div class="col-span-1 md:col-span-3 md:p-12 flex flex-col bg-black/50 pt-8 pr-8 pb-8 pl-8 justify-end">
+        <div class="mt-auto font-mono text-[10px] space-y-3 text-zinc-600">
+          <div class="flex items-center gap-2 text-zinc-400"><iconify-icon icon="solar:map-point-linear" width="14"></iconify-icon><span>PITTSBURGH, PA</span></div>
+          <div class="flex items-center gap-4 border-t pt-4 border-white/10">
+            <span class="block text-zinc-500">40.4406° N</span>
+            <span class="block text-zinc-500">79.9959° W</span>
+          </div>
+          <div class="pt-4 text-zinc-700">© 2026 OMESH KANDREGULA</div>
+        </div>
+      </div>
+    </div>
   </footer>
 
 </div>
 
 <script>
-// Cursor
-const dot = document.getElementById('cursor-dot');
-const ring = document.getElementById('cursor-ring');
-let rx = 0, ry = 0;
-document.addEventListener('mousemove', e => {
-  const x = e.clientX, y = e.clientY;
-  dot.style.transform = `translate(${x - 3}px, ${y - 3}px)`;
-  rx += (x - 16 - rx) * 0.12;
-  ry += (y - 16 - ry) * 0.12;
-  ring.style.transform = `translate(${rx}px, ${ry}px)`;
-});
-document.querySelectorAll('a, button').forEach(el => {
-  el.addEventListener('mouseenter', () => ring.classList.add('expanded'));
-  el.addEventListener('mouseleave', () => ring.classList.remove('expanded'));
-});
-
-// Scroll progress
-const bar = document.getElementById('scroll-progress');
-window.addEventListener('scroll', () => {
-  const pct = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100;
-  bar.style.width = pct + '%';
-}, { passive: true });
-
-// Reveal
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-}, { threshold: 0.1 });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-// Read More
+const prog = document.getElementById('scroll-progress');
+window.addEventListener('scroll', () => { const s = document.documentElement; prog.style.width = (s.scrollTop / (s.scrollHeight - s.clientHeight) * 100) + '%'; }, { passive: true });
+const dot = document.getElementById('cursor-dot'), ring = document.getElementById('cursor-ring');
+const dotR = 3, ringR = 16; let rx = 0, ry = 0, mx = 0, my = 0;
+window.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; }, { passive: true });
+(function loop() { rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12; dot.style.transform = `translate(${mx - dotR}px, ${my - dotR}px)`; ring.style.transform = `translate(${rx - ringR}px, ${ry - ringR}px)`; requestAnimationFrame(loop); })();
+document.querySelectorAll('a, button').forEach(el => { el.addEventListener('mouseenter', () => ring.classList.add('expanded')); el.addEventListener('mouseleave', () => ring.classList.remove('expanded')); });
+const obs = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } }); }, { threshold: 0.07 });
+document.querySelectorAll('.reveal').forEach(el => { if (el.getBoundingClientRect().top < window.innerHeight * 1.05) el.classList.add('visible'); else obs.observe(el); });
 document.getElementById('read-more-btn').addEventListener('click', function() {
-  const exp = document.getElementById('expanded-content');
-  const container = document.getElementById('read-more-container');
-  exp.classList.remove('hidden');
-  container.style.display = 'none';
-  exp.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  const expandedContent = document.getElementById('expanded-content');
+  const buttonContainer = document.getElementById('read-more-container');
+  expandedContent.classList.remove('hidden');
+  expandedContent.classList.add('animate-fade-in');
+  buttonContainer.classList.add('hidden');
+  expandedContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
   gtag('event', 'read_more_click', { page_title: document.title });
 });
-
-// External link tracking
 document.querySelectorAll('a[target="_blank"]').forEach(function(el) {
   el.addEventListener('click', function() { gtag('event', 'external_link_click', { url: this.href, page_title: document.title }); });
 });
