@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fovea - Omesh Kandregula</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/favicon.svg">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;1,14..32,300&display=swap" rel="stylesheet">
+<style>
+html { font-size: 87.5%; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Inter', sans-serif; background-color: #000; background-image: linear-gradient(to right, #1a1a1a 1px, transparent 1px), linear-gradient(to bottom, #1a1a1a 1px, transparent 1px); background-size: 40px 40px; -webkit-font-smoothing: antialiased; }
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.animate-fade-in { animation: fadeIn 0.8s ease-out forwards; }
+@media (hover: hover) and (pointer: fine) { *, *::before, *::after { cursor: none !important; } }
+#cursor-dot { position: fixed; width: 6px; height: 6px; background: #fff; border-radius: 50%; pointer-events: none; z-index: 99999; top: 0; left: 0; will-change: transform; }
+#cursor-ring { position: fixed; width: 32px; height: 32px; border: 1px solid rgba(255,255,255,0.5); border-radius: 50%; pointer-events: none; z-index: 99998; top: 0; left: 0; transition: width 0.2s ease, height 0.2s ease, border-color 0.2s ease; will-change: transform; }
+#cursor-ring.expanded { width: 48px; height: 48px; border-color: rgba(255,255,255,0.25); }
+#scroll-progress { position: fixed; top: 0; left: 0; width: 0%; height: 1px; background: linear-gradient(90deg, rgba(255,255,255,0.7), rgba(16,185,129,0.9)); z-index: 9999; transition: width 0.04s linear; }
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6L2PZ9E8N5"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-6L2PZ9E8N5');</script>
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","wg0c5adccj");</script>
+</head>
+<body class="antialiased selection:bg-white/20 selection:text-white flex flex-col min-h-screen text-zinc-400">
+<div id="cursor-dot" aria-hidden="true"></div>
+<div id="cursor-ring" aria-hidden="true"></div>
+<div id="scroll-progress" aria-hidden="true"></div>
+
+<div class="max-w-[1400px] mx-auto w-full border-x border-white/10 bg-black/90 min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 border-b bg-black/85 backdrop-blur-md border-white/10">
+    <div class="grid grid-cols-1 md:grid-cols-12 h-16 divide-y md:divide-y-0 md:divide-x divide-white/10">
+      <div class="col-span-1 md:col-span-3 flex items-center px-6">
+        <a href="index.html" class="group flex items-center gap-2 text-xs font-medium uppercase tracking-widest text-zinc-400 hover:text-white transition-colors duration-150">
+          <iconify-icon icon="solar:arrow-left-linear" width="14" class="group-hover:-translate-x-0.5 transition-transform"></iconify-icon>
+          Back
+        </a>
+      </div>
+      <div class="col-span-1 md:col-span-9 flex items-center px-6 justify-end">
+        <span class="text-xs font-mono text-zinc-600 uppercase tracking-widest">Project: Fovea</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-grow">
+
+    <!-- Hero -->
+    <section class="border-b border-white/10 p-8 md:p-16 lg:p-24 bg-white/[0.01]">
+      <div class="max-w-4xl space-y-6">
+        <h1 class="md:text-6xl lg:text-7xl leading-[0.95] text-5xl font-medium text-white tracking-tight reveal">
+          <a href="https://fovea.lovable.app" target="_blank" class="inline-flex items-center gap-4 hover:opacity-80 transition-opacity">
+            <div class="w-[1.2em] h-[1.2em] border border-white/20 bg-white/[0.03] rounded-sm flex items-center justify-center shrink-0">
+              <iconify-icon icon="solar:eye-scan-linear" width="36" class="text-white"></iconify-icon>
+            </div>
+            <span>Fovea</span>
+          </a>
+        </h1>
+        <p class="text-xl md:text-2xl text-zinc-400 font-light tracking-tight reveal" style="transition-delay:0.06s">Reading for minds that wander</p>
+        <div class="pt-4 space-y-3 reveal" style="transition-delay:0.12s">
+          <div class="flex items-center gap-4 flex-wrap">
+            <span class="uppercase text-xs text-white tracking-widest font-mono bg-white/10 border-white/20 border rounded-sm pt-1 pr-2 pb-1 pl-2">Personal Project</span>
+            <span class="text-sm font-medium text-white tracking-wide">Early Stage · Self-Funded · Built with Claude Code + Lovable</span>
+          </div>
+          <p class="text-sm text-zinc-500 font-light">A personal problem that turned into a product. I kept bouncing off long articles and books I needed to read, so I looked for research instead of willpower.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skim View -->
+    <div class="grid grid-cols-1 md:grid-cols-12 divide-y md:divide-y-0 md:divide-x divide-white/10 border-b border-white/10">
+
+      <!-- Left Column -->
+      <div class="col-span-1 md:col-span-7 p-8 md:p-16 space-y-12">
+
+        <div class="space-y-4 reveal">
+          <h3 class="uppercase flex items-center gap-2 text-xs font-medium text-blue-400 tracking-widest">
+            <iconify-icon icon="solar:bolt-linear" width="14"></iconify-icon>
+            Summary
+          </h3>
+          <p class="text-lg md:text-xl text-white font-light leading-relaxed">
+            An RSVP-based reading tool grounded in peer-reviewed research, built because I kept failing to get through books and articles I actually needed to read.
+          </p>
+        </div>
+
+        <div class="space-y-4 reveal" style="transition-delay:0.06s">
+          <h3 class="text-xs font-medium uppercase tracking-widest text-zinc-500">Context</h3>
+          <div class="p-6 border border-white/10 bg-white/[0.02] rounded-sm">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-white font-medium text-sm">Founder · Product + Engineering</span>
+              <span class="text-zinc-600 text-[10px] font-mono">Early Prototype · Ongoing</span>
+            </div>
+            <p class="text-sm text-zinc-400 font-light">Started after finding a 2023 PubMed study showing RSVP (Rapid Serial Visual Presentation) improves reading comprehension for ADHD users by 13%. Built the first version in a weekend using Claude Code and Lovable.</p>
+          </div>
+        </div>
+
+        <div class="space-y-4 reveal" style="transition-delay:0.12s">
+          <h3 class="text-xs font-medium uppercase tracking-widest text-zinc-500">The Problem</h3>
+          <p class="text-sm text-zinc-400 font-light mb-2">I need to read. Books, research papers, long Substack pieces. I struggle to get through them:</p>
+          <ul class="space-y-3 text-sm font-light text-zinc-400 leading-relaxed list-disc list-inside marker:text-zinc-700">
+            <li>Attention drifts mid-paragraph, even on content I care about.</li>
+            <li>Traditional reading apps offer no mechanism to fight this.</li>
+            <li>Willpower-based approaches keep failing at the same places.</li>
+            <li>Most "focus" tools treat the symptom instead of the reading mechanics.</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Right Column -->
+      <div class="col-span-1 md:col-span-5 divide-y divide-white/10 bg-white/[0.005]">
+
+        <div class="p-8 md:p-12 space-y-4">
+          <h3 class="text-xs font-medium uppercase tracking-widest text-zinc-500 flex items-center gap-2">
+            <iconify-icon icon="solar:code-square-linear" width="14"></iconify-icon>
+            What I Built
+          </h3>
+          <p class="text-sm text-white font-medium mb-2">Two core features, shipped in early prototype form.</p>
+          <ul class="space-y-2 text-sm text-zinc-400 font-light">
+            <li class="flex items-start gap-2">
+              <iconify-icon icon="solar:check-read-linear" class="text-emerald-500 mt-0.5 min-w-[14px]"></iconify-icon>
+              <span>RSVP reader: words flash one at a time, no eye movement needed</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <iconify-icon icon="solar:check-read-linear" class="text-emerald-500 mt-0.5 min-w-[14px]"></iconify-icon>
+              <span>Body-doubling rooms: read with a friend or accountability partner</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <iconify-icon icon="solar:check-read-linear" class="text-emerald-500 mt-0.5 min-w-[14px]"></iconify-icon>
+              <span>Paste or URL import: low-friction content entry</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="p-8 md:p-12 space-y-4">
+          <h3 class="text-xs font-medium uppercase tracking-widest text-zinc-500">Product Thinking</h3>
+          <div class="space-y-3">
+            <p class="text-sm text-zinc-400 font-light">Research first, convention second. Most reading apps optimize for library management, not the act of reading.</p>
+            <p class="text-sm text-zinc-400 font-light">RSVP removes the "where to look" decision. Body-doubling adds social accountability without requiring coordination.</p>
+            <p class="text-sm text-zinc-400 font-light">No AI summaries. That would defeat the point.</p>
+          </div>
+        </div>
+
+        <div class="p-8 md:p-12 space-y-4 bg-white/[0.02]">
+          <h3 class="text-xs font-medium uppercase tracking-widest text-zinc-500">Research Basis</h3>
+          <div class="space-y-4">
+            <div class="flex gap-3">
+              <div class="w-8 h-8 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-400 shrink-0">
+                <iconify-icon icon="solar:document-text-linear" width="16"></iconify-icon>
+              </div>
+              <div>
+                <p class="text-sm text-white font-medium">+13% Comprehension</p>
+                <p class="text-xs text-zinc-500 mt-1">RSVP method for ADHD users. PubMed, 2023.</p>
+              </div>
+            </div>
+            <div class="flex gap-3">
+              <div class="w-8 h-8 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-400 shrink-0">
+                <iconify-icon icon="solar:users-group-rounded-linear" width="16"></iconify-icon>
+              </div>
+              <div>
+                <p class="text-sm text-white font-medium">Body-Doubling Works</p>
+                <p class="text-xs text-zinc-500 mt-1">Established ADHD productivity technique. Presence creates focus.</p>
+              </div>
+            </div>
+            <div class="flex gap-3">
+              <div class="w-8 h-8 rounded-full bg-yellow-500/10 flex items-center justify-center text-yellow-500 shrink-0">
+                <iconify-icon icon="solar:test-tube-minimalistic-linear" width="16"></iconify-icon>
+              </div>
+              <div>
+                <p class="text-sm text-white font-medium">Still Validating</p>
+                <p class="text-xs text-zinc-500 mt-1">Early prototype. Using it myself first.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Skills Bar -->
+    <div class="border-b border-white/10 p-6 md:px-16 flex flex-wrap items-center gap-4 bg-[#050505]">
+      <span class="text-[10px] uppercase tracking-widest text-zinc-600 mr-2">Skills:</span>
+      <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] text-zinc-400 bg-white/[0.02]">Research Synthesis</span>
+      <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] text-zinc-400 bg-white/[0.02]">Problem Framing</span>
+      <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] text-zinc-400 bg-white/[0.02]">Rapid Prototyping</span>
+      <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] text-zinc-400 bg-white/[0.02]">Behavioral Design</span>
+      <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] text-zinc-400 bg-white/[0.02]">Claude Code</span>
+      <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] text-zinc-400 bg-white/[0.02]">0 to 1</span>
+    </div>
+
+    <!-- Read More Toggle -->
+    <div id="read-more-container" class="py-24 flex flex-col items-center justify-center border-b border-white/10 bg-gradient-to-b from-black to-zinc-900/20">
+      <button id="read-more-btn" class="group flex items-center gap-3 hover:bg-zinc-200 transition-colors uppercase text-xs font-medium text-black tracking-widest bg-white rounded-sm px-8 py-3">
+        <span>Read More</span>
+        <iconify-icon icon="solar:arrow-down-linear" width="16" class="group-hover:translate-y-0.5 transition-transform"></iconify-icon>
+      </button>
+    </div>
+
+    <!-- Expanded Content -->
+    <div id="expanded-content" class="hidden">
+
+      <!-- Research Foundation -->
+      <section class="grid grid-cols-1 md:grid-cols-12 border-b border-white/10 animate-fade-in">
+        <div class="col-span-1 md:col-span-4 p-8 md:p-16 border-b md:border-b-0 md:border-r border-white/10">
+          <h2 class="text-2xl md:text-3xl text-white font-medium tracking-tight mb-4">The Research</h2>
+          <p class="text-sm text-zinc-500">Why RSVP instead of just building a timer or a focus mode.</p>
+        </div>
+        <div class="col-span-1 md:col-span-8 p-8 md:p-16 space-y-6">
+          <p class="leading-relaxed text-lg font-light text-zinc-300">
+            The bottleneck in reading isn't vocabulary or intelligence. It's attention fragmentation during the physical act of scanning text.
+          </p>
+          <p class="text-base text-zinc-400 font-light leading-relaxed">
+            Saccades are the rapid eye movements your eyes make while reading. Every saccade is an opportunity for attention to drift before you land on the next word. RSVP eliminates this by flashing words one at a time in a fixed position. Your eyes don't move. The cognitive task reduces to comprehension alone.
+          </p>
+          <div class="p-5 border border-blue-500/20 bg-blue-500/[0.04] rounded-sm">
+            <p class="text-xs font-mono text-blue-400 uppercase tracking-widest mb-2">Key Finding</p>
+            <p class="text-sm text-zinc-300 font-light leading-relaxed">
+              "Reading without eye movements: Improving reading comprehension in ADHD" (PubMed, 2023) showed a 13% improvement in comprehension scores for ADHD users when reading via RSVP versus standard text. The effect was most pronounced in longer passages.
+            </p>
+          </div>
+          <div class="mt-8 pt-8 border-t border-white/10">
+            <h4 class="text-sm font-medium text-white mb-4">What the research suggested for product design</h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-zinc-400 font-light">
+              <div class="flex items-center gap-3">
+                <div class="w-1.5 h-1.5 bg-zinc-600 rounded-full shrink-0"></div>
+                <span>Speed is personal: let the user control WPM</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-1.5 h-1.5 bg-zinc-600 rounded-full shrink-0"></div>
+                <span>The reading window should have zero UI around it</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-1.5 h-1.5 bg-zinc-600 rounded-full shrink-0"></div>
+                <span>Comprehension over speed: start slow, let users go faster</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-1.5 h-1.5 bg-zinc-600 rounded-full shrink-0"></div>
+                <span>Pause and rewind are non-negotiable features</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Feature Architecture -->
+      <section class="border-b border-white/10 bg-white/[0.01] animate-fade-in" style="animation-delay:0.1s">
+        <div class="p-8 md:p-16 border-b border-white/10">
+          <h2 class="text-2xl md:text-3xl text-white font-medium tracking-tight">Feature Architecture</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/10">
+          <div class="p-8 md:p-12 space-y-6">
+            <div class="w-10 h-10 border border-white/10 bg-black flex items-center justify-center text-white">
+              <iconify-icon icon="solar:eye-linear" width="20"></iconify-icon>
+            </div>
+            <h3 class="text-lg font-medium text-white">RSVP Engine</h3>
+            <ul class="space-y-3 text-sm text-zinc-400 font-light">
+              <li>Words flash one at a time in a fixed center position. No eye tracking. No scrolling.</li>
+              <li>User controls words-per-minute from 150 to 600. Speed has a direct effect on comprehension, so this matters.</li>
+              <li>Pause, rewind by 10 words, and restart are the only UI elements during a session.</li>
+            </ul>
+          </div>
+          <div class="p-8 md:p-12 space-y-6">
+            <div class="w-10 h-10 border border-white/10 bg-black flex items-center justify-center text-white">
+              <iconify-icon icon="solar:users-group-rounded-linear" width="20"></iconify-icon>
+            </div>
+            <h3 class="text-lg font-medium text-white">Body-Doubling Rooms</h3>
+            <ul class="space-y-3 text-sm text-zinc-400 font-light">
+              <li>Share a room link with a friend or accountability partner. Both start reading (same content or different).</li>
+              <li>Presence creates focus. No chat, no interaction during the session. Just the awareness of another person reading.</li>
+              <li>Inspired by the ADHD body-doubling technique, adapted for asynchronous-friendly use.</li>
+            </ul>
+          </div>
+          <div class="p-8 md:p-12 space-y-6">
+            <div class="w-10 h-10 border border-white/10 bg-black flex items-center justify-center text-white">
+              <iconify-icon icon="solar:import-linear" width="20"></iconify-icon>
+            </div>
+            <h3 class="text-lg font-medium text-white">Content Import</h3>
+            <ul class="space-y-3 text-sm text-zinc-400 font-light">
+              <li>Paste plain text or a URL. The tool strips formatting and sends clean text to the RSVP renderer.</li>
+              <li>Works with Substack, blog posts, book excerpts, research papers.</li>
+              <li>No library, no sync, no account needed to try it. Friction was the enemy of the first session.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Design Decisions -->
+      <section class="grid grid-cols-1 md:grid-cols-12 border-b border-white/10 animate-fade-in" style="animation-delay:0.2s">
+        <div class="col-span-1 md:col-span-4 p-8 md:p-16 border-b md:border-b-0 md:border-r border-white/10 bg-[#050505]">
+          <h2 class="text-xl md:text-2xl text-white font-medium tracking-tight mb-4">Design Decisions</h2>
+          <p class="text-sm text-zinc-500 leading-relaxed">
+            What I deliberately left out matters as much as what I built.
+          </p>
+        </div>
+        <div class="col-span-1 md:col-span-8 p-8 md:p-16">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            <div class="space-y-2">
+              <span class="text-xs font-mono text-zinc-500 uppercase">Kept</span>
+              <p class="text-white text-sm font-medium">Minimal reading UI</p>
+              <p class="text-xs text-zinc-400 leading-relaxed">During a session, the only things visible are the current word and basic controls. Everything else is hidden. The RSVP method works precisely because there is nothing else competing for attention.</p>
+            </div>
+            <div class="space-y-2">
+              <span class="text-xs font-mono text-zinc-500 uppercase">Kept</span>
+              <p class="text-white text-sm font-medium">Presence-only rooms</p>
+              <p class="text-xs text-zinc-400 leading-relaxed">No chat during sessions. No commenting. Just a "friend is reading" indicator. Adding communication would have turned this into a social product, which would have broken the focus mechanic.</p>
+            </div>
+            <div class="space-y-2">
+              <span class="text-xs font-mono text-zinc-500 uppercase">Cut</span>
+              <p class="text-white text-sm font-medium">AI summaries</p>
+              <p class="text-xs text-zinc-400 leading-relaxed">The obvious feature to add would have defeated the purpose. The goal is to help you read and retain, not to read for you. I will not build this.</p>
+            </div>
+            <div class="space-y-2">
+              <span class="text-xs font-mono text-zinc-500 uppercase">Deferred</span>
+              <p class="text-white text-sm font-medium">Progress tracking</p>
+              <p class="text-xs text-zinc-400 leading-relaxed">Reading streaks and metrics could add engagement. Deferred because I want to validate that the core reading experience works first. Gamification on a broken core is just noise.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- What's Next -->
+      <section class="grid grid-cols-1 md:grid-cols-12 border-b border-white/10 animate-fade-in" style="animation-delay:0.3s">
+        <div class="col-span-1 md:col-span-4 p-8 md:p-16 border-b md:border-b-0 md:border-r border-white/10">
+          <h2 class="text-xl md:text-2xl text-white font-medium tracking-tight mb-4">What's Next</h2>
+          <p class="text-sm text-zinc-500">Questions I'm still trying to answer.</p>
+        </div>
+        <div class="col-span-1 md:col-span-8 p-8 md:p-16 space-y-6">
+          <p class="text-zinc-400 font-light text-sm leading-relaxed">
+            The current version is a working prototype. I'm using it myself and sharing it with a few people who have the same problem. Before building more, I want to answer:
+          </p>
+          <div class="space-y-4">
+            <div class="flex items-start gap-4">
+              <span class="text-xs font-mono text-zinc-600 mt-0.5 shrink-0">01</span>
+              <div>
+                <p class="text-sm text-white font-medium">Does body-doubling compound the RSVP effect?</p>
+                <p class="text-xs text-zinc-500 mt-1 leading-relaxed">The paper validates RSVP alone. No research I found tested RSVP plus social presence together. That's the hypothesis I want to test.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <span class="text-xs font-mono text-zinc-600 mt-0.5 shrink-0">02</span>
+              <div>
+                <p class="text-sm text-white font-medium">Who actually has this problem badly enough to change their behavior?</p>
+                <p class="text-xs text-zinc-500 mt-1 leading-relaxed">I need to talk to more people. Specifically people who are trying to read professional content and failing to finish it, not casual readers.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <span class="text-xs font-mono text-zinc-600 mt-0.5 shrink-0">03</span>
+              <div>
+                <p class="text-sm text-white font-medium">Is a browser extension the right form factor?</p>
+                <p class="text-xs text-zinc-500 mt-1 leading-relaxed">Right now it's a web app you go to. Reading happens everywhere. The better path might be meeting users where the content lives rather than making them come to Fovea.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Closing Note -->
+      <section class="border-b border-white/10 bg-[#050505] animate-fade-in" style="animation-delay:0.4s">
+        <div class="p-8 md:p-16 max-w-3xl">
+          <p class="text-lg md:text-xl font-light text-zinc-300 leading-relaxed italic">
+            "Sometimes the best product insight is a paper you found at 2am trying to understand why you couldn't read."
+          </p>
+          <p class="text-sm text-zinc-600 mt-6 font-light">
+            This is still early. But the research is real, the problem is real, and the first version works for me. That's enough to keep going.
+          </p>
+          <div class="mt-8 pt-6 border-t border-white/10 flex items-center gap-4 flex-wrap">
+            <a href="https://fovea.lovable.app" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 bg-white text-black text-xs font-medium uppercase tracking-widest hover:bg-zinc-200 transition-colors rounded-sm">
+              <iconify-icon icon="solar:arrow-right-up-linear" width="14"></iconify-icon>
+              Try Fovea
+            </a>
+            <a href="mailto:kandregulaomesh@gmail.com" class="text-xs text-zinc-500 hover:text-white transition-colors uppercase tracking-widest border-b border-zinc-800 pb-1 hover:border-zinc-400">
+              Talk to me about this
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10 p-8 md:px-16 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+    <span class="text-xs font-mono text-zinc-700 uppercase tracking-widest">Omesh Kandregula · 2025</span>
+    <a href="index.html" class="text-xs text-zinc-600 hover:text-zinc-300 transition-colors uppercase tracking-widest">Back to Portfolio</a>
+  </footer>
+
+</div>
+
+<script>
+// Cursor
+const dot = document.getElementById('cursor-dot');
+const ring = document.getElementById('cursor-ring');
+let rx = 0, ry = 0;
+document.addEventListener('mousemove', e => {
+  const x = e.clientX, y = e.clientY;
+  dot.style.transform = `translate(${x - 3}px, ${y - 3}px)`;
+  rx += (x - 16 - rx) * 0.12;
+  ry += (y - 16 - ry) * 0.12;
+  ring.style.transform = `translate(${rx}px, ${ry}px)`;
+});
+document.querySelectorAll('a, button').forEach(el => {
+  el.addEventListener('mouseenter', () => ring.classList.add('expanded'));
+  el.addEventListener('mouseleave', () => ring.classList.remove('expanded'));
+});
+
+// Scroll progress
+const bar = document.getElementById('scroll-progress');
+window.addEventListener('scroll', () => {
+  const pct = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100;
+  bar.style.width = pct + '%';
+}, { passive: true });
+
+// Reveal
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Read More
+document.getElementById('read-more-btn').addEventListener('click', function() {
+  const exp = document.getElementById('expanded-content');
+  const container = document.getElementById('read-more-container');
+  exp.classList.remove('hidden');
+  container.style.display = 'none';
+  exp.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  gtag('event', 'read_more_click', { page_title: document.title });
+});
+
+// External link tracking
+document.querySelectorAll('a[target="_blank"]').forEach(function(el) {
+  el.addEventListener('click', function() { gtag('event', 'external_link_click', { url: this.href, page_title: document.title }); });
+});
+document.querySelectorAll('a[href^="mailto"]').forEach(function(el) {
+  el.addEventListener('click', function() { gtag('event', 'contact_click', { page_title: document.title }); });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Taxy - Omesh Kandregula</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/favicon.svg">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;1,14..32,300&display=swap" rel="stylesheet">
+<style>
+html { font-size: 87.5%; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Inter', sans-serif; background-color: #000; background-image: linear-gradient(to right, #1a1a1a 1px, transparent 1px), linear-gradient(to bottom, #1a1a1a 1px, transparent 1px); background-size: 40px 40px; -webkit-font-smoothing: antialiased; }
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.animate-fade-in { animation: fadeIn 0.8s ease-out forwards; }
+@media (hover: hover) and (pointer: fine) { *, *::before, *::after { cursor: none !important; } }
+#cursor-dot { position: fixed; width: 6px; height: 6px; background: #fff; border-radius: 50%; pointer-events: none; z-index: 99999; top: 0; left: 0; will-change: transform; }
+#cursor-ring { position: fixed; width: 32px; height: 32px; border: 1px solid rgba(255,255,255,0.5); border-radius: 50%; pointer-events: none; z-index: 99998; top: 0; left: 0; transition: width 0.2s ease, height 0.2s ease, border-color 0.2s ease; will-change: transform; }
+#cursor-ring.expanded { width: 48px; height: 48px; border-color: rgba(255,255,255,0.25); }
+#scroll-progress { position: fixed; top: 0; left: 0; width: 0%; height: 1px; background: linear-gradient(90deg, rgba(255,255,255,0.7), rgba(16,185,129,0.9)); z-index: 9999; transition: width 0.04s linear; }
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6L2PZ9E8N5"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-6L2PZ9E8N5');</script>
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","wg0c5adccj");</script>
+</head>
+<body class="antialiased selection:bg-white/20 selection:text-white flex flex-col min-h-screen text-zinc-400">
+<div id="cursor-dot" aria-hidden="true"></div>
+<div id="cursor-ring" aria-hidden="true"></div>
+<div id="scroll-progress" aria-hidden="true"></div>
+
+<div class="max-w-[1400px] mx-auto w-full border-x border-white/10 bg-black/90 min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 border-b bg-black/85 backdrop-blur-md border-white/10">
+    <div class="grid grid-cols-1 md:grid-cols-12 h-16 divide-y md:divide-y-0 md:divide-x divide-white/10">
+      <div class="col-span-1 md:col-span-3 flex items-center px-6">
+        <a href="index.html" class="group flex items-center gap-2 text-xs font-medium uppercase tracking-widest text-zinc-400 hover:text-white transition-colors duration-150">
+          <iconify-icon icon="solar:arrow-left-linear" width="14" class="group-hover:-translate-x-0.5 transition-transform"></iconify-icon>
+          Back
+        </a>
+      </div>
+      <div class="col-span-1 md:col-span-9 flex items-center px-6 justify-end">
+        <span class="text-xs font-mono text-zinc-600 uppercase tracking-widest">Project: Taxy</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-grow">
+
+    <!-- Hero -->
+    <section class="border-b border-white/10 p-8 md:p-16 lg:p-24 bg-white/[0.01]">
+      <div class="max-w-4xl space-y-6">
+        <h1 class="md:text-6xl lg:text-7xl leading-[0.95] text-5xl font-medium text-white tracking-tight reveal">
+          <span class="inline-flex items-center gap-4">
+            <div class="w-[1.2em] h-[1.2em] border border-white/20 bg-white/[0.03] rounded-sm flex items-center justify-center shrink-0">
+              <iconify-icon icon="solar:dollar-minimalistic-linear" width="36" class="text-white"></iconify-icon>
+            </div>
+            <span>Taxy</span>
+          </span>
+        </h1>
+        <p class="text-xl md:text-2xl text-zinc-400 font-light tracking-tight reveal" style="transition-delay:0.06s">Your Year-Round AI Tax Strategist</p>
+        <div class="pt-4 space-y-3 reveal" style="transition-delay:0.12s">
+          <div class="flex items-center gap-4 flex-wrap">
+            <span class="uppercase text-xs text-white tracking-widest font-mono bg-white/10 border-white/20 border rounded-sm pt-1 pr-2 pb-1 pl-2">PM Studio 2026</span>
+            <span class="text-sm font-medium text-white tracking-wide">Team Project · Carnegie Mellon · Full Strategy</span>
+          </div>
+          <p class="text-sm text-zinc-500 font-light">A product strategy and market analysis project for an AI tax intelligence platform. TAM $17.6B. One uncontested competitive quadrant. 80% of surveyed users called it useful.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skim View -->
+    <div class="grid grid-cols-1 md:grid-cols-12 divide-y md:divide-y-0 md:divide-x divide-white/10 border-b border-white/10">
+
+      <!-- Left Column -->
+      <div class="col-span-1 md:col-span-7 p-8 md:p-16 space-y-12">
+
+        <div class="space-y-4 reveal">
+          <h3 class="uppercase flex items-center gap-2 text-xs font-medium text-blue-400 tracking-widest">
+            <iconify-icon icon="solar:bolt-linear" width="14"></iconify-icon>
+            Overview
+          </h3>
+          <p class="text-lg md:text-xl text-white font-light leading-relaxed">
+            A full go-to-market strategy for an AI tax intelligence platform that sits between $120/yr DIY software and $10K/yr CPAs: proactive, affordable, and CPA-backed.
+          </p>
+        </div>
+
+        <div class="space-y-4 reveal" style="transition-delay:0.06s">
+          <h3 class="text-xs font-medium uppercase tracking-widest text-zinc-500">Context</h3>
+          <div class="p-6 border border-white/10 bg-white/[0.02] rounded-sm">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-white font-medium text-sm">Group 5 · Product Management Studio</span>
+              <span class="text-zinc-600 text-[10px] font-mono">Spring 2026 · CMU</span>
+            </div>
+            <p class="text-sm text-zinc-400 font-light">Built the full product strategy: market sizing, customer interviews, competitive landscape analysis, pricing model, trust strategy, and GTM plan across three sales motions.</p>
+          </div>
+        </div>
+
+        <div class="space-y-4 reveal" style="transition-delay:0.12s">
+          <h3 class="text-xs font-medium uppercase tracking-widest text-zinc-500">The Problem</h3>
+          <p class="text-sm text-zinc-400 font-light mb-2">70% of Americans file taxes reactively. Three existing solution categories each fail the same user differently:</p>
+          <ul class="space-y-3 text-sm font-light text-zinc-400 leading-relaxed list-disc list-inside marker:text-zinc-700">
+            <li>Filing software ($60-120/yr): cheap, but annual-only and completely reactive.</li>
+            <li>AI deduction scanners ($16-20/mo): proactive on expenses, but too narrow in scope.</li>
+            <li>Year-round CPAs ($3K-10K/yr): proactive and comprehensive, but unaffordable for most.</li>
+            <li>Result: $1,200+ lost per household through missed deductions and surprise bills over $5,000.</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Right Column -->
+      <div class="col-span-1 md:col-span-5 divide-y divide-white/10 bg-white/[0.005]">
+
+        <div class="p-8 md:p-12 space-y-4">
+          <h3 class="text-xs font-medium uppercase tracking-widest text-zinc-500 flex items-center gap-2">
+            <iconify-icon icon="solar:code-square-linear" width="14"></iconify-icon>
+            What We Delivered
+          </h3>
+          <p class="text-sm text-white font-medium mb-2">End-to-end product strategy across five workstreams.</p>
+          <ul class="space-y-2 text-sm text-zinc-400 font-light">
+            <li class="flex items-start gap-2">
+              <iconify-icon icon="solar:check-read-linear" class="text-emerald-500 mt-0.5 min-w-[14px]"></iconify-icon>
+              <span>TAM/SAM/SOM market sizing with source documentation</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <iconify-icon icon="solar:check-read-linear" class="text-emerald-500 mt-0.5 min-w-[14px]"></iconify-icon>
+              <span>20-user customer validation study with quantified findings</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <iconify-icon icon="solar:check-read-linear" class="text-emerald-500 mt-0.5 min-w-[14px]"></iconify-icon>
+              <span>Competitive landscape across 7 players on 6 dimensions</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <iconify-icon icon="solar:check-read-linear" class="text-emerald-500 mt-0.5 min-w-[14px]"></iconify-icon>
+              <span>Freemium pricing ladder with unit economics</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <iconify-icon icon="solar:check-read-linear" class="text-emerald-500 mt-0.5 min-w-[14px]"></iconify-icon>
+              <span>3-motion GTM plan: D2C, CPA channel, B2B2C partnerships</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="p-8 md:p-12 space-y-4">
+          <h3 class="text-xs font-medium uppercase tracking-widest text-zinc-500">The Insight</h3>
+          <div class="space-y-3">
+            <p class="text-sm text-zinc-400 font-light">Nobody owns the proactive + optimization quadrant at consumer price. The competitive analysis showed a clear gap that no incumbent was constrained to fill quickly.</p>
+            <p class="text-sm text-zinc-400 font-light">The trust barrier was not about the product concept. It was about AI making consequential financial decisions. CPA oversight was the product answer, not just a marketing claim.</p>
+          </div>
+        </div>
+
+        <div class="p-8 md:p-12 space-y-4 bg-white/[0.02]">
+          <h3 class="text-xs font-medium uppercase tracking-widest text-emerald-500">Validation Outcomes</h3>
+          <div class="space-y-4">
+            <div class="flex gap-3">
+              <div class="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500 shrink-0">
+                <iconify-icon icon="solar:graph-up-linear" width="16"></iconify-icon>
+              </div>
+              <div>
+                <p class="text-sm text-white font-medium">80% Rated Concept Useful</p>
+                <p class="text-xs text-zinc-500 mt-1">4-5 out of 5 usefulness score across 20 surveyed users.</p>
+              </div>
+            </div>
+            <div class="flex gap-3">
+              <div class="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500 shrink-0">
+                <iconify-icon icon="solar:bell-bing-linear" width="16"></iconify-icon>
+              </div>
+              <div>
+                <p class="text-sm text-white font-medium">Proactive Alerts: Top Feature</p>
+                <p class="text-xs text-zinc-500 mt-1">80% of users listed it as a top-3 desired feature.</p>
+              </div>
+            </div>
+            <div class="flex gap-3">
+              <div class="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500 shrink-0">
+                <iconify-icon icon="solar:shield-user-linear" width="16"></iconify-icon>
+              </div>
+              <div>
+                <p class="text-sm text-white font-medium">75% Want CPA Oversight</p>
+                <p class="text-xs text-zinc-500 mt-1">The trust mechanism is also the primary adoption driver.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Skills Bar -->
+    <div class="border-b border-white/10 p-6 md:px-16 flex flex-wrap items-center gap-4 bg-[#050505]">
+      <span class="text-[10px] uppercase tracking-widest text-zinc-600 mr-2">Skills:</span>
+      <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] text-zinc-400 bg-white/[0.02]">Market Sizing</span>
+      <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] text-zinc-400 bg-white/[0.02]">Customer Research</span>
+      <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] text-zinc-400 bg-white/[0.02]">Competitive Analysis</span>
+      <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] text-zinc-400 bg-white/[0.02]">GTM Strategy</span>
+      <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] text-zinc-400 bg-white/[0.02]">Pricing Design</span>
+      <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] text-zinc-400 bg-white/[0.02]">Positioning</span>
+    </div>
+
+    <!-- Read More Toggle -->
+    <div id="read-more-container" class="py-24 flex flex-col items-center justify-center border-b border-white/10 bg-gradient-to-b from-black to-zinc-900/20">
+      <button id="read-more-btn" class="group flex items-center gap-3 hover:bg-zinc-200 transition-colors uppercase text-xs font-medium text-black tracking-widest bg-white rounded-sm px-8 py-3">
+        <span>Read More</span>
+        <iconify-icon icon="solar:arrow-down-linear" width="16" class="group-hover:translate-y-0.5 transition-transform"></iconify-icon>
+      </button>
+    </div>
+
+    <!-- Expanded Content -->
+    <div id="expanded-content" class="hidden">
+
+      <!-- Market Opportunity -->
+      <section class="grid grid-cols-1 md:grid-cols-12 border-b border-white/10 animate-fade-in">
+        <div class="col-span-1 md:col-span-4 p-8 md:p-16 border-b md:border-b-0 md:border-r border-white/10">
+          <h2 class="text-2xl md:text-3xl text-white font-medium tracking-tight mb-4">Market Opportunity</h2>
+          <p class="text-sm text-zinc-500">How we sized it and why we believe the SAM is the right unit to focus on.</p>
+        </div>
+        <div class="col-span-1 md:col-span-8 p-8 md:p-16 space-y-6">
+          <p class="leading-relaxed text-lg font-light text-zinc-300">
+            The TAM is large, but the real insight is in the SAM: 20 to 25 million Americans with complex tax situations who have no good year-round option.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <div class="p-5 border border-white/10 rounded-sm space-y-2">
+              <p class="text-xs font-mono text-zinc-600 uppercase tracking-widest">TAM</p>
+              <p class="text-2xl font-medium text-white">$17.6-20B</p>
+              <p class="text-xs text-zinc-500 leading-relaxed">Total US tax prep and advisory spend. 160M taxpayers at $110-125 blended annual spend.</p>
+            </div>
+            <div class="p-5 border border-white/10 rounded-sm space-y-2">
+              <p class="text-xs font-mono text-zinc-600 uppercase tracking-widest">SAM</p>
+              <p class="text-2xl font-medium text-white">$3-4B</p>
+              <p class="text-xs text-zinc-500 leading-relaxed">Complex-situation Americans who are addressable with today's AI stack. 20-25M users at $150-200/yr willingness-to-pay.</p>
+            </div>
+            <div class="p-5 border border-emerald-500/20 bg-emerald-500/[0.03] rounded-sm space-y-2">
+              <p class="text-xs font-mono text-emerald-600 uppercase tracking-widest">SOM Target</p>
+              <p class="text-2xl font-medium text-white">$50-75M</p>
+              <p class="text-xs text-zinc-500 leading-relaxed">2-3% SAM penetration by Year 3. 125K-150K paying customers at $40/mo avg ARPU.</p>
+            </div>
+          </div>
+          <div class="mt-6 pt-6 border-t border-white/10">
+            <h4 class="text-sm font-medium text-white mb-4">Why now</h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-zinc-400 font-light">
+              <div class="flex items-start gap-3">
+                <div class="w-1.5 h-1.5 bg-zinc-600 rounded-full mt-1.5 shrink-0"></div>
+                <span>Gig economy growth: more Americans have multiple income streams and genuinely complex situations</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-1.5 h-1.5 bg-zinc-600 rounded-full mt-1.5 shrink-0"></div>
+                <span>Rising RSU and equity compensation creates year-round tax events that don't exist in W-2-only worlds</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-1.5 h-1.5 bg-zinc-600 rounded-full mt-1.5 shrink-0"></div>
+                <span>AI capability maturity: agentic monitoring was too expensive two years ago</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-1.5 h-1.5 bg-zinc-600 rounded-full mt-1.5 shrink-0"></div>
+                <span>Incumbents are constrained by legacy filing-revenue models: they cannot easily pivot to proactive</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Competitive Landscape -->
+      <section class="border-b border-white/10 bg-white/[0.01] animate-fade-in" style="animation-delay:0.1s">
+        <div class="p-8 md:p-16 border-b border-white/10">
+          <h2 class="text-2xl md:text-3xl text-white font-medium tracking-tight">Competitive Positioning</h2>
+          <p class="text-sm text-zinc-500 mt-2">Two axes. Seven players. One empty quadrant.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-white/10">
+          <div class="p-8 md:p-16 space-y-8">
+            <p class="text-base text-zinc-300 font-light leading-relaxed">
+              Mapping the market on two axes reveals the structural gap: no affordable player owns proactive optimization.
+            </p>
+            <div class="space-y-4">
+              <div class="flex items-start gap-4 p-4 border border-white/10 rounded-sm">
+                <div class="w-2 h-2 rounded-full bg-zinc-600 mt-1 shrink-0"></div>
+                <div>
+                  <p class="text-sm text-white font-medium">TurboTax / H&amp;R Block</p>
+                  <p class="text-xs text-zinc-500 mt-1">Reactive + Filing-focused. The dominant category. Annual, commodity pricing. No forward-looking guidance.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4 p-4 border border-white/10 rounded-sm">
+                <div class="w-2 h-2 rounded-full bg-zinc-600 mt-1 shrink-0"></div>
+                <div>
+                  <p class="text-sm text-white font-medium">FlyFin / Keeper</p>
+                  <p class="text-xs text-zinc-500 mt-1">Proactive + Filing-focused. Good on expense scanning. Still anchored to deductions at filing time, not year-round strategy.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4 p-4 border border-white/10 rounded-sm">
+                <div class="w-2 h-2 rounded-full bg-zinc-600 mt-1 shrink-0"></div>
+                <div>
+                  <p class="text-sm text-white font-medium">Year-Round CPAs</p>
+                  <p class="text-xs text-zinc-500 mt-1">Proactive + Optimization-First. High-touch, high-cost. $3K-10K/yr excludes most of the addressable market.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4 p-4 border border-emerald-500/20 bg-emerald-500/[0.03] rounded-sm">
+                <div class="w-2 h-2 rounded-full bg-emerald-500 mt-1 shrink-0"></div>
+                <div>
+                  <p class="text-sm text-white font-medium">Taxy</p>
+                  <p class="text-xs text-zinc-400 mt-1">Proactive + Optimization-First + Affordable. The quadrant nobody else occupies. CPA oversight as a structural feature, not an upsell.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="p-8 md:p-16 space-y-6">
+            <h4 class="text-sm font-medium text-white">Full competitor grid (6 dimensions)</h4>
+            <div class="overflow-x-auto">
+              <table class="w-full text-xs">
+                <thead>
+                  <tr class="border-b border-white/10">
+                    <th class="text-left pb-3 text-zinc-600 font-mono uppercase tracking-wider pr-4">Player</th>
+                    <th class="text-center pb-3 text-zinc-600 font-mono uppercase tracking-wider px-2">Year-Round</th>
+                    <th class="text-center pb-3 text-zinc-600 font-mono uppercase tracking-wider px-2">Proactive</th>
+                    <th class="text-center pb-3 text-zinc-600 font-mono uppercase tracking-wider px-2">Optimiz.</th>
+                    <th class="text-center pb-3 text-zinc-600 font-mono uppercase tracking-wider px-2">Affordable</th>
+                    <th class="text-center pb-3 text-zinc-600 font-mono uppercase tracking-wider px-2">CPA Trust</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-white/[0.04] text-zinc-500">
+                  <tr>
+                    <td class="py-3 pr-4 text-white font-medium">Taxy</td>
+                    <td class="py-3 text-center text-emerald-500">Yes</td>
+                    <td class="py-3 text-center text-emerald-500">Yes</td>
+                    <td class="py-3 text-center text-emerald-500">Yes</td>
+                    <td class="py-3 text-center text-emerald-500">Yes</td>
+                    <td class="py-3 text-center text-emerald-500">Yes</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 pr-4">Year-Round CPA</td>
+                    <td class="py-3 text-center text-emerald-500">Yes</td>
+                    <td class="py-3 text-center text-emerald-500">Yes</td>
+                    <td class="py-3 text-center text-emerald-500">Yes</td>
+                    <td class="py-3 text-center text-red-500/70">No</td>
+                    <td class="py-3 text-center text-emerald-500">Yes</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 pr-4">FlyFin / Keeper</td>
+                    <td class="py-3 text-center text-red-500/70">No</td>
+                    <td class="py-3 text-center text-emerald-500">Yes</td>
+                    <td class="py-3 text-center text-red-500/70">No</td>
+                    <td class="py-3 text-center text-emerald-500">Yes</td>
+                    <td class="py-3 text-center text-red-500/70">No</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 pr-4">TurboTax</td>
+                    <td class="py-3 text-center text-red-500/70">No</td>
+                    <td class="py-3 text-center text-red-500/70">No</td>
+                    <td class="py-3 text-center text-zinc-600">Partial</td>
+                    <td class="py-3 text-center text-emerald-500">Yes</td>
+                    <td class="py-3 text-center text-red-500/70">No</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Customer Validation + Trust Strategy -->
+      <section class="border-b border-white/10 animate-fade-in" style="animation-delay:0.15s">
+        <div class="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-white/10">
+          <div class="p-8 md:p-16 space-y-8">
+            <h2 class="text-2xl md:text-3xl text-white font-medium tracking-tight">Customer Validation</h2>
+            <p class="text-sm text-zinc-400 font-light leading-relaxed">We ran 20 structured customer interviews and a quantitative survey in February 2026, targeting both primary personas: high-earning W-2 employees with equity comp, and self-employed professionals with variable income.</p>
+            <div class="grid grid-cols-2 gap-6">
+              <div class="space-y-1">
+                <p class="text-3xl font-medium text-white">80%</p>
+                <p class="text-xs text-zinc-500 leading-relaxed">Rated the concept useful (4-5/5)</p>
+              </div>
+              <div class="space-y-1">
+                <p class="text-3xl font-medium text-white">3.8/5</p>
+                <p class="text-xs text-zinc-500 leading-relaxed">Average self-reported tax stress; 70% reported high stress</p>
+              </div>
+              <div class="space-y-1">
+                <p class="text-3xl font-medium text-white">80%</p>
+                <p class="text-xs text-zinc-500 leading-relaxed">Listed proactive alerts as a top-3 feature</p>
+              </div>
+              <div class="space-y-1">
+                <p class="text-3xl font-medium text-white">75%</p>
+                <p class="text-xs text-zinc-500 leading-relaxed">Said CPA oversight would make them comfortable adopting Taxy</p>
+              </div>
+            </div>
+            <div class="p-5 border border-white/10 bg-white/[0.02] rounded-sm">
+              <p class="text-xs font-mono text-zinc-600 uppercase tracking-widest mb-2">Key learning from interviews</p>
+              <p class="text-sm text-zinc-300 font-light leading-relaxed italic">"Positioning Taxy as 'AI-powered' was actually a barrier. Users didn't want AI alone making tax decisions. The CPA oversight layer shifted the conversation from trust concerns to value questions."</p>
+            </div>
+          </div>
+          <div class="p-8 md:p-16 space-y-8">
+            <h2 class="text-2xl md:text-3xl text-white font-medium tracking-tight">Trust Strategy</h2>
+            <p class="text-sm text-zinc-400 font-light leading-relaxed">The #1 adoption barrier was not price. It was willingness to trust AI with consequential financial decisions. The product strategy addressed this structurally, not just in messaging.</p>
+            <div class="space-y-5">
+              <div class="flex items-start gap-4">
+                <div class="w-8 h-8 border border-white/10 bg-black flex items-center justify-center text-white shrink-0">
+                  <iconify-icon icon="solar:user-check-linear" width="16"></iconify-icon>
+                </div>
+                <div>
+                  <p class="text-sm text-white font-medium">CPA Review Layer</p>
+                  <p class="text-xs text-zinc-500 mt-1 leading-relaxed">Credentialed CPAs vet every material recommendation before it reaches a user. Trust is earned through demonstrated accountability.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div class="w-8 h-8 border border-white/10 bg-black flex items-center justify-center text-white shrink-0">
+                  <iconify-icon icon="solar:shield-check-linear" width="16"></iconify-icon>
+                </div>
+                <div>
+                  <p class="text-sm text-white font-medium">Penalty Guarantee</p>
+                  <p class="text-xs text-zinc-500 mt-1 leading-relaxed">If Taxy's advice leads to an IRS penalty, Taxy pays. Backed by third-party insurance. Skin in the game as a product feature.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div class="w-8 h-8 border border-white/10 bg-black flex items-center justify-center text-white shrink-0">
+                  <iconify-icon icon="solar:eye-linear" width="16"></iconify-icon>
+                </div>
+                <div>
+                  <p class="text-sm text-white font-medium">Read-Only Account Access</p>
+                  <p class="text-xs text-zinc-500 mt-1 leading-relaxed">Connected via Plaid. Read-only view only. No money can ever move. Users control what data the app can see.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div class="w-8 h-8 border border-white/10 bg-black flex items-center justify-center text-white shrink-0">
+                  <iconify-icon icon="solar:book-linear" width="16"></iconify-icon>
+                </div>
+                <div>
+                  <p class="text-sm text-white font-medium">Transparent AI Reasoning</p>
+                  <p class="text-xs text-zinc-500 mt-1 leading-relaxed">"We recommend this because..." with citations to tax code and account data. No black-box recommendations.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pricing + GTM -->
+      <section class="grid grid-cols-1 md:grid-cols-12 border-b border-white/10 animate-fade-in" style="animation-delay:0.2s">
+        <div class="col-span-1 md:col-span-4 p-8 md:p-16 border-b md:border-b-0 md:border-r border-white/10 bg-[#050505]">
+          <h2 class="text-xl md:text-2xl text-white font-medium tracking-tight mb-4">Pricing Logic</h2>
+          <p class="text-sm text-zinc-500 leading-relaxed">
+            Freemium ladder anchored between DIY software and full-service CPAs. The price gap is so wide that Pro at $29/mo feels like an obvious answer once users see their missed savings.
+          </p>
+        </div>
+        <div class="col-span-1 md:col-span-8 p-8 md:p-16">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
+            <div class="p-5 border border-white/10 rounded-sm space-y-3">
+              <p class="text-xs font-mono text-zinc-600 uppercase tracking-widest">Free</p>
+              <p class="text-2xl font-medium text-white">$0</p>
+              <ul class="space-y-2 text-xs text-zinc-500 leading-relaxed">
+                <li>Tax deadline reminders</li>
+                <li>Basic deduction scan</li>
+                <li>Free "Opportunity Audit"</li>
+                <li class="text-zinc-700 italic">Acquisition surface for Pro</li>
+              </ul>
+            </div>
+            <div class="p-5 border border-white/20 bg-white/[0.03] rounded-sm space-y-3 relative">
+              <div class="absolute -top-3 left-4">
+                <span class="text-[10px] bg-white text-black px-2 py-0.5 font-medium uppercase tracking-wider rounded-sm">Main Tier</span>
+              </div>
+              <p class="text-xs font-mono text-zinc-400 uppercase tracking-widest">Pro</p>
+              <p class="text-2xl font-medium text-white">$29<span class="text-sm text-zinc-500">/mo</span></p>
+              <ul class="space-y-2 text-xs text-zinc-400 leading-relaxed">
+                <li>Proactive alerts</li>
+                <li>Bracket and threshold warnings</li>
+                <li>Quarterly tax reports</li>
+                <li>CPA review on recommendations</li>
+              </ul>
+            </div>
+            <div class="p-5 border border-white/10 rounded-sm space-y-3">
+              <p class="text-xs font-mono text-zinc-600 uppercase tracking-widest">Premium</p>
+              <p class="text-2xl font-medium text-white">$49<span class="text-sm text-zinc-500">/mo</span></p>
+              <ul class="space-y-2 text-xs text-zinc-500 leading-relaxed">
+                <li>Everything in Pro</li>
+                <li>Equity and RSU guidance</li>
+                <li>Direct CPA chat access</li>
+                <li>Complex scenario planning</li>
+              </ul>
+            </div>
+          </div>
+          <div class="pt-6 border-t border-white/10 space-y-4">
+            <h4 class="text-sm font-medium text-white">GTM: Three Sales Motions</h4>
+            <div class="space-y-3">
+              <div class="flex items-start gap-4">
+                <span class="text-xs font-mono text-zinc-600 shrink-0 mt-0.5">01</span>
+                <div>
+                  <p class="text-sm text-white font-medium">D2C: Convert pain-triggered searchers</p>
+                  <p class="text-xs text-zinc-500 mt-1">SEO on "freelance tax optimization" and bracket-crossing queries. Reddit r/personalfinance, r/tax. Free audit shows dollar-quantified missed savings before asking for conversion.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <span class="text-xs font-mono text-zinc-600 shrink-0 mt-0.5">02</span>
+                <div>
+                  <p class="text-sm text-white font-medium">CPA Channel: Shed their filing-season workload</p>
+                  <p class="text-xs text-zinc-500 mt-1">CPAs refer clients to Taxy for year-round monitoring. CPA earns referral fees. Taxy gets warm, high-trust acquisition at $50-100 CAC vs $150-300 for paid channels.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <span class="text-xs font-mono text-zinc-600 shrink-0 mt-0.5">03</span>
+                <div>
+                  <p class="text-sm text-white font-medium">B2B2C: Embedded in financial workflows</p>
+                  <p class="text-xs text-zinc-500 mt-1">Partnerships with QuickBooks, Gusto, FreshBooks as the tax intelligence layer inside tools self-employed users already use daily. Target a QuickBooks deal by Q3 2026.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Closing Note -->
+      <section class="border-b border-white/10 bg-[#050505] animate-fade-in" style="animation-delay:0.3s">
+        <div class="p-8 md:p-16 max-w-3xl">
+          <p class="text-lg md:text-xl font-light text-zinc-300 leading-relaxed italic">
+            "Nobody owns year-round, proactive tax intelligence at a consumer price. Every solution either lacked proactivity or was prohibitively expensive. One empty quadrant, clearly addressable today."
+          </p>
+          <p class="text-sm text-zinc-600 mt-6 font-light">
+            The most useful part of building this strategy wasn't the financial model. It was identifying that the trust barrier wasn't about the concept at all. It was about who vouches for the AI. Once that clicked, the CPA overlay stopped being a marketing feature and became the core product moat.
+          </p>
+          <div class="mt-8 pt-6 border-t border-white/10 flex items-center gap-4 flex-wrap">
+            <a href="mailto:kandregulaomesh@gmail.com" class="text-xs text-zinc-500 hover:text-white transition-colors uppercase tracking-widest border-b border-zinc-800 pb-1 hover:border-zinc-400">
+              Talk to me about this
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10 p-8 md:px-16 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+    <span class="text-xs font-mono text-zinc-700 uppercase tracking-widest">Omesh Kandregula · 2025</span>
+    <a href="index.html" class="text-xs text-zinc-600 hover:text-zinc-300 transition-colors uppercase tracking-widest">Back to Portfolio</a>
+  </footer>
+
+</div>
+
+<script>
+// Cursor
+const dot = document.getElementById('cursor-dot');
+const ring = document.getElementById('cursor-ring');
+let rx = 0, ry = 0;
+document.addEventListener('mousemove', e => {
+  const x = e.clientX, y = e.clientY;
+  dot.style.transform = `translate(${x - 3}px, ${y - 3}px)`;
+  rx += (x - 16 - rx) * 0.12;
+  ry += (y - 16 - ry) * 0.12;
+  ring.style.transform = `translate(${rx}px, ${ry}px)`;
+});
+document.querySelectorAll('a, button').forEach(el => {
+  el.addEventListener('mouseenter', () => ring.classList.add('expanded'));
+  el.addEventListener('mouseleave', () => ring.classList.remove('expanded'));
+});
+
+// Scroll progress
+const bar = document.getElementById('scroll-progress');
+window.addEventListener('scroll', () => {
+  const pct = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100;
+  bar.style.width = pct + '%';
+}, { passive: true });
+
+// Reveal
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Read More
+document.getElementById('read-more-btn').addEventListener('click', function() {
+  const exp = document.getElementById('expanded-content');
+  const container = document.getElementById('read-more-container');
+  exp.classList.remove('hidden');
+  container.style.display = 'none';
+  exp.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  gtag('event', 'read_more_click', { page_title: document.title });
+});
+
+// External link tracking
+document.querySelectorAll('a[target="_blank"]').forEach(function(el) {
+  el.addEventListener('click', function() { gtag('event', 'external_link_click', { url: this.href, page_title: document.title }); });
+});
+document.querySelectorAll('a[href^="mailto"]').forEach(function(el) {
+  el.addEventListener('click', function() { gtag('event', 'contact_click', { page_title: document.title }); });
+});
+</script>
+</body>
+</html>
