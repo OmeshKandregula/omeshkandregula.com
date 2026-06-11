@@ -30,10 +30,6 @@ body { font-family: 'Inter', sans-serif; background-color: #000; background-imag
 .reveal.visible { opacity: 1; transform: translateY(0); }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 .animate-fade-in { animation: fadeIn 0.8s ease-out forwards; }
-@media (hover: hover) and (pointer: fine) { *, *::before, *::after { cursor: none !important; } }
-#cursor-dot { position: fixed; width: 6px; height: 6px; background: #fff; border-radius: 50%; pointer-events: none; z-index: 99999; top: 0; left: 0; will-change: transform; }
-#cursor-ring { position: fixed; width: 32px; height: 32px; border: 1px solid rgba(255,255,255,0.5); border-radius: 50%; pointer-events: none; z-index: 99998; top: 0; left: 0; transition: width 0.2s ease, height 0.2s ease, border-color 0.2s ease; will-change: transform; }
-#cursor-ring.expanded { width: 48px; height: 48px; border-color: rgba(255,255,255,0.25); }
 #scroll-progress { position: fixed; top: 0; left: 0; width: 0%; height: 1px; background: linear-gradient(90deg, rgba(255,255,255,0.7), rgba(16,185,129,0.9)); z-index: 9999; transition: width 0.04s linear; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
@@ -46,8 +42,6 @@ body { font-family: 'Inter', sans-serif; background-color: #000; background-imag
 <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","wg0c5adccj");</script>
 </head>
 <body class="antialiased selection:bg-white/20 selection:text-white flex flex-col min-h-screen text-zinc-400">
-<div id="cursor-dot" aria-hidden="true"></div>
-<div id="cursor-ring" aria-hidden="true"></div>
 <div id="scroll-progress" aria-hidden="true"></div>
 
 <div class="max-w-[1400px] mx-auto w-full border-x border-white/10 bg-black/90 min-h-screen flex flex-col">
@@ -430,11 +424,6 @@ body { font-family: 'Inter', sans-serif; background-color: #000; background-imag
 <script>
 const prog = document.getElementById('scroll-progress');
 window.addEventListener('scroll', () => { const s = document.documentElement; prog.style.width = (s.scrollTop / (s.scrollHeight - s.clientHeight) * 100) + '%'; }, { passive: true });
-const dot = document.getElementById('cursor-dot'), ring = document.getElementById('cursor-ring');
-const dotR = 3, ringR = 16; let rx = 0, ry = 0, mx = 0, my = 0;
-window.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; }, { passive: true });
-(function loop() { rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12; dot.style.transform = `translate(${mx - dotR}px, ${my - dotR}px)`; ring.style.transform = `translate(${rx - ringR}px, ${ry - ringR}px)`; requestAnimationFrame(loop); })();
-document.querySelectorAll('a, button').forEach(el => { el.addEventListener('mouseenter', () => ring.classList.add('expanded')); el.addEventListener('mouseleave', () => ring.classList.remove('expanded')); });
 const obs = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } }); }, { threshold: 0.07 });
 document.querySelectorAll('.reveal').forEach(el => { if (el.getBoundingClientRect().top < window.innerHeight * 1.05) el.classList.add('visible'); else obs.observe(el); });
 document.getElementById('read-more-btn').addEventListener('click', function() {
