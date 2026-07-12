@@ -78,7 +78,7 @@ body { font-family: 'Inter', sans-serif; background-color: #000; background-imag
             <span class="uppercase text-xs text-white tracking-widest font-mono bg-white/10 border-white/20 border rounded-sm pt-1 pr-2 pb-1 pl-2">Personal Project</span>
             <span class="text-sm font-medium text-white tracking-wide">Active Development · PWA · Lovable + Claude Code</span>
           </div>
-          <p class="text-sm text-zinc-500 font-light">Named after the fovea centralis, the part of your retina responsible for sharp central vision. That is exactly where the reader keeps your gaze.</p>
+          <p class="text-sm text-zinc-500 font-light">Named after the fovea centralis, the retina's center of sharp vision. Exactly where the reader keeps your gaze.</p>
         </div>
       </div>
     </section>
@@ -90,12 +90,12 @@ body { font-family: 'Inter', sans-serif; background-color: #000; background-imag
       <div class="col-span-1 md:col-span-7 p-8 md:p-16 space-y-12">
 
         <div class="space-y-4 reveal">
-          <h3 class="uppercase flex items-center gap-2 text-xs font-medium text-blue-400 tracking-widest">
+          <h3 class="uppercase flex items-center gap-2 text-xs font-medium text-emerald-500 tracking-widest">
             <iconify-icon icon="solar:bolt-linear" width="14"></iconify-icon>
             Summary
           </h3>
           <p class="text-lg md:text-xl text-white font-light leading-relaxed">
-            An RSVP speed reading web app built for people with ADHD, grounded in peer-reviewed research and designed around how ADHD brains actually fail at reading.
+            An RSVP speed reader built for ADHD brains, designed around how ADHD reading actually fails.
           </p>
         </div>
 
@@ -106,19 +106,36 @@ body { font-family: 'Inter', sans-serif; background-color: #000; background-imag
               <span class="text-white font-medium text-sm">Founder · Product + Engineering</span>
               <span class="text-zinc-600 text-[10px] font-mono">Phase 1 Live · Phase 2 In Progress</span>
             </div>
-            <p class="text-sm text-zinc-400 font-light">A personal problem I kept failing to solve with willpower. Started after finding a 2023 PubMed study showing RSVP improves ADHD reading comprehension by 13%. Runs in the browser and installs as a PWA on iPad, iPhone, or desktop. No App Store required.</p>
+            <p class="text-sm text-zinc-400 font-light">A personal problem willpower kept failing to solve. Built after finding a 2023 peer-reviewed study on RSVP and ADHD comprehension.</p>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">Runs in browser</span>
+              <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">PWA install</span>
+              <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">No App Store</span>
+            </div>
           </div>
         </div>
 
         <div class="space-y-4 reveal" style="transition-delay:0.12s">
           <h3 class="text-xs font-medium uppercase tracking-widest text-zinc-500">The Problem</h3>
           <p class="text-sm text-zinc-400 font-light mb-2">Most people with ADHD don't have a reading speed problem. They have a staying-on-the-page problem.</p>
-          <ul class="space-y-3 text-sm font-light text-zinc-400 leading-relaxed list-disc list-inside marker:text-zinc-700">
-            <li>Eyes drift and the mind wanders mid-sentence, even on content they care about.</li>
-            <li>Re-reading the same paragraph four times, then closing the book feeling worse.</li>
-            <li>Existing speed reading apps are built for people who already read fine and want to go faster.</li>
-            <li>No app was built for people who struggle to stay on the page at all.</li>
-          </ul>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div class="p-3 border border-white/[0.08] bg-white/[0.02]">
+              <span class="text-[10px] font-mono uppercase tracking-widest text-zinc-500">Drift</span>
+              <p class="text-xs text-zinc-300 mt-1">Mind wanders mid-sentence, even on content they care about.</p>
+            </div>
+            <div class="p-3 border border-white/[0.08] bg-white/[0.02]">
+              <span class="text-[10px] font-mono uppercase tracking-widest text-zinc-500">Re-read loop</span>
+              <p class="text-xs text-zinc-300 mt-1">Same paragraph four times, then the book closes.</p>
+            </div>
+            <div class="p-3 border border-white/[0.08] bg-white/[0.02]">
+              <span class="text-[10px] font-mono uppercase tracking-widest text-zinc-500">Wrong user</span>
+              <p class="text-xs text-zinc-300 mt-1">Speed reading apps target people who already read fine.</p>
+            </div>
+            <div class="p-3 border border-white/[0.08] bg-white/[0.02]">
+              <span class="text-[10px] font-mono uppercase tracking-widest text-zinc-500">The gap</span>
+              <p class="text-xs text-zinc-300 mt-1">Nobody builds for staying on the page at all.</p>
+            </div>
+          </div>
         </div>
 
       </div>
@@ -132,68 +149,59 @@ body { font-family: 'Inter', sans-serif; background-color: #000; background-imag
             What I Built
           </h3>
           <p class="text-sm text-white font-medium mb-2">Phase 1 shipped. Phase 2 in development.</p>
-          <ul class="space-y-2 text-sm text-zinc-400 font-light">
-            <li class="flex items-start gap-2">
-              <iconify-icon icon="solar:check-read-linear" class="text-emerald-500 mt-0.5 min-w-[14px]"></iconify-icon>
-              <span>ORP-based RSVP engine with smart pacing and peripheral context</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <iconify-icon icon="solar:check-read-linear" class="text-emerald-500 mt-0.5 min-w-[14px]"></iconify-icon>
-              <span>PDF, EPUB, URL import, and plain text paste</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <iconify-icon icon="solar:check-read-linear" class="text-emerald-500 mt-0.5 min-w-[14px]"></iconify-icon>
-              <span>Chapter detection, sidebar navigation, offline via PWA</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <iconify-icon icon="solar:check-read-linear" class="text-emerald-500 mt-0.5 min-w-[14px]"></iconify-icon>
-              <span>Recover button, Hyperfocus Mode, Streak Freezes, Pomodoro</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <iconify-icon icon="solar:clock-circle-linear" class="text-zinc-600 mt-0.5 min-w-[14px]"></iconify-icon>
-              <span class="text-zinc-600">Phase 2: body doubling rooms, ambient soundscapes, AI summaries, stats</span>
-            </li>
-          </ul>
+          <div class="space-y-3">
+            <div class="flex flex-wrap gap-2">
+              <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-300 border border-white/[0.08] px-2 py-1">ORP RSVP engine</span>
+              <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-300 border border-white/[0.08] px-2 py-1">Smart pacing</span>
+              <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-300 border border-white/[0.08] px-2 py-1">PDF · EPUB · URL import</span>
+              <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-300 border border-white/[0.08] px-2 py-1">Chapter detection</span>
+              <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-300 border border-white/[0.08] px-2 py-1">Offline PWA</span>
+              <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-300 border border-white/[0.08] px-2 py-1">Recover button</span>
+              <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-300 border border-white/[0.08] px-2 py-1">Hyperfocus Mode</span>
+              <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-300 border border-white/[0.08] px-2 py-1">Streak Freezes</span>
+              <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-300 border border-white/[0.08] px-2 py-1">Pomodoro</span>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-600 border border-white/[0.08] border-dashed px-2 py-1">Phase 2 · Body doubling</span>
+              <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-600 border border-white/[0.08] border-dashed px-2 py-1">Phase 2 · Soundscapes</span>
+              <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-600 border border-white/[0.08] border-dashed px-2 py-1">Phase 2 · AI summaries</span>
+              <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-600 border border-white/[0.08] border-dashed px-2 py-1">Phase 2 · Stats</span>
+            </div>
+          </div>
         </div>
 
         <div class="p-8 md:p-12 space-y-4">
           <h3 class="text-xs font-medium uppercase tracking-widest text-zinc-500">Product Approach</h3>
           <div class="space-y-3">
-            <p class="text-sm text-zinc-400 font-light">ADHD reading fails at the eye movement level, not the comprehension level. RSVP eliminates saccades entirely.</p>
-            <p class="text-sm text-zinc-400 font-light">Every feature is justified by a specific ADHD failure mode, not a generic UX pattern.</p>
-            <p class="text-sm text-zinc-400 font-light">No AI summaries in Phase 1. That would defeat the point of reading.</p>
+            <div class="p-4 border border-white/[0.08] bg-white/[0.02]">
+              <p class="text-sm font-light"><span class="text-zinc-600 line-through">Comprehension problem</span> <span class="text-emerald-500">→</span> <span class="text-zinc-200">Eye movement problem. RSVP removes saccades entirely.</span></p>
+            </div>
+            <p class="text-sm text-zinc-400 font-light">Every feature maps to a specific ADHD failure mode. No AI summaries in Phase 1: That would defeat the point of reading.</p>
           </div>
         </div>
 
         <div class="p-8 md:p-12 space-y-4 bg-white/[0.02]">
           <h3 class="text-xs font-medium uppercase tracking-widest text-zinc-500">Research Basis</h3>
-          <div class="space-y-4">
-            <div class="flex gap-3">
-              <div class="w-8 h-8 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-400 shrink-0">
-                <iconify-icon icon="solar:document-text-linear" width="16"></iconify-icon>
-              </div>
-              <div>
-                <p class="text-sm text-white font-medium">+13% Comprehension for ADHD</p>
-                <p class="text-xs text-zinc-500 mt-1">RSVP vs standard text. PubMed, 2023. Neurotypical readers showed no improvement.</p>
-              </div>
+          <div class="space-y-6">
+            <div>
+              <p class="text-3xl font-medium text-white">+13%</p>
+              <p class="text-xs text-zinc-300 mt-1">ADHD reading comprehension, RSVP vs standard text</p>
+              <p class="text-[9px] font-mono uppercase tracking-wider text-zinc-600 mt-2">Peer-reviewed · PubMed 2023 · No gain for neurotypical readers</p>
             </div>
-            <div class="flex gap-3">
-              <div class="w-8 h-8 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-400 shrink-0">
-                <iconify-icon icon="solar:eye-linear" width="16"></iconify-icon>
+            <div class="space-y-3">
+              <div>
+                <div class="flex justify-between text-[10px] font-mono uppercase tracking-wider text-zinc-500 mb-1"><span>Locating the ORP</span><span>80%</span></div>
+                <div class="h-1 bg-white/[0.06]"><div class="h-full bg-emerald-500/60" style="width:80%"></div></div>
               </div>
               <div>
-                <p class="text-sm text-white font-medium">80/20 ORP Finding</p>
-                <p class="text-xs text-zinc-500 mt-1">80% of reading time spent locating the ORP. 20% on processing meaning. RSVP collapses the 80% to zero.</p>
+                <div class="flex justify-between text-[10px] font-mono uppercase tracking-wider text-zinc-500 mb-1"><span>Processing meaning</span><span>20%</span></div>
+                <div class="h-1 bg-white/[0.06]"><div class="h-full bg-emerald-500/60" style="width:20%"></div></div>
               </div>
+              <p class="text-[9px] font-mono uppercase tracking-wider text-zinc-600">Share of reading time · ORP eye-movement research · RSVP collapses the 80% to zero</p>
             </div>
-            <div class="flex gap-3">
-              <div class="w-8 h-8 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-400 shrink-0">
-                <iconify-icon icon="solar:users-group-rounded-linear" width="16"></iconify-icon>
-              </div>
-              <div>
-                <p class="text-sm text-white font-medium">Body Doubling (Phase 2)</p>
-                <p class="text-xs text-zinc-500 mt-1">Well-documented ADHD technique. Silent presence of others measurably improves focus.</p>
-              </div>
+            <div>
+              <p class="text-sm text-white font-medium">Body doubling <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-600 border border-white/[0.08] px-2 py-0.5 ml-2">Phase 2</span></p>
+              <p class="text-xs text-zinc-500 mt-1">Documented ADHD technique: Silent presence of others improves focus.</p>
             </div>
           </div>
         </div>
@@ -232,32 +240,34 @@ body { font-family: 'Inter', sans-serif; background-color: #000; background-imag
         </div>
         <div class="col-span-1 md:col-span-8 p-8 md:p-16 space-y-6">
           <p class="leading-relaxed text-lg font-light text-zinc-300">
-            Saccades are the rapid eye movements your eyes make while reading. Every saccade is an opportunity for attention to drift. RSVP eliminates them entirely by flashing words one at a time in a fixed center position.
+            Every saccade, the eye's jump between words, is a chance for attention to drift. RSVP flashes words at one fixed point: Zero saccades.
           </p>
-          <div class="p-5 border border-blue-500/20 bg-blue-500/[0.04] rounded-sm">
-            <p class="text-xs font-mono text-blue-400 uppercase tracking-widest mb-2">Key Finding · PubMed 2023</p>
-            <p class="text-sm text-zinc-300 font-light leading-relaxed">
-              ADHD adults comprehended 13% better with RSVP than with normal text. Neurotypical readers showed no improvement or a slight decline at speed. The benefit is specific to the population with the attention architecture problem.
-            </p>
+          <div class="p-5 border border-emerald-500/20 bg-emerald-500/[0.04] rounded-sm">
+            <p class="text-xs font-mono text-emerald-500 uppercase tracking-widest mb-3">Key Finding · Peer-Reviewed · PubMed 2023</p>
+            <div class="flex items-baseline gap-3">
+              <span class="text-4xl font-medium text-white">+13%</span>
+              <span class="text-xs text-zinc-300">comprehension for ADHD adults, RSVP vs normal text</span>
+            </div>
+            <p class="text-[9px] font-mono uppercase tracking-wider text-zinc-600 mt-3">Neurotypical readers: No gain · Study data, not Fovea usage data</p>
           </div>
           <div class="mt-4 pt-6 border-t border-white/10">
             <h4 class="text-sm font-medium text-white mb-4">What the research changed in the product</h4>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-zinc-400 font-light">
-              <div class="flex items-start gap-3">
-                <div class="w-1.5 h-1.5 bg-zinc-600 rounded-full mt-1.5 shrink-0"></div>
-                <span>ORP letter highlighted in coral red at a fixed screen position. Eyes never move.</span>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div class="p-3 border border-white/[0.08] bg-white/[0.02]">
+                <span class="text-[10px] font-mono uppercase tracking-widest text-zinc-500">Fixation</span>
+                <p class="text-xs text-zinc-300 mt-1">ORP letter in coral red at a fixed position. Eyes never move.</p>
               </div>
-              <div class="flex items-start gap-3">
-                <div class="w-1.5 h-1.5 bg-zinc-600 rounded-full mt-1.5 shrink-0"></div>
-                <span>New users start at 80% of their baseline WPM. Speed ramps over the first 30 seconds.</span>
+              <div class="p-3 border border-white/[0.08] bg-white/[0.02]">
+                <span class="text-[10px] font-mono uppercase tracking-widest text-zinc-500">Ramp-up</span>
+                <p class="text-xs text-zinc-300 mt-1">Start at 80% of baseline WPM, ramping over 30 seconds.</p>
               </div>
-              <div class="flex items-start gap-3">
-                <div class="w-1.5 h-1.5 bg-zinc-600 rounded-full mt-1.5 shrink-0"></div>
-                <span>Zero competing UI during a session. Nothing to context-switch to.</span>
+              <div class="p-3 border border-white/[0.08] bg-white/[0.02]">
+                <span class="text-[10px] font-mono uppercase tracking-widest text-zinc-500">Zero UI</span>
+                <p class="text-xs text-zinc-300 mt-1">Nothing on screen to context-switch to mid-session.</p>
               </div>
-              <div class="flex items-start gap-3">
-                <div class="w-1.5 h-1.5 bg-zinc-600 rounded-full mt-1.5 shrink-0"></div>
-                <span>Pause and rewind are non-negotiable. Zoning out is assumed, not punished.</span>
+              <div class="p-3 border border-white/[0.08] bg-white/[0.02]">
+                <span class="text-[10px] font-mono uppercase tracking-widest text-zinc-500">Forgiveness</span>
+                <p class="text-xs text-zinc-300 mt-1">Pause and rewind assume zoning out. Never punish it.</p>
               </div>
             </div>
           </div>
@@ -275,33 +285,40 @@ body { font-family: 'Inter', sans-serif; background-color: #000; background-imag
               <iconify-icon icon="solar:eye-linear" width="20"></iconify-icon>
             </div>
             <h3 class="text-lg font-medium text-white">ORP + Smart Pacing</h3>
-            <ul class="space-y-3 text-sm text-zinc-400 font-light leading-relaxed">
-              <li>ORP letter sits at a fixed screen position, highlighted in coral red. Gaze never moves.</li>
-              <li>Longer words get more display time. Commas add a brief pause. Sentence-ending punctuation gets longer. Paragraph breaks get the longest, with a visual divider.</li>
-              <li>100 to 1,200 WPM via slider. Previous and next words faint at the periphery to reduce the anxiety of feeling lost mid-sentence.</li>
-            </ul>
+            <p class="text-sm text-zinc-400 font-light">Gaze stays fixed on the ORP letter. Display time follows word length and punctuation.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">100 to 1,200 WPM</span>
+              <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">Punctuation pauses</span>
+              <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">Peripheral context</span>
+            </div>
+            <p class="text-[9px] font-mono uppercase tracking-wider text-zinc-600">Fovea · Reader spec · Phase 1</p>
           </div>
           <div class="p-8 md:p-12 space-y-5">
             <div class="w-10 h-10 border border-white/10 bg-black flex items-center justify-center text-white">
               <iconify-icon icon="solar:layers-minimalistic-linear" width="20"></iconify-icon>
             </div>
             <h3 class="text-lg font-medium text-white">Reading Modes</h3>
-            <ul class="space-y-3 text-sm text-zinc-400 font-light leading-relaxed">
-              <li>Chunk mode: 2 or 3 words at once for users who comprehend better with phrases than single words.</li>
-              <li>Bionic Reading: first half of every word bolded, helping the eye anchor faster on each flash.</li>
-              <li>Text-to-speech via Web Speech API: word mode or sentence mode, with the currently spoken word highlighted in real time. No external service, no cost.</li>
-            </ul>
+            <p class="text-sm text-zinc-400 font-light">Three modes for three kinds of brains. TTS highlights the spoken word live, no external service.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">Chunk mode · 2 to 3 words</span>
+              <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">Bionic Reading</span>
+              <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">TTS · Web Speech API</span>
+            </div>
+            <p class="text-[9px] font-mono uppercase tracking-wider text-zinc-600">Fovea · Reader spec · Phase 1</p>
           </div>
           <div class="p-8 md:p-12 space-y-5">
             <div class="w-10 h-10 border border-white/10 bg-black flex items-center justify-center text-white">
               <iconify-icon icon="solar:import-linear" width="20"></iconify-icon>
             </div>
             <h3 class="text-lg font-medium text-white">Content Import</h3>
-            <ul class="space-y-3 text-sm text-zinc-400 font-light leading-relaxed">
-              <li>PDF parsed client-side with pdfjs-dist. Rule-based cleaning strips page numbers, headers, footers, TOC, and bibliography before the reader touches it. An AI pass catches anything left.</li>
-              <li>EPUB via epubjs. Chapters from native spine. Front and back matter stripped automatically.</li>
-              <li>URL import via Mozilla Readability: Substack, Medium, any article. Strips navigation, ads, and subscribe prompts.</li>
-            </ul>
+            <p class="text-sm text-zinc-400 font-light">Parsed client-side, stripped of headers, ads, and front matter before the reader touches it.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">PDF · pdfjs-dist</span>
+              <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">EPUB · epubjs</span>
+              <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">URL · Readability</span>
+              <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">Rule-based clean + AI pass</span>
+            </div>
+            <p class="text-[9px] font-mono uppercase tracking-wider text-zinc-600">Fovea · Import pipeline · Phase 1</p>
           </div>
         </div>
       </section>
@@ -319,22 +336,23 @@ body { font-family: 'Inter', sans-serif; background-color: #000; background-imag
             <div class="space-y-2">
               <span class="text-xs font-mono text-zinc-500 uppercase">Recovery</span>
               <p class="text-white text-sm font-medium">Recover Button</p>
-              <p class="text-xs text-zinc-400 leading-relaxed">Large, always-visible. Press R and the reader rewinds 10 seconds with no animation, no judgment, no friction. Zoning out is inevitable. The question is whether recovering is easy enough that you don't close the app.</p>
+              <p class="text-xs font-light"><span class="text-zinc-600 line-through">Zone out, close the app</span> <span class="text-emerald-500">→</span> <span class="text-zinc-300">press R, rewind 10 seconds, keep reading</span></p>
             </div>
             <div class="space-y-2">
               <span class="text-xs font-mono text-zinc-500 uppercase">Focus</span>
               <p class="text-white text-sm font-medium">Hyperfocus Mode</p>
-              <p class="text-xs text-zinc-400 leading-relaxed">Full screen, no UI. Optionally prompts Do Not Disturb before starting. When the only thing on screen is the word, there is nothing to context-switch to.</p>
+              <p class="text-xs font-light"><span class="text-zinc-600 line-through">Notifications win</span> <span class="text-emerald-500">→</span> <span class="text-zinc-300">full screen, no UI, optional Do Not Disturb</span></p>
             </div>
             <div class="space-y-2">
               <span class="text-xs font-mono text-zinc-500 uppercase">Habit</span>
               <p class="text-white text-sm font-medium">Streak Freezes</p>
-              <p class="text-xs text-zinc-400 leading-relaxed">Daily streak that auto-protects on missed days using earned freeze tokens (one per week of consistent reading). Prevents the "I already broke it, forget it" spiral that derails every ADHD habit attempt.</p>
+              <p class="text-xs font-light"><span class="text-zinc-600 line-through">"Already broke it, forget it"</span> <span class="text-emerald-500">→</span> <span class="text-zinc-300">earned freeze tokens auto-protect missed days</span></p>
+              <span class="inline-block text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">1 token per week read</span>
             </div>
             <div class="space-y-2">
               <span class="text-xs font-mono text-zinc-500 uppercase">Sessions</span>
               <p class="text-white text-sm font-medium">Pomodoro + Smart Length</p>
-              <p class="text-xs text-zinc-400 leading-relaxed">Built-in 25-minute sessions with 5-minute breaks. The app also tracks how long users typically read before they bail and suggests sessions of that length plus 10%. Specific beats open-ended for ADHD.</p>
+              <p class="text-xs font-light"><span class="text-zinc-600 line-through">Open-ended reading</span> <span class="text-emerald-500">→</span> <span class="text-zinc-300">25-minute sessions, 5-minute breaks, suggested length at typical bail time plus 10%</span></p>
             </div>
           </div>
         </div>
@@ -351,7 +369,7 @@ body { font-family: 'Inter', sans-serif; background-color: #000; background-imag
               <span class="text-xs font-medium uppercase tracking-widest text-emerald-500">Key Takeaway</span>
             </div>
             <p class="md:text-xl text-lg font-medium text-white tracking-tight">Stop asking what features to add. Start asking which failure modes to design around.</p>
-            <p class="leading-relaxed text-sm font-light text-zinc-400">That reframe changed everything. The Recover button, the Streak Freezes, the Low-stim mode: none of them came from a feature list. They came from asking why ADHD users quit reading apps.</p>
+            <p class="leading-relaxed text-sm font-light text-zinc-400">Recover, Streak Freezes, Hyperfocus: None came from a feature list. All came from asking why ADHD users quit.</p>
             <a href="https://fovea.lovable.app" target="_blank" rel="noopener noreferrer" class="uppercase hover:bg-zinc-200 transition-colors inline-flex items-center gap-2 text-xs font-medium text-black tracking-widest bg-white px-6 py-3">
               Try Fovea
               <iconify-icon icon="solar:arrow-right-up-linear" width="16"></iconify-icon>

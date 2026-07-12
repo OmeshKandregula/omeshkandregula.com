@@ -69,7 +69,7 @@ body { font-family: 'Inter', sans-serif; background-color: #000; background-imag
       <!-- Main Title Area -->
       <div class="col-span-1 md:col-span-8 p-8 md:p-16 lg:p-24 bg-white/[0.01]">
         <div class="max-w-2xl">
-          <div class="inline-flex items-center gap-2 mb-6 text-blue-400 reveal">
+          <div class="inline-flex items-center gap-2 mb-6 text-emerald-400 reveal">
             <iconify-icon icon="solar:smartphone-rotate-orientation-linear" width="16"></iconify-icon>
             <span class="text-xs font-medium uppercase tracking-widest">Product Concept</span>
           </div>
@@ -83,13 +83,13 @@ body { font-family: 'Inter', sans-serif; background-color: #000; background-imag
           <!-- Inline expand -->
           <div id="hero-expanded" class="hidden overflow-hidden">
             <p class="text-base text-zinc-400 font-light leading-relaxed mt-6 pr-4 border-l border-white/10 pl-6">
-              ScreenSage isn't just a tracker. It's a social contract. By studying why passive monitoring tools fail, we found the real blocker: people don't respond to data about themselves, they respond to how they compare to people they care about. The prototype turned digital detox into a team sport, not a solitary punishment.
+              Passive trackers fail because people don't respond to data about themselves. They respond to how they compare to people they care about.
             </p>
           </div>
 
           <button
             onclick="document.getElementById('hero-expanded').classList.toggle('hidden'); this.querySelector('span').textContent = this.querySelector('span').textContent === 'Read More' ? 'Read Less' : 'Read More'; this.querySelector('iconify-icon').setAttribute('icon', this.querySelector('span').textContent === 'Read More' ? 'solar:arrow-right-linear' : 'solar:arrow-up-linear');"
-            class="group inline-flex items-center gap-2 mt-8 text-xs font-medium uppercase tracking-widest text-white hover:text-blue-400 transition-colors focus:outline-none reveal"
+            class="group inline-flex items-center gap-2 mt-8 text-xs font-medium uppercase tracking-widest text-white hover:text-emerald-400 transition-colors focus:outline-none reveal"
             style="transition-delay:0.18s">
             <span>Read More</span>
             <iconify-icon icon="solar:arrow-right-linear" width="14" class="group-hover:translate-x-1 transition-transform"></iconify-icon>
@@ -107,15 +107,17 @@ body { font-family: 'Inter', sans-serif; background-color: #000; background-imag
           </div>
           <div class="p-8 md:p-10 flex flex-col justify-center">
             <span class="text-xs font-mono text-zinc-600 uppercase mb-2">Outcome</span>
-            <div class="flex items-center gap-3">
-              <iconify-icon icon="solar:graph-down-linear" class="text-emerald-500" width="24"></iconify-icon>
-              <span class="text-lg font-medium text-white">40% Reduction</span>
+            <div class="flex items-baseline gap-3">
+              <span class="text-4xl font-medium text-emerald-400 tracking-tight">-40%</span>
+              <iconify-icon icon="solar:graph-down-linear" class="text-emerald-500" width="20"></iconify-icon>
             </div>
-            <span class="text-xs text-zinc-500 mt-1">In pilot participant screen time</span>
+            <span class="text-xs text-zinc-300 mt-2">Screen time across pilot participants</span>
+            <span class="text-[9px] font-mono uppercase tracking-wider text-zinc-600 mt-1">ScreenSage · live pilot</span>
           </div>
           <div class="p-8 md:p-10 flex flex-col justify-center">
             <span class="text-xs font-mono text-zinc-600 uppercase mb-2">Core Insight</span>
-            <p class="text-sm text-zinc-400 font-light">"I don't care about the graph, I care if I beat my friend."</p>
+            <p class="text-sm text-zinc-300 font-light">"I don't care about the graph, I care if I beat my friend."</p>
+            <span class="text-[9px] font-mono uppercase tracking-wider text-zinc-600 mt-2">ScreenSage · user interview</span>
           </div>
         </div>
       </div>
@@ -133,22 +135,23 @@ body { font-family: 'Inter', sans-serif; background-color: #000; background-imag
         <div class="space-y-6">
           <h2 class="text-2xl text-white font-medium tracking-tight">Awareness isn't enough.</h2>
           <p class="text-sm text-zinc-400 font-light leading-relaxed">
-            Most digital well-being tools are passive. They show you a graph of your failure (high screen time) but offer no immediate incentive to change.
+            Passive well-being tools show you a graph of your failure, then offer no reason to change.
           </p>
-          <ul class="space-y-4 pt-4">
-            <li class="flex gap-4">
-              <span class="w-6 h-6 rounded-full border border-white/10 flex items-center justify-center text-zinc-500 text-[10px] shrink-0">01</span>
-              <span class="text-sm text-zinc-400 font-light">Users ignore "Time Limit" notifications easily.</span>
-            </li>
-            <li class="flex gap-4">
-              <span class="w-6 h-6 rounded-full border border-white/10 flex items-center justify-center text-zinc-500 text-[10px] shrink-0">02</span>
-              <span class="text-sm text-zinc-400 font-light">Self-discipline depletes throughout the day.</span>
-            </li>
-            <li class="flex gap-4">
-              <span class="w-6 h-6 rounded-full border border-white/10 flex items-center justify-center text-zinc-500 text-[10px] shrink-0">03</span>
-              <span class="text-sm text-zinc-400 font-light">Existing apps feel like punishment, not play.</span>
-            </li>
-          </ul>
+          <div class="border border-white/10 bg-white/[0.02] p-4 space-y-3">
+            <div class="flex items-baseline justify-between gap-3">
+              <span class="text-sm text-zinc-400 font-light">"Time limit" notifications</span>
+              <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-600 text-right shrink-0">Ignored</span>
+            </div>
+            <div class="flex items-baseline justify-between gap-3 border-t border-white/[0.06] pt-3">
+              <span class="text-sm text-zinc-400 font-light">Self-discipline</span>
+              <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-600 text-right shrink-0">Depletes daily</span>
+            </div>
+            <div class="flex items-baseline justify-between gap-3 border-t border-white/[0.06] pt-3">
+              <span class="text-sm text-zinc-400 font-light">Blocking &amp; limits</span>
+              <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-600 text-right shrink-0">Feel like punishment</span>
+            </div>
+            <p class="text-[9px] font-mono uppercase tracking-wider text-zinc-600 pt-1">Passive tools · observed failure modes</p>
+          </div>
         </div>
       </div>
 
@@ -161,20 +164,26 @@ body { font-family: 'Inter', sans-serif; background-color: #000; background-imag
               The Approach
             </h3>
             <h2 class="text-2xl text-white font-medium tracking-tight mb-4">Turning a personal habit into a shared challenge.</h2>
-            <p class="text-sm text-zinc-400 font-light leading-relaxed max-w-xl">
-              ScreenSage shifts the focus from "limit yourself" to "beat your friends." By introducing social friction and small-group accountability, we made putting the phone down a competitive advantage.
-            </p>
+            <div class="border border-white/10 bg-white/[0.02] p-4 space-y-2 max-w-xl">
+              <p class="text-sm text-zinc-600 line-through decoration-zinc-700">"Limit yourself."</p>
+              <p class="text-sm text-zinc-200 flex items-start gap-2"><span class="text-emerald-400 shrink-0">→</span><span>"Beat your friends."</span></p>
+              <div class="flex flex-wrap gap-1.5 pt-2">
+                <span class="text-[9px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-1.5 py-0.5">Squads of 3 to 5</span>
+                <span class="text-[9px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-1.5 py-0.5">Weekly reset</span>
+                <span class="text-[9px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-1.5 py-0.5">Lowest time wins</span>
+              </div>
+            </div>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-auto">
             <div class="p-5 border border-white/10 bg-black/90 rounded-sm">
-              <iconify-icon icon="solar:users-group-two-rounded-linear" class="text-blue-400 mb-3" width="20"></iconify-icon>
+              <iconify-icon icon="solar:users-group-two-rounded-linear" class="text-emerald-400 mb-3" width="20"></iconify-icon>
               <h4 class="text-sm font-medium text-white mb-1">Weekly Leagues</h4>
-              <p class="text-xs text-zinc-500 leading-relaxed">Small groups (3 to 5 friends) reset every Monday. Low stakes, high engagement.</p>
+              <p class="text-xs text-zinc-500 leading-relaxed">3 to 5 friends. Resets every Monday.</p>
             </div>
             <div class="p-5 border border-white/10 bg-black/90 rounded-sm">
-              <iconify-icon icon="solar:chart-square-linear" class="text-blue-400 mb-3" width="20"></iconify-icon>
+              <iconify-icon icon="solar:chart-square-linear" class="text-emerald-400 mb-3" width="20"></iconify-icon>
               <h4 class="text-sm font-medium text-white mb-1">Cumulative Scoring</h4>
-              <p class="text-xs text-zinc-500 leading-relaxed">Total screen time determines rank. Lower is better. Live updates create urgency.</p>
+              <p class="text-xs text-zinc-500 leading-relaxed">Total screen time ranks the squad. Lowest wins, live.</p>
             </div>
           </div>
         </div>
@@ -200,7 +209,7 @@ body { font-family: 'Inter', sans-serif; background-color: #000; background-imag
             <div>
               <h2 class="text-xl text-white font-medium tracking-tight mb-4">"Don't ask them what they want."</h2>
               <p class="text-sm text-zinc-400 font-light leading-relaxed mb-6">
-                I used Jobs-to-be-Done methodology for user interviews. Instead of asking "Would you use an app that tracks screen time?", I asked about their last week.
+                Jobs-to-be-Done interviews: No pitching, just their last week with the phone.
               </p>
               <div class="pl-4 border-l border-zinc-700 space-y-4">
                 <div>
@@ -209,26 +218,25 @@ body { font-family: 'Inter', sans-serif; background-color: #000; background-imag
                 </div>
                 <div>
                   <p class="text-xs text-zinc-500 uppercase tracking-wider mb-1">Insight Uncovered</p>
-                  <p class="text-sm text-zinc-300 italic">People often doom-scrolled while waiting for something else, or when feeling lonely. The "social" element was the missing link.</p>
+                  <p class="text-sm text-zinc-300 italic">Doom-scrolling spiked while waiting or feeling lonely. The missing element was social.</p>
                 </div>
               </div>
             </div>
-            <div class="bg-white/[0.02] border border-white/10 p-6 rounded-sm">
-              <h4 class="text-sm font-medium text-white mb-4">Research-Informed Decisions</h4>
-              <ul class="space-y-4 text-sm font-light text-zinc-400">
-                <li class="flex items-start gap-3">
-                  <iconify-icon icon="solar:check-circle-linear" class="text-zinc-600 mt-0.5" width="16"></iconify-icon>
-                  <span>Global leaderboards are discouraging. Competing with strangers doesn't matter. Competing with your roommate does.</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <iconify-icon icon="solar:check-circle-linear" class="text-zinc-600 mt-0.5" width="16"></iconify-icon>
-                  <span>Infinite streaks cause burnout. If you have a bad day, you should be able to try again next week.</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <iconify-icon icon="solar:check-circle-linear" class="text-zinc-600 mt-0.5" width="16"></iconify-icon>
-                  <span>Negative reinforcement (locking apps) caused users to uninstall. Positive competition caused them to engage.</span>
-                </li>
-              </ul>
+            <div class="bg-white/[0.02] border border-white/10 p-6 rounded-sm space-y-4">
+              <h4 class="text-[10px] font-mono uppercase tracking-widest text-zinc-500">What the research overturned</h4>
+              <div class="space-y-1">
+                <p class="text-xs text-zinc-600 line-through decoration-zinc-700">Global leaderboards</p>
+                <p class="text-xs text-zinc-200 flex items-start gap-2"><span class="text-emerald-400 shrink-0">→</span><span>Squads of people you know. Your roommate matters, strangers don't.</span></p>
+              </div>
+              <div class="space-y-1 border-t border-white/[0.06] pt-4">
+                <p class="text-xs text-zinc-600 line-through decoration-zinc-700">Infinite streaks</p>
+                <p class="text-xs text-zinc-200 flex items-start gap-2"><span class="text-emerald-400 shrink-0">→</span><span>Weekly resets. A bad day shouldn't end the game.</span></p>
+              </div>
+              <div class="space-y-1 border-t border-white/[0.06] pt-4">
+                <p class="text-xs text-zinc-600 line-through decoration-zinc-700">Locking apps</p>
+                <p class="text-xs text-zinc-200 flex items-start gap-2"><span class="text-emerald-400 shrink-0">→</span><span>Positive competition. Locks drove uninstalls, play drove engagement.</span></p>
+              </div>
+              <p class="text-[9px] font-mono uppercase tracking-wider text-zinc-600 pt-1">ScreenSage · discovery interviews</p>
             </div>
           </div>
         </div>
@@ -239,14 +247,18 @@ body { font-family: 'Inter', sans-serif; background-color: #000; background-imag
         <div class="col-span-1 md:col-span-4 p-8 md:p-12">
           <h2 class="text-2xl text-white font-medium tracking-tight mb-4">What We Built</h2>
           <p class="text-sm text-zinc-400 font-light leading-relaxed mb-6">
-            The focus was on feasibility and clarity. We scoped features to fit tight timelines, prioritizing the "Core Loop" of the application.
+            Scoped to the core loop to fit a tight sprint timeline.
           </p>
-          <div class="space-y-2">
-            <div class="flex items-center gap-2 text-xs text-zinc-500 uppercase tracking-wider">
+          <div class="space-y-3">
+            <div class="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-zinc-500">
               <iconify-icon icon="solar:code-file-linear" width="14"></iconify-icon>
               <span>Tech Stack</span>
             </div>
-            <p class="text-sm text-white">Figma, React Native (Expo), Firebase</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">Figma</span>
+              <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">React Native · Expo</span>
+              <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">Firebase</span>
+            </div>
           </div>
         </div>
         <div class="col-span-1 md:col-span-8 bg-white/[0.01] p-8 md:p-12">
@@ -256,21 +268,21 @@ body { font-family: 'Inter', sans-serif; background-color: #000; background-imag
                 <iconify-icon icon="solar:login-2-linear" width="20"></iconify-icon>
               </div>
               <h4 class="text-sm font-medium text-white">1. Onboarding</h4>
-              <p class="text-xs text-zinc-500 font-light leading-relaxed">Permission handling for screen time access and creating a user profile.</p>
+              <p class="text-xs text-zinc-500 font-light leading-relaxed">Screen-time permissions, then a profile.</p>
             </div>
             <div class="space-y-3">
               <div class="w-10 h-10 flex items-center justify-center bg-zinc-900 border border-white/10 text-white rounded-full">
                 <iconify-icon icon="solar:users-group-rounded-linear" width="20"></iconify-icon>
               </div>
               <h4 class="text-sm font-medium text-white">2. Squad Creation</h4>
-              <p class="text-xs text-zinc-500 font-light leading-relaxed">Invite-only groups ensuring users only compete with people they know.</p>
+              <p class="text-xs text-zinc-500 font-light leading-relaxed">Invite-only. You compete with people you know.</p>
             </div>
             <div class="space-y-3">
               <div class="w-10 h-10 flex items-center justify-center bg-zinc-900 border border-white/10 text-white rounded-full">
                 <iconify-icon icon="solar:cup-star-linear" width="20"></iconify-icon>
               </div>
               <h4 class="text-sm font-medium text-white">3. The Leaderboard</h4>
-              <p class="text-xs text-zinc-500 font-light leading-relaxed">Real-time ranking based on inverse screen time. The lowest time wins.</p>
+              <p class="text-xs text-zinc-500 font-light leading-relaxed">Live rank by screen time. Lowest wins.</p>
             </div>
           </div>
         </div>
@@ -285,28 +297,29 @@ body { font-family: 'Inter', sans-serif; background-color: #000; background-imag
               <iconify-icon icon="solar:chat-round-line-linear" class="text-zinc-500 shrink-0 mt-1" width="20"></iconify-icon>
               <div class="space-y-2">
                 <h4 class="text-sm font-medium text-white">Talk Less. Observe More.</h4>
-                <p class="text-sm text-zinc-400 font-light leading-relaxed">User research is most effective when it avoids pitching ideas. Focusing on real behavior uncovered more useful insights than asking users what they wanted.</p>
+                <p class="text-sm text-zinc-400 font-light leading-relaxed">Real behavior surfaced more than stated preferences ever did.</p>
               </div>
             </div>
             <div class="flex gap-4">
               <iconify-icon icon="solar:brain-linear" class="text-zinc-500 shrink-0 mt-1" width="20"></iconify-icon>
               <div class="space-y-2">
                 <h4 class="text-sm font-medium text-white">Psychology over Features</h4>
-                <p class="text-sm text-zinc-400 font-light leading-relaxed">Behavior change products rely more on understanding human motivation than on complex technical features.</p>
+                <p class="text-sm text-zinc-400 font-light leading-relaxed">Behavior change is a motivation problem, not a feature problem.</p>
               </div>
             </div>
             <div class="flex gap-4">
               <iconify-icon icon="solar:rocket-linear" class="text-zinc-500 shrink-0 mt-1" width="20"></iconify-icon>
               <div class="space-y-2">
                 <h4 class="text-sm font-medium text-white">Validate Early</h4>
-                <p class="text-sm text-zinc-400 font-light leading-relaxed">Shipping less code but validating the core mechanism early is more valuable than building a full suite of features.</p>
+                <p class="text-sm text-zinc-400 font-light leading-relaxed">Proving the core mechanism beat building a full feature suite.</p>
               </div>
             </div>
             <div class="flex gap-4">
               <iconify-icon icon="solar:refresh-circle-linear" class="text-zinc-500 shrink-0 mt-1" width="20"></iconify-icon>
               <div class="space-y-2">
                 <h4 class="text-sm font-medium text-white">Iterate on Friction</h4>
-                <p class="text-sm text-zinc-400 font-light leading-relaxed">Initially, onboarding was too hard. Reducing steps to "Join a Squad" increased conversion by roughly 40% in prototypes.</p>
+                <p class="text-sm text-zinc-400 font-light leading-relaxed">Cutting onboarding to one step, "Join a Squad," lifted conversion roughly 40%.</p>
+                <p class="text-[9px] font-mono uppercase tracking-wider text-zinc-600">ScreenSage · prototype tests</p>
               </div>
             </div>
           </div>
@@ -318,31 +331,11 @@ body { font-family: 'Inter', sans-serif; background-color: #000; background-imag
             <iconify-icon icon="solar:checklist-minimalistic-linear" width="14"></iconify-icon>
             Skills Applied
           </h3>
-          <div class="flex flex-col border-t border-white/5">
-            <div class="group flex items-center gap-3 py-3 border-b border-white/5 hover:bg-white/[0.02] -mx-4 px-4 transition-all duration-200">
-              <div class="w-4 h-4 rounded-[4px] bg-blue-500 flex items-center justify-center shadow-[0_0_15px_rgba(59,130,246,0.25)]">
-                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="text-white"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              </div>
-              <span class="text-sm text-zinc-400 group-hover:text-zinc-200 font-medium transition-colors">Product Strategy</span>
-            </div>
-            <div class="group flex items-center gap-3 py-3 border-b border-white/5 hover:bg-white/[0.02] -mx-4 px-4 transition-all duration-200">
-              <div class="w-4 h-4 rounded-[4px] bg-blue-500 flex items-center justify-center shadow-[0_0_15px_rgba(59,130,246,0.25)]">
-                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="text-white"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              </div>
-              <span class="text-sm text-zinc-400 group-hover:text-zinc-200 font-medium transition-colors">User Research</span>
-            </div>
-            <div class="group flex items-center gap-3 py-3 border-b border-white/5 hover:bg-white/[0.02] -mx-4 px-4 transition-all duration-200">
-              <div class="w-4 h-4 rounded-[4px] bg-blue-500 flex items-center justify-center shadow-[0_0_15px_rgba(59,130,246,0.25)]">
-                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="text-white"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              </div>
-              <span class="text-sm text-zinc-400 group-hover:text-zinc-200 font-medium transition-colors">Rapid Prototyping</span>
-            </div>
-            <div class="group flex items-center gap-3 py-3 border-b border-white/5 hover:bg-white/[0.02] -mx-4 px-4 transition-all duration-200">
-              <div class="w-4 h-4 rounded-[4px] bg-blue-500 flex items-center justify-center shadow-[0_0_15px_rgba(59,130,246,0.25)]">
-                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="text-white"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              </div>
-              <span class="text-sm text-zinc-400 group-hover:text-zinc-200 font-medium transition-colors">Behavioral Design</span>
-            </div>
+          <div class="flex flex-wrap gap-2 border-t border-white/5 pt-6">
+            <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">Product Strategy</span>
+            <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">User Research</span>
+            <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">Rapid Prototyping</span>
+            <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">Behavioral Design</span>
           </div>
         </div>
       </section>
@@ -358,7 +351,7 @@ body { font-family: 'Inter', sans-serif; background-color: #000; background-imag
               <span class="text-xs font-medium uppercase tracking-widest text-emerald-500">Key Takeaway</span>
             </div>
             <p class="md:text-xl text-lg font-medium text-white tracking-tight">The right insight unlocks the right product.</p>
-            <p class="leading-relaxed text-sm font-light text-zinc-400">Every passive screen time tool had already tried limits, notifications, and graphs. None of it worked. One interview question uncovered why: the problem wasn't information, it was motivation. That single insight reshaped the entire product direction.</p>
+            <p class="leading-relaxed text-sm font-light text-zinc-400">Limits, notifications, and graphs had all been tried. One interview question showed the problem was motivation, not information.</p>
           </div>
         </div>
       </section>

@@ -76,9 +76,9 @@ body { font-family: 'Inter', sans-serif; background-color: #000; background-imag
         <div class="pt-4 space-y-3 reveal" style="transition-delay:0.12s">
           <div class="flex items-center gap-4 flex-wrap">
             <span class="uppercase text-xs text-white tracking-widest font-mono bg-white/10 border-white/20 border rounded-sm pt-1 pr-2 pb-1 pl-2">Prodhacks 2026</span>
-            <span class="text-sm font-medium text-white tracking-wide">Built at Prodhacks · Live Product · AI Newsletter</span>
+            <span class="text-sm font-medium text-white tracking-wide">Live Product · AI Newsletter</span>
           </div>
-          <p class="text-sm text-zinc-500 font-light">Started as a hackathon MVP at CMU. Now a live product with real subscribers and zero unsubscribes.</p>
+          <p class="text-sm text-zinc-500 font-light">Hackathon MVP at CMU, now a live product with zero unsubscribes.</p>
         </div>
       </div>
     </section>
@@ -91,7 +91,13 @@ body { font-family: 'Inter', sans-serif; background-color: #000; background-imag
             <iconify-icon icon="solar:bolt-linear" width="14"></iconify-icon>
             Summary
           </h3>
-          <p class="text-lg md:text-xl text-white font-light leading-relaxed">An AI system that scans 90+ sources across 29 topics every night and delivers a personalized, role-specific news brief to your inbox at 7 AM.</p>
+          <p class="text-lg md:text-xl text-white font-light leading-relaxed">AI reads the news overnight. You get one role-specific brief at 7 AM.</p>
+          <div class="flex flex-wrap gap-2 pt-1">
+            <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">90+ sources</span>
+            <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">29 topics</span>
+            <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">7 AM local</span>
+            <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">4 reading depths</span>
+          </div>
         </div>
         <div class="space-y-4 reveal">
           <h3 class="text-xs font-medium uppercase tracking-widest text-zinc-500">Context</h3>
@@ -100,18 +106,30 @@ body { font-family: 'Inter', sans-serif; background-color: #000; background-imag
               <span class="text-white font-medium text-sm">Founder &amp; Product Lead</span>
               <span class="text-zinc-600 text-xs font-mono">Live Product · Post-Hackathon</span>
             </div>
-            <p class="text-sm text-zinc-400 font-light">Built end-to-end as part of a week-long hackathon at CMU named <strong class="text-zinc-300">Prodhacks</strong>. Continued post-hackathon into a live product. Responsible for product, engineering, AI pipeline, editorial, and brand. Solo.</p>
+            <p class="text-sm text-zinc-400 font-light">Built solo at <strong class="text-zinc-300">Prodhacks</strong>, a week-long CMU hackathon. Still shipping.</p>
+            <div class="flex flex-wrap gap-1.5 pt-3">
+              <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">Product</span>
+              <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">Engineering</span>
+              <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">AI pipeline</span>
+              <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">Editorial</span>
+              <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">Brand</span>
+            </div>
           </div>
         </div>
         <div class="space-y-4 reveal">
           <h3 class="text-xs font-medium uppercase tracking-widest text-zinc-500">The Problem</h3>
-          <p class="text-sm text-zinc-400 font-light mb-2">Staying informed today is cognitively expensive. 53% of Americans feel overwhelmed by the volume of news. The average person consumes from 6 different sources weekly, spending over 2 hours daily on social media, where algorithms optimize for clicks, not clarity.</p>
-          <ul class="space-y-3 text-sm font-light text-zinc-400 leading-relaxed list-disc list-inside marker:text-zinc-700">
-            <li>Check multiple platforms and aggregators daily.</li>
-            <li>Open several articles on the same topic but abandon them halfway.</li>
-            <li>Feel constant anxiety about missing something critical.</li>
-            <li>Get generic headlines with no context for their specific role or focus.</li>
-          </ul>
+          <p class="text-sm text-zinc-400 font-light mb-2">Feeds optimize for clicks, not clarity.</p>
+          <div class="border border-white/10 bg-white/[0.02] p-5 space-y-4">
+            <div>
+              <div class="flex justify-between items-baseline text-[10px] font-mono uppercase tracking-wider"><span class="text-zinc-500">Overwhelmed by news volume</span><span class="text-zinc-300">53%</span></div>
+              <div class="h-1 bg-white/[0.06] mt-1.5"><div class="h-full bg-emerald-500/60" style="width:53%"></div></div>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div><p class="text-2xl font-medium text-white tracking-tight">6</p><p class="text-xs text-zinc-500 font-light">sources checked weekly</p></div>
+              <div><p class="text-2xl font-medium text-white tracking-tight">2+ hrs</p><p class="text-xs text-zinc-500 font-light">daily on social feeds</p></div>
+            </div>
+            <p class="text-[9px] font-mono uppercase tracking-wider text-zinc-600">US adults · industry research</p>
+          </div>
         </div>
       </div>
 
@@ -121,38 +139,32 @@ body { font-family: 'Inter', sans-serif; background-color: #000; background-imag
             <iconify-icon icon="solar:code-square-linear" width="14"></iconify-icon>
             What I Built
           </h3>
-          <p class="text-sm text-white font-medium mb-2">Designed and shipped the full system: product, pipeline, and brand. Solo.</p>
+          <p class="text-sm text-white font-medium mb-2">The full system, solo: Product, pipeline, brand.</p>
           <ul class="space-y-2 text-sm text-zinc-400 font-light">
-            <li class="flex items-start gap-2"><iconify-icon icon="solar:check-read-linear" class="text-emerald-500 mt-0.5 min-w-[14px]"></iconify-icon><span>Automated pipeline scanning 90+ RSS feeds across 29 topic categories nightly</span></li>
-            <li class="flex items-start gap-2"><iconify-icon icon="solar:check-read-linear" class="text-emerald-500 mt-0.5 min-w-[14px]"></iconify-icon><span>AI enrichment generating role-specific "For You" insights per user per topic</span></li>
-            <li class="flex items-start gap-2"><iconify-icon icon="solar:check-read-linear" class="text-emerald-500 mt-0.5 min-w-[14px]"></iconify-icon><span>Four reading depth formats: Quick Scan, Tactical, Strategic, and Deep Reading</span></li>
-            <li class="flex items-start gap-2"><iconify-icon icon="solar:check-read-linear" class="text-emerald-500 mt-0.5 min-w-[14px]"></iconify-icon><span>Timezone-aware delivery at 7 AM to each subscriber's local time</span></li>
+            <li class="flex items-start gap-2"><iconify-icon icon="solar:check-read-linear" class="text-emerald-500 mt-0.5 min-w-[14px]"></iconify-icon><span>Nightly pipeline: 90+ RSS feeds, 29 topics</span></li>
+            <li class="flex items-start gap-2"><iconify-icon icon="solar:check-read-linear" class="text-emerald-500 mt-0.5 min-w-[14px]"></iconify-icon><span>Role-specific "For You" insights per reader</span></li>
+            <li class="flex items-start gap-2"><iconify-icon icon="solar:check-read-linear" class="text-emerald-500 mt-0.5 min-w-[14px]"></iconify-icon><span>Four depths: Quick Scan, Tactical, Strategic, Deep Reading</span></li>
+            <li class="flex items-start gap-2"><iconify-icon icon="solar:check-read-linear" class="text-emerald-500 mt-0.5 min-w-[14px]"></iconify-icon><span>Timezone-aware 7 AM delivery</span></li>
           </ul>
         </div>
         <div class="p-8 md:p-12 space-y-4 reveal">
           <h3 class="text-xs font-medium uppercase tracking-widest text-zinc-500">Product Approach</h3>
           <div class="space-y-3">
-            <p class="text-sm text-zinc-400 font-light">Pull-based, not push-based. Bulletyn goes and gets the news so you don't have to.</p>
-            <p class="text-sm text-zinc-400 font-light">Optimized for clarity over clicks. Signal over volume. Role-specific insight over generic headlines.</p>
-            <p class="text-sm text-zinc-400 font-light">One subscription replaces 5 to 6 niche newsletters across 29 topic categories.</p>
+            <p class="text-sm text-zinc-300 font-light flex items-start gap-2"><span class="text-emerald-400 shrink-0">→</span><span>Pull, not push.</span></p>
+            <p class="text-sm text-zinc-300 font-light flex items-start gap-2"><span class="text-emerald-400 shrink-0">→</span><span>Clarity over clicks. Signal over volume.</span></p>
+            <p class="text-sm text-zinc-300 font-light flex items-start gap-2"><span class="text-emerald-400 shrink-0">→</span><span>One brief replaces 5 to 6 newsletters.</span></p>
           </div>
         </div>
         <div class="p-8 md:p-12 space-y-4 bg-white/[0.02] reveal">
           <h3 class="text-xs font-medium uppercase tracking-widest text-emerald-500">Outcomes</h3>
-          <div class="space-y-4">
-            <div class="flex gap-3">
-              <div class="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500 shrink-0"><iconify-icon icon="solar:rocket-linear" width="16"></iconify-icon></div>
-              <div><p class="text-sm text-white font-medium">357 opens, week 1</p><p class="text-xs text-zinc-500 mt-1">13 active subscribers. 114 link click-throughs. $0 marketing spend.</p></div>
-            </div>
-            <div class="flex gap-3">
-              <div class="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500 shrink-0"><iconify-icon icon="solar:users-group-rounded-linear" width="16"></iconify-icon></div>
-              <div><p class="text-sm text-white font-medium">Zero unsubscribes</p><p class="text-xs text-zinc-500 mt-1">100% delivery rate. Readers actively click through to sources.</p></div>
-            </div>
-            <div class="flex gap-3">
-              <div class="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500 shrink-0"><iconify-icon icon="solar:map-linear" width="16"></iconify-icon></div>
-              <div><p class="text-sm text-white font-medium">Live and growing</p><p class="text-xs text-zinc-500 mt-1">Post-hackathon product at readbulletyn.com with a clear roadmap to 25K+ subscribers.</p></div>
-            </div>
+          <div class="grid grid-cols-2 gap-px bg-white/[0.06] border border-white/10">
+            <div class="bg-black p-4"><p class="text-3xl font-medium text-white">357</p><p class="text-xs text-zinc-300 mt-1">opens, week one</p></div>
+            <div class="bg-black p-4"><p class="text-3xl font-medium text-white">114</p><p class="text-xs text-zinc-300 mt-1">link click-throughs</p></div>
+            <div class="bg-black p-4"><p class="text-3xl font-medium text-emerald-400">0</p><p class="text-xs text-zinc-300 mt-1">unsubscribes</p></div>
+            <div class="bg-black p-4"><p class="text-3xl font-medium text-white">$0</p><p class="text-xs text-zinc-300 mt-1">marketing spend</p></div>
           </div>
+          <p class="text-[9px] font-mono uppercase tracking-wider text-zinc-600">Bulletyn · email analytics · week 1 · 13 subscribers · 100% delivery</p>
+          <p class="text-xs text-zinc-500 font-light">Live at <a href="https://readbulletyn.com/" target="_blank" rel="noopener noreferrer" class="text-zinc-300 hover:text-white transition-colors">readbulletyn.com</a>.</p>
         </div>
       </div>
     </div>
@@ -186,15 +198,25 @@ body { font-family: 'Inter', sans-serif; background-color: #000; background-imag
         </div>
         <div class="col-span-1 md:col-span-8 p-8 md:p-16 space-y-6">
           <p class="leading-relaxed text-lg font-light text-zinc-300">The pain isn't reading. The pain is filtering.</p>
-          <p class="text-base text-zinc-400 font-light leading-relaxed">During customer discovery interviews at Prodhacks, we talked to university students and working professionals about their daily news habits. The conversations were informal but consistent: people don't need more content. They need signal, context, and impact. Every participant expressed frustration with bouncing between apps and newsletters to piece together what actually matters for their work or career.</p>
+          <p class="text-base text-zinc-400 font-light leading-relaxed">Every interview landed in the same place: People need signal, not more content.</p>
           <div class="mt-8 pt-8 border-t border-white/10">
             <h4 class="text-sm font-medium text-white mb-4">What We Heard</h4>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-zinc-400 font-light">
-              <div class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-zinc-600 rounded-full shrink-0"></div><span>78% feel overwhelmed by source volume</span></div>
-              <div class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-zinc-600 rounded-full shrink-0"></div><span>75% check 3 or more platforms daily</span></div>
-              <div class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-zinc-600 rounded-full shrink-0"></div><span>72% abandon long-form articles midway</span></div>
-              <div class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-zinc-600 rounded-full shrink-0"></div><span>Users want their news, not the news</span></div>
+            <div class="max-w-md space-y-4">
+              <div>
+                <div class="flex justify-between items-baseline text-[10px] font-mono uppercase tracking-wider"><span class="text-zinc-500">Overwhelmed by source volume</span><span class="text-zinc-300">78%</span></div>
+                <div class="h-1 bg-white/[0.06] mt-1.5"><div class="h-full bg-emerald-500/60" style="width:78%"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between items-baseline text-[10px] font-mono uppercase tracking-wider"><span class="text-zinc-500">Check 3+ platforms daily</span><span class="text-zinc-300">75%</span></div>
+                <div class="h-1 bg-white/[0.06] mt-1.5"><div class="h-full bg-emerald-500/60" style="width:75%"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between items-baseline text-[10px] font-mono uppercase tracking-wider"><span class="text-zinc-500">Abandon long-form midway</span><span class="text-zinc-300">72%</span></div>
+                <div class="h-1 bg-white/[0.06] mt-1.5"><div class="h-full bg-emerald-500/60" style="width:72%"></div></div>
+              </div>
+              <p class="text-[9px] font-mono uppercase tracking-wider text-zinc-600 pt-1">Bulletyn · discovery interviews · Prodhacks 2026</p>
             </div>
+            <p class="text-sm text-zinc-200 font-light mt-6 flex items-start gap-2"><span class="text-emerald-400 shrink-0">→</span><span>Users want their news, not the news.</span></p>
           </div>
         </div>
       </section>
@@ -206,22 +228,26 @@ body { font-family: 'Inter', sans-serif; background-color: #000; background-imag
           <p class="text-sm text-zinc-500">The broken loop before Bulletyn</p>
         </div>
         <div class="col-span-1 md:col-span-8 p-8 md:p-16 space-y-8">
-          <div class="space-y-4 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-white/10 before:to-transparent">
-            <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-              <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white/20 bg-black text-zinc-500 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-[0_0_0_8px_#050505]"><span class="text-xs font-mono">01</span></div>
-              <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] border border-white/10 p-5 bg-white/[0.02]"><h4 class="text-white text-sm font-medium mb-1">Intent</h4><p class="text-xs text-zinc-400 font-light">Desire to stay informed on industry trends.</p></div>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-px bg-white/[0.06] border border-white/10">
+            <div class="bg-black p-5 space-y-2">
+              <span class="text-xs font-mono text-zinc-600">01</span>
+              <h4 class="text-white text-sm font-medium">Intent</h4>
+              <p class="text-xs text-zinc-500 font-light">Wants to stay informed.</p>
             </div>
-            <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-              <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white/20 bg-black text-zinc-500 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-[0_0_0_8px_#050505]"><span class="text-xs font-mono">02</span></div>
-              <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] border border-white/10 p-5 bg-white/[0.02]"><h4 class="text-white text-sm font-medium mb-1">Hunt</h4><p class="text-xs text-zinc-400 font-light">Jump blindly across multiple sources and aggregators.</p></div>
+            <div class="bg-black p-5 space-y-2">
+              <span class="text-xs font-mono text-zinc-600">02</span>
+              <h4 class="text-white text-sm font-medium">Hunt</h4>
+              <p class="text-xs text-zinc-500 font-light">Jumps across apps and aggregators.</p>
             </div>
-            <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-              <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white/20 bg-black text-zinc-500 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-[0_0_0_8px_#050505]"><span class="text-xs font-mono">03</span></div>
-              <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] border border-white/10 p-5 bg-white/[0.02]"><h4 class="text-white text-sm font-medium mb-1">Fatigue</h4><p class="text-xs text-zinc-400 font-light">Scroll through filler content, mentally filtering noise, leading to fatigue.</p></div>
+            <div class="bg-black p-5 space-y-2">
+              <span class="text-xs font-mono text-zinc-600">03</span>
+              <h4 class="text-white text-sm font-medium">Fatigue</h4>
+              <p class="text-xs text-zinc-500 font-light">Filters noise by hand. Gives up.</p>
             </div>
           </div>
-          <div class="mt-8 p-6 bg-white/[0.03] border border-white/10 text-center">
-            <p class="text-sm font-medium text-white tracking-wide">Bulletyn compresses that entire journey into one structured delivery.</p>
+          <div class="border border-white/10 bg-white/[0.02] p-5 space-y-2">
+            <p class="text-xs text-zinc-600 line-through decoration-zinc-700">Hunt, filter, repeat, every day.</p>
+            <p class="text-sm text-zinc-200 flex items-start gap-2"><span class="text-emerald-400 shrink-0">→</span><span>One structured delivery, every morning.</span></p>
           </div>
         </div>
       </section>
@@ -230,32 +256,23 @@ body { font-family: 'Inter', sans-serif; background-color: #000; background-imag
       <section class="border-b border-white/10 bg-white/[0.01] animate-fade-in" style="animation-delay: 0.2s;">
         <div class="p-8 md:p-16 border-b border-white/10">
           <h2 class="text-2xl md:text-3xl text-white font-medium tracking-tight">System Architecture</h2>
-          <p class="text-sm text-zinc-500 mt-2">Three pipeline stages, each acting as an internal stage gate</p>
+          <p class="text-sm text-zinc-500 mt-2">Three stages, each an internal gate</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/10">
           <div class="p-8 md:p-12 space-y-6">
             <div class="w-10 h-10 border border-white/10 bg-black flex items-center justify-center text-white"><iconify-icon icon="solar:chat-line-linear" width="20"></iconify-icon></div>
             <h3 class="text-lg font-medium text-white">1. Ingest &amp; Cache</h3>
-            <ul class="space-y-3 text-sm text-zinc-400 font-light">
-              <li>Scheduled cron scans a curated set of RSS feeds across topic categories simultaneously.</li>
-              <li>Quality filters and topic scoring surface only high-signal articles per topic.</li>
-            </ul>
+            <p class="text-sm text-zinc-400 font-light">Nightly cron scans 90+ feeds. Quality filters keep only high-signal articles.</p>
           </div>
           <div class="p-8 md:p-12 space-y-6">
             <div class="w-10 h-10 border border-white/10 bg-black flex items-center justify-center text-white"><iconify-icon icon="solar:sort-by-time-linear" width="20"></iconify-icon></div>
             <h3 class="text-lg font-medium text-white">2. Enrich &amp; Personalize</h3>
-            <ul class="space-y-3 text-sm text-zinc-400 font-light">
-              <li>AI reads every subscriber profile, pulls chosen topics, generates role-specific "For You" insights per user.</li>
-              <li>Briefs pre-rendered in the user's chosen format and stored. Zero AI calls at delivery time.</li>
-            </ul>
+            <p class="text-sm text-zinc-400 font-light">Role-specific "For You" insights per subscriber. Pre-rendered, zero AI calls at send time.</p>
           </div>
           <div class="p-8 md:p-12 space-y-6">
             <div class="w-10 h-10 border border-white/10 bg-black flex items-center justify-center text-white"><iconify-icon icon="solar:target-linear" width="20"></iconify-icon></div>
             <h3 class="text-lg font-medium text-white">3. Deliver at 7 AM</h3>
-            <ul class="space-y-3 text-sm text-zinc-400 font-light">
-              <li>Delivery cron checks every 10 minutes for users whose local time hits 7 AM.</li>
-              <li>Pre-built briefs sent via email. Timezone-aware, consistent, reliable.</li>
-            </ul>
+            <p class="text-sm text-zinc-400 font-light">Checks every 10 minutes for local 7 AM. Pre-built briefs ship via email.</p>
           </div>
         </div>
         <div class="border-t border-white/10 p-8 md:p-12 bg-[#050505]">
@@ -273,16 +290,15 @@ body { font-family: 'Inter', sans-serif; background-color: #000; background-imag
       <section class="border-b border-white/10 animate-fade-in" style="animation-delay: 0.3s;">
         <div class="p-8 md:p-16 border-b border-white/10 bg-[#050505]">
           <h2 class="text-2xl md:text-3xl text-white font-medium tracking-tight">Market Context</h2>
-          <p class="text-sm text-zinc-500 mt-2">Adjacent innovation in a $24B market</p>
+          <p class="text-sm text-zinc-500 mt-2">Adjacent innovation in a proven market</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-12 divide-y md:divide-y-0 md:divide-x divide-white/10">
           <div class="col-span-1 md:col-span-5 p-8 md:p-12 space-y-6">
-            <p class="text-sm text-zinc-400 font-light leading-relaxed">Bulletyn competes in a global news subscription market worth $24 billion. The category already has proof that people pay for curation: The New York Times built a $2.4B subscription business, and Substack proved that readers pay directly for focused, topic-specific newsletters.</p>
-            <p class="text-sm text-zinc-400 font-light leading-relaxed">Bulletyn sits at the intersection of both behaviors: paying for quality journalism and paying for curation. It does not replace subscriptions. It makes existing ones worth having.</p>
+            <p class="text-sm text-zinc-400 font-light leading-relaxed">NYT and Substack proved people pay for curation. Bulletyn makes existing subscriptions worth having.</p>
             <div class="pt-4 space-y-2">
               <p class="text-[10px] uppercase tracking-widest text-zinc-600">Type of Innovation</p>
               <p class="text-sm text-white font-medium">Adjacent innovation</p>
-              <p class="text-xs text-zinc-500 font-light">Uses existing trusted journalism. Applies AI to solve the integration problem, not the content problem.</p>
+              <p class="text-xs text-zinc-500 font-light">Trusted journalism stays. AI solves integration, not content.</p>
             </div>
           </div>
           <div class="col-span-1 md:col-span-7 p-8 md:p-12">
@@ -293,28 +309,28 @@ body { font-family: 'Inter', sans-serif; background-color: #000; background-imag
                   <p class="text-sm text-white font-medium">Morning Brew</p>
                   <span class="text-[10px] uppercase tracking-widest text-zinc-600 shrink-0">General business</span>
                 </div>
-                <p class="text-xs text-zinc-500 font-light">Sends the same content to everyone regardless of profession. Good tone, poor relevance at scale.</p>
+                <p class="text-xs text-zinc-500 font-light">Same content for everyone.</p>
               </div>
               <div class="border border-white/10 p-5 bg-white/[0.02]">
                 <div class="flex items-start justify-between gap-4 mb-2">
                   <p class="text-sm text-white font-medium">TLDR</p>
                   <span class="text-[10px] uppercase tracking-widest text-zinc-600 shrink-0">Tech-focused</span>
                 </div>
-                <p class="text-xs text-zinc-500 font-light">Optimizes for brevity, not insight. Tells you what happened, not why it matters for your role.</p>
+                <p class="text-xs text-zinc-500 font-light">What happened, not why it matters to you.</p>
               </div>
               <div class="border border-white/10 p-5 bg-white/[0.02]">
                 <div class="flex items-start justify-between gap-4 mb-2">
                   <p class="text-sm text-white font-medium">Google News / Social Feeds</p>
                   <span class="text-[10px] uppercase tracking-widest text-zinc-600 shrink-0">Algorithm-driven</span>
                 </div>
-                <p class="text-xs text-zinc-500 font-light">More articles, not better articles. Engagement-optimized, not clarity-optimized. 53% of users still feel overwhelmed.</p>
+                <p class="text-xs text-zinc-500 font-light">More articles, not better ones. Engagement-optimized.</p>
               </div>
               <div class="border border-emerald-500/30 p-5 bg-emerald-500/[0.04]">
                 <div class="flex items-start justify-between gap-4 mb-2">
                   <p class="text-sm text-white font-medium">Bulletyn</p>
                   <span class="text-[10px] uppercase tracking-widest text-emerald-600 shrink-0">Role-specific</span>
                 </div>
-                <p class="text-xs text-zinc-400 font-light">Multiple reading depths. Per-reader, per-topic AI insights every morning. Actionable, not just informational.</p>
+                <p class="text-xs text-zinc-400 font-light">Per-reader, per-topic AI insight, at multiple depths, every morning.</p>
               </div>
             </div>
           </div>
@@ -325,24 +341,24 @@ body { font-family: 'Inter', sans-serif; background-color: #000; background-imag
       <section class="grid grid-cols-1 md:grid-cols-12 border-b border-white/10 animate-fade-in" style="animation-delay: 0.35s;">
         <div class="col-span-1 md:col-span-4 p-8 md:p-16 border-b md:border-b-0 md:border-r border-white/10 bg-[#050505]">
           <h2 class="text-xl md:text-2xl text-white font-medium tracking-tight mb-4">Go-to-Market</h2>
-          <p class="text-sm text-zinc-500 leading-relaxed">Three-phase concentric circle rollout, starting where feedback density is highest.</p>
+          <p class="text-sm text-zinc-500 leading-relaxed">Concentric circles, starting where feedback density is highest.</p>
         </div>
         <div class="col-span-1 md:col-span-8 p-8 md:p-16">
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
             <div class="space-y-3">
               <div class="w-8 h-8 border border-white/10 bg-black flex items-center justify-center text-xs font-mono text-zinc-500">01</div>
               <p class="text-white text-sm font-medium">Community First</p>
-              <p class="text-xs text-zinc-400 leading-relaxed font-light">Start where feedback density is highest and iteration cycles are fastest. Build with users who are already required to synthesize information daily and can articulate exactly where the product fails them.</p>
+              <p class="text-xs text-zinc-400 leading-relaxed font-light">Build with users who synthesize information daily.</p>
             </div>
             <div class="space-y-3">
               <div class="w-8 h-8 border border-white/10 bg-black flex items-center justify-center text-xs font-mono text-zinc-500">02</div>
               <p class="text-white text-sm font-medium">Peer-Driven Growth</p>
-              <p class="text-xs text-zinc-400 leading-relaxed font-light">In a high news-avoidance environment, product recommendations from trusted colleagues outperform any paid channel. Growth that compounds without ad spend.</p>
+              <p class="text-xs text-zinc-400 leading-relaxed font-light">Colleague recommendations beat paid channels.</p>
             </div>
             <div class="space-y-3">
               <div class="w-8 h-8 border border-white/10 bg-black flex items-center justify-center text-xs font-mono text-zinc-500">03</div>
               <p class="text-white text-sm font-medium">Enterprise Layer</p>
-              <p class="text-xs text-zinc-400 leading-relaxed font-light">Information overload costs the global economy roughly $1 trillion annually in lost productivity. A per-seat B2B model turns an individual subscription into a team-level productivity tool.</p>
+              <p class="text-xs text-zinc-400 leading-relaxed font-light">Per-seat B2B turns a personal brief into a team productivity tool.</p>
             </div>
           </div>
         </div>
@@ -360,25 +376,25 @@ body { font-family: 'Inter', sans-serif; background-color: #000; background-imag
               <iconify-icon icon="solar:user-linear" width="20"></iconify-icon>
             </div>
             <p class="text-sm text-white font-medium">Free Tier</p>
-            <p class="text-xs text-zinc-500 font-light leading-relaxed">Core brief with limited topic selection. Designed to demonstrate value before asking for commitment.</p>
+            <p class="text-xs text-zinc-500 font-light leading-relaxed">Core brief, limited topics.</p>
           </div>
           <div class="p-8 md:p-12 space-y-4">
             <div class="w-10 h-10 border border-white/10 bg-black flex items-center justify-center text-white">
               <iconify-icon icon="solar:star-linear" width="20"></iconify-icon>
             </div>
             <p class="text-sm text-white font-medium">Premium</p>
-            <p class="text-xs text-zinc-500 font-light leading-relaxed">Full topic customization, deeper AI analysis, and multiple reading formats. Individual subscription.</p>
+            <p class="text-xs text-zinc-500 font-light leading-relaxed">Full customization, deeper analysis, every reading format.</p>
           </div>
           <div class="p-8 md:p-12 space-y-4 bg-white/[0.02]">
             <div class="w-10 h-10 border border-white/10 bg-black flex items-center justify-center text-white">
               <iconify-icon icon="solar:buildings-linear" width="20"></iconify-icon>
             </div>
             <p class="text-sm text-white font-medium">Enterprise</p>
-            <p class="text-xs text-zinc-500 font-light leading-relaxed">Per-seat B2B model. Briefings scoped to company context, industry verticals, and team-specific signals.</p>
+            <p class="text-xs text-zinc-500 font-light leading-relaxed">Briefs scoped to company and team context.</p>
           </div>
         </div>
         <div class="border-t border-white/10 p-8 md:p-12 bg-[#050505]">
-          <p class="text-sm text-zinc-400 font-light max-w-2xl">The pre-render architecture keeps variable costs low regardless of subscriber count. Margins improve with scale rather than degrading, which is the structural advantage of separating AI computation from delivery.</p>
+          <p class="text-sm text-zinc-400 font-light max-w-2xl">Pre-rendering separates AI compute from delivery. Margins improve with scale.</p>
         </div>
       </section>
 
@@ -387,7 +403,7 @@ body { font-family: 'Inter', sans-serif; background-color: #000; background-imag
         <div class="flex flex-col items-center justify-center text-center max-w-2xl mx-auto space-y-6">
           <h3 class="text-xs font-medium uppercase tracking-widest text-zinc-500">Live Project</h3>
           <p class="text-lg text-white font-medium tracking-tight">Experience Bulletyn</p>
-          <p class="text-sm text-zinc-400 font-light">See the live product. Sign up, pick your topics, and get your first brief tomorrow at 7 AM.</p>
+          <p class="text-sm text-zinc-400 font-light">Pick your topics. First brief tomorrow at 7 AM.</p>
           <div class="pt-4">
             <a href="https://readbulletyn.com/" target="_blank" rel="noopener noreferrer" class="uppercase hover:bg-zinc-200 transition-colors flex items-center gap-2 text-xs font-medium text-black tracking-widest bg-white pt-3 pr-6 pb-3 pl-6">
               Visit Bulletyn
@@ -406,7 +422,7 @@ body { font-family: 'Inter', sans-serif; background-color: #000; background-imag
               <span class="text-xs font-medium uppercase tracking-widest text-emerald-500">Key Takeaway</span>
             </div>
             <p class="md:text-xl text-lg font-medium text-white tracking-tight">Personalization is the product.</p>
-            <p class="leading-relaxed text-sm font-light text-zinc-400">Generic headlines are a solved problem. The real moat is knowing what a story means for this reader, in this role, right now. Every design and engineering decision in Bulletyn optimizes for that one thing.</p>
+            <p class="leading-relaxed text-sm font-light text-zinc-400">The moat is knowing what a story means for this reader, in this role, right now.</p>
           </div>
         </div>
       </section>

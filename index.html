@@ -25,6 +25,10 @@
 <link rel="apple-touch-icon" href="/favicon.svg">
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<script type="importmap">
+{ "imports": { "three": "https://unpkg.com/three@0.160.0/build/three.module.js" } }
+</script>
+<script type="module" src="assets/js/hero-scene.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;1,14..32,300&display=swap" rel="stylesheet">
@@ -178,6 +182,31 @@ body {
   will-change: transform;
 }
 
+/* ── Hero 3D canvas ── */
+#hero-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+}
+.hero-3d-fade {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(to top, #000 0%, transparent 18%),
+    linear-gradient(100deg, #000 0%, #000 55%, transparent 100%);
+}
+@media (min-width: 768px) {
+  .hero-3d-fade {
+    background:
+      linear-gradient(to top, #000 0%, transparent 12%),
+      linear-gradient(100deg, #000 0%, #000 30%, transparent 78%);
+  }
+}
+
 /* ── Footer glow ── */
 .footer-glow {
   position: absolute;
@@ -227,6 +256,30 @@ body {
 
 /* ── Stat counter tabular nums ── */
 .stat-value { font-variant-numeric: tabular-nums; display: inline-block; }
+
+/* ── Operating loop rail ── */
+.loop-connector {
+  height: 1px;
+  flex: 1 1 0%;
+  background: linear-gradient(90deg, rgba(16,185,129,0.3), transparent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1) 0.6s;
+}
+.reveal.visible .loop-connector { transform: scaleX(1); }
+.loop-node {
+  width: 8px; height: 8px;
+  border-radius: 9999px;
+  border: 1px solid #52525b;
+  transition: background-color 0.6s ease 0.5s, border-color 0.6s ease 0.5s, box-shadow 0.6s ease 0.5s;
+}
+.reveal.visible .loop-node {
+  background: #10b981;
+  border-color: #10b981;
+  box-shadow: 0 0 10px rgba(16,185,129,0.5);
+}
+.loop-bar { width: 0; transition: width 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s; }
+.reveal.visible .loop-bar { width: var(--w); }
 
 /* ── Skip link ── */
 .skip-link {
@@ -329,9 +382,8 @@ body {
 
       <!-- Status -->
       <div class="col-span-1 md:col-span-3 hidden md:flex items-center px-6 justify-end">
-        <a href="mailto:kandregulaomesh@gmail.com" class="text-xs font-mono text-zinc-500 hover:text-zinc-300 transition-colors flex items-center gap-2">
-          <span class="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse"></span>
-          Open to Internships
+        <a href="mailto:kandregulaomesh@gmail.com" class="text-xs font-mono text-zinc-500 hover:text-zinc-300 transition-colors">
+          kandregulaomesh@gmail.com
         </a>
       </div>
     </div>
@@ -344,20 +396,12 @@ body {
     <div class="col-span-1 md:col-span-9 divide-y divide-white/10">
 
       <!-- ── HERO ── -->
-      <section class="p-8 md:p-16 lg:p-24 flex flex-col gap-8 relative overflow-hidden">
+      <section class="p-8 md:p-16 lg:p-24 flex flex-col justify-center gap-8 relative overflow-hidden min-h-[560px] md:min-h-[680px] lg:min-h-[780px]">
         <div class="hero-glow" aria-hidden="true"></div>
+        <canvas id="hero-canvas" aria-hidden="true"></canvas>
+        <div class="hero-3d-fade" aria-hidden="true"></div>
 
         <div class="space-y-8 max-w-3xl relative z-10">
-          <!-- Badge -->
-          <div class="flex items-center gap-3 reveal">
-            <span class="relative inline-flex overflow-hidden rounded-full p-[1px]">
-              <span class="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#000_0%,#fff_50%,#000_100%)]"></span>
-              <span class="inline-flex h-full w-full items-center justify-center rounded-full bg-black px-4 py-1.5 text-[10px] uppercase tracking-wider text-white backdrop-blur-3xl">
-                <span class="mr-2 w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.6)] animate-pulse"></span>
-                Actively seeking Summer 2026 Product Internships
-              </span>
-            </span>
-          </div>
 
           <!-- Heading -->
           <div class="space-y-4">
@@ -392,6 +436,47 @@ body {
               Read More
             </a>
           </div>
+        </div>
+      </section>
+
+      <!-- ── PROOF: MEASURED OUTCOMES ── -->
+      <section id="proof" class="relative overflow-hidden">
+        <div class="absolute inset-x-0 top-0 h-44 pointer-events-none" style="background: radial-gradient(ellipse 70% 55% at 50% -10%, rgba(16,185,129,0.05), transparent);" aria-hidden="true"></div>
+
+        <div class="md:px-12 pt-8 pr-8 pb-8 pl-8 border-b border-white/10 flex items-center justify-between reveal">
+          <span class="inline-flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-zinc-500">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+            Measured outcomes
+          </span>
+          <span class="text-[10px] font-mono uppercase tracking-widest text-zinc-700 hidden sm:block">Outcomes, not projections</span>
+        </div>
+
+        <div class="grid grid-cols-2 lg:grid-cols-4">
+          <div class="p-6 md:p-8 lg:p-10 border-white/10 reveal">
+            <div class="text-4xl md:text-5xl font-medium text-white tracking-tight"><span class="stat-value" data-target="3">0</span></div>
+            <div class="text-xs text-zinc-300 mt-3">Live products, real users</div>
+            <div class="text-[10px] font-mono uppercase tracking-wider text-zinc-600 mt-2 leading-relaxed">Bulletyn · Fovea · PeerfectCV</div>
+          </div>
+          <div class="p-6 md:p-8 lg:p-10 border-l border-white/10 reveal" style="transition-delay:0.06s">
+            <div class="text-4xl md:text-5xl font-medium text-white tracking-tight"><span class="text-emerald-400">+</span><span class="stat-value" data-target="40">0</span><span class="text-2xl text-zinc-500">%</span></div>
+            <div class="text-xs text-zinc-300 mt-3">Feedback quality, from one UX change</div>
+            <div class="text-[10px] font-mono uppercase tracking-wider text-zinc-600 mt-2 leading-relaxed">PeerfectCV · one guided-forms change</div>
+          </div>
+          <div class="p-6 md:p-8 lg:p-10 border-t lg:border-t-0 lg:border-l border-white/10 reveal" style="transition-delay:0.12s">
+            <div class="text-4xl md:text-5xl font-medium text-white tracking-tight"><span class="stat-value" data-target="88">0</span><span class="text-2xl text-zinc-500">%</span></div>
+            <div class="text-xs text-zinc-300 mt-3">Onboarding completion</div>
+            <div class="text-[10px] font-mono uppercase tracking-wider text-zinc-600 mt-2 leading-relaxed">PeerfectCV · 50+ beta users</div>
+          </div>
+          <div class="p-6 md:p-8 lg:p-10 border-t border-l lg:border-t-0 border-white/10 reveal" style="transition-delay:0.18s">
+            <div class="text-4xl md:text-5xl font-medium text-white tracking-tight"><span class="stat-value" data-target="357">0</span><span class="text-2xl text-zinc-500"> opens</span></div>
+            <div class="text-xs text-zinc-300 mt-3">114 click-throughs · 0 unsubscribes</div>
+            <div class="text-[10px] font-mono uppercase tracking-wider text-zinc-600 mt-2 leading-relaxed">Bulletyn · week one · $0 marketing</div>
+          </div>
+        </div>
+
+        <div class="px-8 md:px-12 py-4 border-t border-white/10 flex items-center justify-between gap-4 reveal">
+          <p class="text-[10px] font-mono uppercase tracking-wider text-zinc-600">If I ship it, I measure it. Including this page.</p>
+          <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-700 hidden md:block whitespace-nowrap">Habit, not theater</span>
         </div>
       </section>
 
@@ -643,6 +728,105 @@ body {
         </div>
       </section>
 
+      <!-- ── THE OPERATING LOOP ── -->
+      <section id="loop" class="bg-white/[0.01]">
+        <div class="p-8 md:p-12 border-b border-white/10 space-y-4">
+          <span class="inline-flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-zinc-500 reveal">The Operating Loop</span>
+          <h3 class="text-2xl md:text-3xl text-white font-medium tracking-tight reveal" style="transition-delay:0.08s">Every product here ran the same loop.</h3>
+          <p class="text-sm md:text-base text-zinc-500 font-light leading-relaxed max-w-2xl reveal" style="transition-delay:0.16s">Research → validate → ship → measure. Solo, end to end.</p>
+        </div>
+
+        <div class="loop-rail relative reveal">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+
+            <!-- 01 RESEARCH -->
+            <div class="card-spotlight group p-8 lg:p-10 flex flex-col gap-4 relative border-white/10 reveal">
+              <div class="flex items-center gap-3 relative z-10">
+                <span class="loop-node shrink-0"></span>
+                <span class="font-mono text-[10px] uppercase tracking-[0.2em] text-zinc-600 whitespace-nowrap">01 / <span class="loop-title text-zinc-400">Research</span></span>
+                <span class="loop-connector hidden lg:block" aria-hidden="true"></span>
+              </div>
+              <p class="text-xl lg:text-2xl text-white font-medium tracking-tight leading-snug relative z-10">"The pain isn't reading. It's filtering."</p>
+              <p class="text-xs md:text-sm text-zinc-500 font-light leading-relaxed relative z-10"><a href="bulletyn-work.html" class="text-zinc-300 hover:text-white transition-colors duration-200">Bulletyn</a> started as interviews, not code.</p>
+              <div class="border border-white/10 bg-white/[0.02] p-4 space-y-3 mt-auto relative z-10">
+                <div>
+                  <div class="flex justify-between items-baseline text-[10px] font-mono uppercase tracking-wider"><span class="text-zinc-500">Overwhelmed by sources</span><span class="text-zinc-300">78%</span></div>
+                  <div class="h-1 bg-white/[0.06] mt-1.5"><div class="loop-bar h-full bg-emerald-500/60" style="--w:78%"></div></div>
+                </div>
+                <div>
+                  <div class="flex justify-between items-baseline text-[10px] font-mono uppercase tracking-wider"><span class="text-zinc-500">Abandon long reads</span><span class="text-zinc-300">72%</span></div>
+                  <div class="h-1 bg-white/[0.06] mt-1.5"><div class="loop-bar h-full bg-emerald-500/60" style="--w:72%"></div></div>
+                </div>
+                <p class="text-[9px] font-mono uppercase tracking-wider text-zinc-600 pt-1">Bulletyn · discovery interviews</p>
+              </div>
+            </div>
+
+            <!-- 02 VALIDATE -->
+            <div class="card-spotlight group p-8 lg:p-10 flex flex-col gap-4 relative border-t md:border-t-0 md:border-l border-white/10 reveal" style="transition-delay:0.08s">
+              <div class="flex items-center gap-3 relative z-10">
+                <span class="loop-node shrink-0"></span>
+                <span class="font-mono text-[10px] uppercase tracking-[0.2em] text-zinc-600 whitespace-nowrap">02 / <span class="loop-title text-zinc-400">Validate</span></span>
+                <span class="loop-connector hidden lg:block" aria-hidden="true"></span>
+              </div>
+              <p class="text-xl lg:text-2xl text-white font-medium tracking-tight leading-snug relative z-10">"The barrier isn't price. It's who vouches for the AI."</p>
+              <p class="text-xs md:text-sm text-zinc-500 font-light leading-relaxed relative z-10"><a href="taxy-work.html" class="text-zinc-300 hover:text-white transition-colors duration-200">Taxy</a>'s research changed the architecture, not the messaging.</p>
+              <div class="border border-white/10 bg-white/[0.02] p-4 space-y-2 mt-auto relative z-10">
+                <p class="text-xs text-zinc-600 line-through decoration-zinc-700">"AI does your taxes."</p>
+                <p class="text-xs text-zinc-200 flex items-start gap-2"><span class="text-emerald-400 shrink-0">→</span><span>"A CPA signs off on what the AI finds."</span></p>
+                <div class="flex flex-wrap gap-1.5 pt-1">
+                  <span class="text-[9px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-1.5 py-0.5">CPA review layer</span>
+                  <span class="text-[9px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-1.5 py-0.5">Penalty guarantee</span>
+                  <span class="text-[9px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-1.5 py-0.5">Read-only Plaid</span>
+                </div>
+                <p class="text-[9px] font-mono uppercase tracking-wider text-zinc-600 pt-1">Taxy · research concept · n=20 · Feb 2026</p>
+              </div>
+            </div>
+
+            <!-- 03 SHIP -->
+            <div class="card-spotlight group p-8 lg:p-10 flex flex-col gap-4 relative border-t lg:border-t-0 lg:border-l border-white/10 reveal" style="transition-delay:0.16s">
+              <div class="flex items-center gap-3 relative z-10">
+                <span class="loop-node shrink-0"></span>
+                <span class="font-mono text-[10px] uppercase tracking-[0.2em] text-zinc-600 whitespace-nowrap">03 / <span class="loop-title text-zinc-400">Ship</span></span>
+                <span class="loop-connector hidden lg:block" aria-hidden="true"></span>
+              </div>
+              <p class="text-xl lg:text-2xl text-white font-medium tracking-tight leading-snug relative z-10">Weeks, not quarters. Solo.</p>
+              <p class="text-xs md:text-sm text-zinc-500 font-light leading-relaxed relative z-10"><a href="peerfectcv-work.html" class="text-zinc-300 hover:text-white transition-colors duration-200">PeerfectCV</a>: A two-sided marketplace, shipped solo with pragmatic no-code.</p>
+              <div class="border border-white/10 bg-white/[0.02] p-4 mt-auto relative z-10">
+                <div class="flex items-baseline justify-between gap-3">
+                  <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500">Idea to live product</span>
+                  <span class="text-2xl font-medium text-emerald-400 tracking-tight whitespace-nowrap">&lt; 6 wks</span>
+                </div>
+                <div class="flex flex-wrap gap-1.5 pt-3">
+                  <span class="text-[9px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-1.5 py-0.5">Auth</span>
+                  <span class="text-[9px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-1.5 py-0.5">Submission flow</span>
+                  <span class="text-[9px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-1.5 py-0.5">Matching engine</span>
+                </div>
+                <p class="text-[9px] font-mono uppercase tracking-wider text-zinc-600 pt-2"><a href="https://peerfectcv.com" target="_blank" rel="noopener noreferrer" class="hover:text-zinc-300 transition-colors duration-200">Live at peerfectcv.com</a> · shipped solo</p>
+              </div>
+            </div>
+
+            <!-- 04 MEASURE -->
+            <div class="card-spotlight group p-8 lg:p-10 flex flex-col gap-4 relative border-t md:border-l lg:border-t-0 border-white/10 reveal" style="transition-delay:0.24s">
+              <div class="flex items-center gap-3 relative z-10">
+                <span class="loop-node shrink-0"></span>
+                <span class="font-mono text-[10px] uppercase tracking-[0.2em] text-zinc-600 whitespace-nowrap">04 / <span class="loop-title text-zinc-400">Measure</span></span>
+                <span class="loop-connector hidden lg:block" aria-hidden="true"></span>
+              </div>
+              <p class="text-xl lg:text-2xl text-white font-medium tracking-tight leading-snug relative z-10">"I don't care about the graph. I care if I beat my friend."</p>
+              <p class="text-xs md:text-sm text-zinc-500 font-light leading-relaxed relative z-10">One ScreenSage interview pivoted the product to social competition.</p>
+              <div class="border border-white/10 bg-white/[0.02] p-4 mt-auto relative z-10">
+                <div class="flex items-baseline justify-between gap-3">
+                  <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500">Screen time, live pilot</span>
+                  <span class="text-2xl font-medium text-emerald-400 tracking-tight whitespace-nowrap">-40%</span>
+                </div>
+                <p class="text-[9px] font-mono uppercase tracking-wider text-zinc-600 pt-2">ScreenSage · behavior change, not engagement</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       <!-- ── SKILLS MARQUEE ── -->
       <div class="border-b border-white/10 py-5 marquee-wrapper bg-black/30">
         <div class="marquee-track select-none" aria-hidden="true">
@@ -685,28 +869,6 @@ body {
         </div>
       </div>
 
-      <!-- ── EDUCATION ── -->
-      <section class="w-full">
-        <div class="p-8 md:p-12 border-b border-white/10">
-          <div class="flex items-center gap-2 text-white mb-6 reveal">
-            <iconify-icon icon="solar:mortarboard-linear" width="18" stroke-width="1.5"></iconify-icon>
-            <h3 class="text-sm font-medium uppercase tracking-widest">Education</h3>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-            <div class="bg-white/[0.01] border border-white/10 p-6 rounded-sm hover:border-white/[0.18] hover:bg-white/[0.02] transition-all duration-400 reveal" style="transition-delay:0.05s">
-              <div class="text-zinc-600 text-[10px] font-mono mb-2 uppercase tracking-wider">Expected Dec 2026</div>
-              <h4 class="text-white font-medium text-lg tracking-tight mb-1">Carnegie Mellon University</h4>
-              <p class="text-zinc-400 text-sm font-light">MS in Engineering &amp; Technology Innovation Management</p>
-            </div>
-            <div class="bg-white/[0.01] border border-white/10 p-6 rounded-sm hover:border-white/[0.18] hover:bg-white/[0.02] transition-all duration-400 reveal" style="transition-delay:0.10s">
-              <div class="text-zinc-600 text-[10px] font-mono mb-2 uppercase tracking-wider">Graduated Jul 2023</div>
-              <h4 class="text-white font-medium text-lg tracking-tight mb-1">IIT Madras</h4>
-              <p class="text-zinc-400 text-sm font-light">BTech + MTech (Dual Degree) in Engineering Design</p>
-              <p class="text-zinc-600 text-xs mt-1">Specialization in Biomedical Design</p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       <!-- ── ABOUT & SKILLS ── -->
       <section id="about" class="grid grid-cols-1 md:grid-cols-12 divide-y md:divide-y-0 md:divide-x divide-white/10">
@@ -725,10 +887,25 @@ body {
           </div>
           <h4 class="text-lg font-medium tracking-tight text-white mb-5 reveal" style="transition-delay:0.12s">Omesh Kandregula</h4>
           <div class="flex flex-col gap-3 font-mono text-[10px] text-zinc-500 leading-relaxed tracking-wider reveal" style="transition-delay:0.16s">
-            <p>EXPERIENCE: 2+ YEARS</p>
             <p>FOCUS: PRODUCT, DATA, EXECUTION</p>
             <p>INTERESTS: EARLY-STAGE, DEEP-TECH</p>
             <p>LOCATION: PITTSBURGH, PA</p>
+          </div>
+          <div class="mt-8 pt-6 border-t border-white/10 space-y-5 reveal" style="transition-delay:0.20s">
+            <h4 class="text-[10px] font-mono uppercase tracking-widest text-zinc-600 flex items-center gap-2">
+              <iconify-icon icon="solar:mortarboard-linear" width="13" stroke-width="1.5"></iconify-icon>
+              Education
+            </h4>
+            <div>
+              <p class="text-sm text-white font-medium tracking-tight">Carnegie Mellon University</p>
+              <p class="text-xs text-zinc-500 mt-0.5 font-light">MS, Engineering &amp; Technology Innovation Management</p>
+              <p class="text-[10px] font-mono uppercase tracking-wider text-zinc-600 mt-1">Expected Dec 2026</p>
+            </div>
+            <div>
+              <p class="text-sm text-white font-medium tracking-tight">IIT Madras</p>
+              <p class="text-xs text-zinc-500 mt-0.5 font-light">BTech + MTech (Dual Degree), Engineering Design</p>
+              <p class="text-[10px] font-mono uppercase tracking-wider text-zinc-600 mt-1">Graduated Jul 2023</p>
+            </div>
           </div>
         </div>
 
@@ -753,18 +930,14 @@ body {
           </div>
 
           <!-- Animated stats -->
-          <div class="mt-12 pt-8 border-t border-white/10 grid grid-cols-3 gap-6 reveal" style="transition-delay:0.20s">
+          <div class="mt-12 pt-8 border-t border-white/10 grid grid-cols-2 gap-6 reveal" style="transition-delay:0.20s">
+            <div>
+              <div class="text-3xl font-medium text-white tracking-tight"><span class="stat-value" data-target="3">0</span></div>
+              <div class="text-[10px] text-zinc-500 mt-1.5 font-mono uppercase tracking-wider">Live products</div>
+            </div>
             <div>
               <div class="text-3xl font-medium text-white tracking-tight"><span class="stat-value" data-target="100">0</span><span class="text-lg text-zinc-500 font-light">+</span></div>
               <div class="text-[10px] text-zinc-500 mt-1.5 font-mono uppercase tracking-wider">Real users across products</div>
-            </div>
-            <div>
-              <div class="text-3xl font-medium text-white tracking-tight"><span class="stat-value" data-target="4">0</span><span class="text-lg text-zinc-500 font-light">+ yrs</span></div>
-              <div class="text-[10px] text-zinc-500 mt-1.5 font-mono uppercase tracking-wider">Building products</div>
-            </div>
-            <div>
-              <div class="text-3xl font-medium text-white tracking-tight"><span class="stat-value" data-target="6">0</span></div>
-              <div class="text-[10px] text-zinc-500 mt-1.5 font-mono uppercase tracking-wider">Products shipped</div>
             </div>
           </div>
 
@@ -817,7 +990,7 @@ body {
             </button>
             <div id="exp-1" class="accordion-content overflow-hidden max-h-0 opacity-0 transition-all duration-300 ease-in-out">
               <div class="px-6 pb-6 pt-0 text-xs leading-relaxed font-light text-zinc-500">
-                <p>Built and shipped a peer-driven resume feedback platform from scratch. Owned the product end-to-end: problem discovery, user research, MVP delivery, and iteration.</p>
+                <p>Built and shipped a peer-driven resume feedback platform from scratch. Owned the product end-to-end: Problem discovery, user research, MVP delivery, and iteration.</p>
               </div>
             </div>
           </div>
@@ -908,13 +1081,10 @@ body {
     <div class="grid grid-cols-1 md:grid-cols-12 divide-y md:divide-y-0 md:divide-x relative z-10 divide-white/10">
       <div class="col-span-1 md:col-span-9 p-8 md:p-16 flex flex-col justify-center items-start">
         <h2 class="text-3xl md:text-4xl tracking-tight mb-4 text-white font-medium">
-          Want to connect?
+          Next product: Yours.
         </h2>
-        <p class="text-lg text-zinc-500 font-light mb-8">
-          Email me at
-          <a href="mailto:kandregulaomesh@gmail.com" class="underline underline-offset-4 text-zinc-300 hover:text-white decoration-white/20 hover:decoration-white/50 transition-all duration-200">
-            kandregulaomesh@gmail.com
-          </a>
+        <p class="text-lg text-zinc-500 font-light mb-8 max-w-xl">
+          The loop works. Looking for product roles where I can run it with a team.
         </p>
         <div class="flex flex-wrap gap-3">
           <a href="mailto:kandregulaomesh@gmail.com"
@@ -922,10 +1092,9 @@ body {
             <iconify-icon icon="solar:letter-linear" width="16" stroke-width="1.5"></iconify-icon>
             Send Message
           </a>
-          <a href="https://linkedin.com/in/omesh-kandregula" target="_blank" rel="noopener noreferrer"
-             class="inline-flex items-center gap-2 px-6 py-3 border text-xs font-medium uppercase tracking-widest border-zinc-800 bg-zinc-900/50 text-zinc-400 hover:text-white hover:border-zinc-600 transition-all duration-300">
-            <iconify-icon icon="solar:linkedin-linear" width="16" stroke-width="1.5"></iconify-icon>
-            LinkedIn
+          <a href="https://linkedin.com/in/omesh-kandregula" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
+             class="inline-flex items-center justify-center px-4 py-3 border text-zinc-400 border-zinc-800 bg-zinc-900/50 hover:text-white hover:border-zinc-600 transition-all duration-300">
+            <iconify-icon icon="mdi:linkedin" width="18"></iconify-icon>
           </a>
           <a href="https://github.com/OmeshKandregula" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
              class="inline-flex items-center justify-center px-4 py-3 border text-zinc-400 border-zinc-800 bg-zinc-900/50 hover:text-white hover:border-zinc-600 transition-all duration-300">
@@ -940,6 +1109,7 @@ body {
             <iconify-icon icon="mdi:instagram" width="18"></iconify-icon>
           </a>
         </div>
+        <p class="mt-6 text-[10px] font-mono uppercase tracking-wider text-zinc-600">kandregulaomesh@gmail.com</p>
       </div>
       <div class="col-span-1 md:col-span-3 p-8 md:p-16 flex flex-col justify-end bg-black/50">
         <div class="text-[10px] text-zinc-500 font-mono mt-auto space-y-3">
@@ -1006,7 +1176,7 @@ mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMo
 // ── Scroll offset (nav height) ────────────────────────────
 (function applyScrollMargins() {
   const h = document.getElementById('site-header').getBoundingClientRect().height;
-  ['work', 'about', 'experience'].forEach(id => {
+  ['proof', 'work', 'loop', 'about', 'experience'].forEach(id => {
     const el = document.getElementById(id);
     if (el) el.style.scrollMarginTop = h + 'px';
   });
@@ -1060,6 +1230,33 @@ window.addEventListener('load', () => {
   const nameEl = document.getElementById('site-name');
   if (nameEl) setTimeout(() => scrambleOnce(nameEl, 600), 120);
 });
+
+// ── Operating loop: title scramble + proof events ─────────
+const loopSection = document.getElementById('loop');
+if (loopSection) {
+  const loopObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      loopSection.querySelectorAll('.loop-title').forEach((el, i) => {
+        setTimeout(() => scrambleOnce(el, 500), i * 120);
+      });
+      if (typeof gtag === 'function') gtag('event', 'loop_view');
+      loopObs.disconnect();
+    });
+  }, { threshold: 0.15 });
+  loopObs.observe(loopSection);
+}
+const proofSection = document.getElementById('proof');
+if (proofSection) {
+  const proofObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      if (typeof gtag === 'function') gtag('event', 'proof_band_view');
+      proofObs.disconnect();
+    });
+  }, { threshold: 0.3 });
+  proofObs.observe(proofSection);
+}
 
 // ── Accordion ──────────────────────────────────────────────
 function toggleExperience(id, btn) {
