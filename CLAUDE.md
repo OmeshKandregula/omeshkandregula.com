@@ -146,7 +146,7 @@ Sizing images against type: use `em`, not pixels, so the asset scales with the h
 | `#experience` | Sticky right-hand sidebar, accordion |
 | Footer | The ask: "Next product: Yours." |
 
-Case studies: `bulletyn-work.html`, `fovea-work.html`, `taxy-work.html`, `peerfectcv-work.html`, `arcane-work.html`, `incident-copilot-work.html`, `screensage-work.html`, `tvasta-work.html`. Plus `404.html` (no analytics on it, which is a known gap).
+Case studies: `bulletyn-work.html`, `fovea-work.html`, `taxy-work.html`, `peerfectcv-work.html`, `incident-copilot-work.html`, `screensage-work.html`, `tvasta-work.html`. Plus `404.html` (no analytics on it, which is a known gap).
 
 Each case page has a skim view, then a **Read More toggle** that reveals the expanded content. **Anything below that toggle is invisible to most readers.** The strongest insight belongs above it. On the Bulletyn page that is the "turning point" band carrying the quote at display size plus four stat tiles.
 
@@ -156,7 +156,7 @@ When adding or removing a page, update `sitemap.xml`.
 
 ## The products
 
-Three are live and publicly usable: **Bulletyn** (readbulletyn.com), **Fovea**, **PeerfectCV** (peerfectcv.com). Taxy is a research concept with no live product; keep it framed honestly and never give it a live badge. Arcane was the hackathon origin of Bulletyn, so do not present them as two separate products.
+Three are live and publicly usable: **Bulletyn** (readbulletyn.com), **Fovea**, **PeerfectCV** (peerfectcv.com). Taxy is a research concept with no live product; keep it framed honestly and never give it a live badge. Arcane was Bulletyn's original name at the Prodhacks hackathon, not a separate product. The name is retired: it appears nowhere on the site, there is no Arcane case study, and it must not be reintroduced. The old Lovable prototype at arcanenews.lovable.app is dead to us, never link it.
 
 **Bulletyn** is the flagship and the most current. It is an AI-personalized daily news brief: 496 active feeds, 29 topics, 4 reading depths, delivered 7 AM in the reader's local timezone. Rebuilt in July 2026 off the original Supabase and Lovable prototype onto AWS (Next.js, SST, Aurora Serverless v2 with Drizzle, Step Functions, Amazon SES, Bedrock with Claude Haiku). Current system numbers: 325 briefs shipped, 16 active readers, 0 unsubscribes, $0 marketing.
 
