@@ -38,7 +38,8 @@ All CSS beyond Tailwind lives in a single `<style>` block in each page's `<head>
 Two gotchas that will waste your time otherwise:
 
 1. **`serve` redirects `/page.html` to `/page`.** Navigate to `http://localhost:3000/bulletyn-work`, not `...-work.html`, or you get a 301 and land back on `/`.
-2. **The in-app browser pane suspends layout when it is hidden.** When that happens `window.innerWidth` reports `0`, `getBoundingClientRect()` returns all zeros, scrolling does nothing, IntersectionObservers never fire, and screenshots time out or come back black. This is an environment artifact, not a bug in the page. Verify structurally (`querySelectorAll`, `textContent`, fetched HTML) and say plainly that you could not confirm visually.
+2. **The NFC snippet must stay high in `<head>`.** `/c/<id>` is rewritten to `/`, which leaves the document with a `/c/` base URL. The snippet's `replaceState` resets that to `/` before the body is parsed, so relative asset paths still resolve. Move it below any asset reference and images plus `hero-scene.js` 404, but only on tapped links, so normal traffic looks fine.
+3. **The in-app browser pane suspends layout when it is hidden.** When that happens `window.innerWidth` reports `0`, `getBoundingClientRect()` returns all zeros, scrolling does nothing, IntersectionObservers never fire, and screenshots time out or come back black. This is an environment artifact, not a bug in the page. Verify structurally (`querySelectorAll`, `textContent`, fetched HTML) and say plainly that you could not confirm visually.
 
 After deploying, confirm the change is actually live before claiming it is:
 
