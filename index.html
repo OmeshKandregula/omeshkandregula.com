@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- NFC tap URLs (/e/<id>) are rewritten to this page, which would otherwise give
+     relative asset paths a /e/ base and 404 them. Keep this above every relative URL. -->
+<base href="/">
 <title>Omesh Kandregula | Product Builder</title>
 <meta name="description" content="Product builder and MS student at Carnegie Mellon. Shipping products at the intersection of AI, data, and execution.">
 <meta name="author" content="Omesh Kandregula">
@@ -312,13 +315,14 @@ body {
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6L2PZ9E8N5"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-6L2PZ9E8N5');</script>
 <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","wg0c5adccj");</script>
+<script defer id="vercel-insights" src="/_vercel/insights/script.js"></script>
 <script>
-// NFC tap attribution: /c/<id> or ?t=<id>. Records the tag, then cleans the URL.
-// Must stay in <head> above <body>: /c/<id> gives the document a /c/ base, and this
-// replaceState resets it to / before any relative asset path is parsed. Move it down
-// and every image plus hero-scene.js 404s on tapped links only.
+// NFC tap attribution: /e/<id> or /c/<id> (both rewritten to this page), or ?t=<id>.
+// Vercel Analytics counts the tap by reading the path, so the tag has to survive in the
+// URL until its script has loaded. Only then is the address bar cleaned. The <base href="/">
+// at the top of this head is what keeps relative assets working during that window.
 (function(){
-  var m = location.pathname.match(/^\/c\/([\w-]{1,24})$/);
+  var m = location.pathname.match(/^\/[ce]\/([\w-]{1,24})$/);
   var t = m ? m[1] : new URLSearchParams(location.search).get('t');
   if (!t) return;
   try { sessionStorage.setItem('nfc_tag', t); } catch (e) {}
@@ -327,7 +331,12 @@ body {
     gtag('set', 'user_properties', { traffic_src: 'nfc' });
   }
   if (typeof clarity === 'function') clarity('set', 'nfc_tag', t);
-  history.replaceState(null, '', (m ? '/' : location.pathname) + location.hash);
+  var clean = function(){ history.replaceState(null, '', (m ? '/' : location.pathname) + location.hash); };
+  if (!m) return clean();
+  var done = false, fire = function(){ if (done) return; done = true; setTimeout(clean, 0); };
+  var s = document.getElementById('vercel-insights');
+  if (s) s.addEventListener('load', fire);
+  setTimeout(fire, 2500); // fallback if analytics is blocked or disabled
 })();
 </script>
 <script type="application/ld+json">
