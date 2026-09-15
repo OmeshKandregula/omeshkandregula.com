@@ -1,0 +1,4 @@
+# Vercel serves this repo root as a static site with zero config.
+# Anything listed here is never uploaded, so it cannot be fetched.
+CLAUDE.md
+.claude

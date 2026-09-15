@@ -6,8 +6,9 @@ The audience is recruiters and hiring managers who skim. Every decision on this 
 
 - **Live:** https://www.omeshkandregula.com
 - **Repo:** https://github.com/OmeshKandregula/omeshkandregula.com
-- **Deploy:** push to `main`. GitHub Pages builds automatically from the repo root. There is no CI workflow and no `CNAME` file; the custom domain is configured in GitHub repo settings, so do not add a CNAME or a build workflow without checking.
-- **`_config.yml`** exists for one reason: `exclude` keeps `CLAUDE.md` and `.claude` out of the published site. This file used to be fetchable at `/CLAUDE.md`, which exposed the whole playbook. Anything internal added to the repo root must go in that exclude list, and the exclusion must be verified live with a 404.
+- **Deploy:** push to `main`. **Vercel** builds and serves the site automatically from the repo root, zero config, no `vercel.json`. Responses carry `Server: Vercel`.
+- **GitHub Pages is not enabled on this repo.** Ignore any Pages or Jekyll advice: `_config.yml` and `.nojekyll` do nothing here, and a `_config.yml` added to the root is itself served as a public file. There is no CI workflow and no `CNAME`; the domain is configured in Vercel.
+- **`.vercelignore`** keeps internal files out of the deployment. `CLAUDE.md` and the whole `.claude` directory used to be fetchable, which published the playbook and the local settings. Anything internal added to the repo root must go in that list, and the exclusion must be verified live with a 404.
 
 ---
 

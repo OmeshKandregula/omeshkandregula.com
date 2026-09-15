@@ -1,6 +1,0 @@
-# GitHub Pages (Jekyll) build config.
-# Sole purpose: keep internal files out of the published site.
-# CLAUDE.md was previously served at /CLAUDE.md as raw markdown.
-exclude:
-  - CLAUDE.md
-  - .claude
