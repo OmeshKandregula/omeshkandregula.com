@@ -6,7 +6,7 @@ The audience is recruiters and hiring managers who skim. Every decision on this 
 
 - **Live:** https://www.omeshkandregula.com
 - **Repo:** https://github.com/OmeshKandregula/omeshkandregula.com
-- **Deploy:** push to `main`. **Vercel** builds and serves the site automatically from the repo root, zero config, no `vercel.json`. Responses carry `Server: Vercel`.
+- **Deploy:** push to `main`. **Vercel** builds and serves the site automatically from the repo root. Responses carry `Server: Vercel`. The only config is `vercel.json`, which holds one rewrite: `/c/:id` → `/` for NFC tag attribution. Do not add it to `.vercelignore`, Vercel needs to read it.
 - **GitHub Pages is not enabled on this repo.** Ignore any Pages or Jekyll advice: `_config.yml` and `.nojekyll` do nothing here, and a `_config.yml` added to the root is itself served as a public file. There is no CI workflow and no `CNAME`; the domain is configured in Vercel.
 - **`.vercelignore`** keeps internal files out of the deployment. `CLAUDE.md` and the whole `.claude` directory used to be fetchable, which published the playbook and the local settings. Anything internal added to the repo root must go in that list, and the exclusion must be verified live with a 404.
 
