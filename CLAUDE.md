@@ -7,6 +7,7 @@ The audience is recruiters and hiring managers who skim. Every decision on this 
 - **Live:** https://www.omeshkandregula.com
 - **Repo:** https://github.com/OmeshKandregula/omeshkandregula.com
 - **Deploy:** push to `main`. GitHub Pages builds automatically from the repo root. There is no CI workflow and no `CNAME` file; the custom domain is configured in GitHub repo settings, so do not add a CNAME or a build workflow without checking.
+- **`_config.yml`** exists for one reason: `exclude` keeps `CLAUDE.md` and `.claude` out of the published site. This file used to be fetchable at `/CLAUDE.md`, which exposed the whole playbook. Anything internal added to the repo root must go in that exclude list, and the exclusion must be verified live with a 404.
 
 ---
 
