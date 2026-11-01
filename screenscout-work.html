@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Screen Scout - Omesh Kandregula</title>
+<meta name="description" content="Screen Scout is a CMU Heinz capstone that scores Indian-language films theater by theater for a national US cinema chain, with live buzz from Reddit, Wikipedia, YouTube and TMDB.">
+<meta name="theme-color" content="#000000">
+<link rel="canonical" href="https://www.omeshkandregula.com/screenscout-work.html">
+<meta property="og:title" content="Screen Scout - Omesh Kandregula">
+<meta property="og:description" content="Theater-level demand scoring for Indian-language films in US theaters. A 6-person CMU Heinz capstone for a national US cinema chain.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.omeshkandregula.com/screenscout-work.html">
+<meta property="og:site_name" content="Omesh Kandregula">
+<meta property="og:image" content="https://www.omeshkandregula.com/assets/social.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.omeshkandregula.com/assets/social.jpg">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/favicon.svg">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;1,14..32,300&display=swap" rel="stylesheet">
+<style>
+html { font-size: 87.5%; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Inter', sans-serif; background-color: #000; background-image: linear-gradient(to right, #1a1a1a 1px, transparent 1px), linear-gradient(to bottom, #1a1a1a 1px, transparent 1px); background-size: 40px 40px; -webkit-font-smoothing: antialiased; }
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.animate-fade-in { animation: fadeIn 0.8s ease-out forwards; }
+#scroll-progress { position: fixed; top: 0; left: 0; width: 0%; height: 1px; background: linear-gradient(90deg, rgba(255,255,255,0.7), rgba(16,185,129,0.9)); z-index: 9999; transition: width 0.04s linear; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; }
+}
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6L2PZ9E8N5"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-6L2PZ9E8N5');</script>
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","wg0c5adccj");</script>
+<script defer id="vercel-insights" src="/_vercel/insights/script.js"></script>
+<script>
+// NFC tap attribution: /c/<id> or ?t=<id>. Records the tag, then cleans the URL.
+(function(){
+  var m = location.pathname.match(/^\/c\/([\w-]{1,24})$/);
+  var t = m ? m[1] : new URLSearchParams(location.search).get('t');
+  if (!t) return;
+  try { sessionStorage.setItem('nfc_tag', t); } catch (e) {}
+  if (typeof gtag === 'function') {
+    gtag('event', 'nfc_scan', { tag_id: t, landing_page: m ? '/' : location.pathname });
+    gtag('set', 'user_properties', { traffic_src: 'nfc' });
+  }
+  if (typeof clarity === 'function') clarity('set', 'nfc_tag', t);
+  history.replaceState(null, '', (m ? '/' : location.pathname) + location.hash);
+})();
+</script>
+</head>
+<body class="antialiased selection:bg-white/20 selection:text-white flex flex-col min-h-screen text-zinc-400">
+<div id="scroll-progress" aria-hidden="true"></div>
+
+<div class="max-w-[1400px] mx-auto w-full border-x border-white/10 bg-black/90 min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 border-b bg-black/85 backdrop-blur-md border-white/10">
+    <div class="grid grid-cols-1 md:grid-cols-12 h-16 divide-y md:divide-y-0 md:divide-x divide-white/10">
+      <div class="col-span-1 md:col-span-3 flex items-center px-6">
+        <a href="index.html" class="group flex items-center gap-2 text-xs font-medium uppercase tracking-widest text-zinc-400 hover:text-white transition-colors duration-150">
+          <iconify-icon icon="solar:arrow-left-linear" width="14" class="group-hover:-translate-x-0.5 transition-transform"></iconify-icon>
+          Back
+        </a>
+      </div>
+      <div class="col-span-1 md:col-span-9 flex items-center px-6 justify-end">
+        <span class="text-xs font-mono text-zinc-600 uppercase tracking-widest">Project: Screen Scout</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-grow">
+
+    <!-- Hero -->
+    <section class="border-b border-white/10 p-8 md:p-16 lg:p-24 bg-white/[0.01]">
+      <div class="max-w-4xl space-y-6">
+        <h1 class="md:text-6xl lg:text-7xl leading-[0.95] text-5xl font-medium text-white tracking-tight reveal">Screen Scout</h1>
+        <p class="text-xl md:text-2xl text-zinc-400 font-light tracking-tight reveal" style="transition-delay:0.06s">Which theaters should play this film, and how hard?</p>
+        <div class="pt-4 space-y-3 reveal" style="transition-delay:0.12s">
+          <div class="flex items-center gap-4 flex-wrap">
+            <span class="uppercase text-xs text-white tracking-widest font-mono bg-white/10 border-white/20 border rounded-sm pt-1 pr-2 pb-1 pl-2">Team Project</span>
+            <span class="text-sm font-medium text-white tracking-wide">CMU Heinz Capstone · Fall 2026</span>
+          </div>
+          <p class="text-sm text-zinc-500 font-light">A national number hid where the demand was.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skim View -->
+    <div class="grid grid-cols-1 md:grid-cols-12 divide-y md:divide-y-0 md:divide-x divide-white/10 border-b border-white/10">
+      <div class="col-span-1 md:col-span-7 p-8 md:p-16 space-y-12">
+        <div class="space-y-4 reveal">
+          <h3 class="uppercase flex items-center gap-2 text-xs font-medium text-blue-400 tracking-widest">
+            <iconify-icon icon="solar:bolt-linear" width="14"></iconify-icon>
+            Summary
+          </h3>
+          <p class="text-lg md:text-xl text-white font-light leading-relaxed">Scores an Indian-language film for every theater: How strong the film is, times how that theater sells that language.</p>
+          <div class="flex flex-wrap gap-2 pt-1">
+            <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">9 languages</span>
+            <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">5 live public sources</span>
+            <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">10 film subreddits</span>
+            <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">Runs daily, no laptop</span>
+          </div>
+        </div>
+        <div class="space-y-4 reveal">
+          <h3 class="text-xs font-medium uppercase tracking-widest text-zinc-500">Context</h3>
+          <div class="p-6 border border-white/10 bg-white/[0.02]">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-white font-medium text-sm">Data Product Manager</span>
+              <span class="text-zinc-600 text-xs font-mono">Team of 6 · CMU Heinz</span>
+            </div>
+            <p class="text-sm text-zinc-400 font-light">Owned data and scoring on a capstone for <strong class="text-zinc-300">a national US cinema chain</strong>.</p>
+            <div class="flex flex-wrap gap-1.5 pt-3">
+              <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">Data layer</span>
+              <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">Scoring model</span>
+              <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">Social listening</span>
+              <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">Dashboard</span>
+              <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">Excel tool</span>
+            </div>
+          </div>
+        </div>
+        <div class="space-y-4 reveal">
+          <h3 class="text-xs font-medium uppercase tracking-widest text-zinc-500">The Problem</h3>
+          <p class="text-sm text-zinc-400 font-light mb-2">International titles are booked on gut feel and one national forecast.</p>
+          <div class="border border-white/10 bg-white/[0.02] p-5 space-y-5">
+            <div>
+              <div class="flex justify-between items-baseline text-[10px] font-mono uppercase tracking-wider"><span class="text-zinc-500">National view</span><span class="text-zinc-300">Looks small</span></div>
+              <div class="h-1 bg-white/[0.06] mt-1.5"><div class="h-full bg-zinc-500/60" style="width:22%"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between items-baseline text-[10px] font-mono uppercase tracking-wider"><span class="text-zinc-500">Theater view</span><span class="text-emerald-400">Concentrated</span></div>
+              <div class="grid grid-cols-12 gap-1 mt-1.5" aria-hidden="true">
+                <span class="h-2 bg-white/[0.06]"></span><span class="h-2 bg-white/[0.06]"></span><span class="h-2 bg-emerald-500/70"></span><span class="h-2 bg-white/[0.06]"></span><span class="h-2 bg-white/[0.06]"></span><span class="h-2 bg-white/[0.06]"></span><span class="h-2 bg-white/[0.06]"></span><span class="h-2 bg-emerald-500/70"></span><span class="h-2 bg-emerald-500/40"></span><span class="h-2 bg-white/[0.06]"></span><span class="h-2 bg-white/[0.06]"></span><span class="h-2 bg-white/[0.06]"></span>
+              </div>
+            </div>
+            <div class="space-y-2 pt-1">
+              <p class="text-xs text-zinc-600 line-through decoration-zinc-700">Small nationally, so drop it everywhere</p>
+              <p class="text-xs text-zinc-200 flex items-start gap-2"><span class="text-emerald-400 shrink-0">→</span><span>Book it where its audience lives</span></p>
+            </div>
+            <p class="text-[9px] font-mono uppercase tracking-wider text-zinc-600">Illustrative · not to scale</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-span-1 md:col-span-5 divide-y divide-white/10 bg-white/[0.005]">
+        <div class="p-8 md:p-12 space-y-4 reveal">
+          <h3 class="text-xs font-medium uppercase tracking-widest text-zinc-500 flex items-center gap-2">
+            <iconify-icon icon="solar:code-square-linear" width="14"></iconify-icon>
+            What I Built
+          </h3>
+          <p class="text-sm text-white font-medium mb-2">One score per film, per theater.</p>
+          <div class="space-y-2">
+            <div class="border border-white/10 bg-white/[0.02] p-4 space-y-2">
+              <p class="text-[10px] font-mono uppercase tracking-widest text-zinc-300">Film strength</p>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">Language</span>
+                <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">Cast and director record</span>
+                <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">Genre</span>
+                <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">Runtime</span>
+                <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">Pre-release Wikipedia</span>
+              </div>
+            </div>
+            <p class="text-center text-zinc-500 font-mono text-sm" aria-hidden="true">×</p>
+            <div class="border border-white/10 bg-white/[0.02] p-4 space-y-2">
+              <p class="text-[10px] font-mono uppercase tracking-widest text-zinc-300">Theater multiplier</p>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">Its history in that language</span>
+                <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">Its other languages</span>
+                <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">Census demographics</span>
+              </div>
+            </div>
+            <p class="text-center text-zinc-500 font-mono text-sm" aria-hidden="true">=</p>
+            <div class="border border-emerald-500/30 bg-emerald-500/[0.04] p-4 flex items-center justify-between gap-3">
+              <p class="text-[10px] font-mono uppercase tracking-widest text-emerald-400">Demand score</p>
+              <div class="flex gap-1.5">
+                <span class="text-[9px] font-mono uppercase tracking-wider text-emerald-400 border border-emerald-500/30 px-1.5 py-0.5">Play</span>
+                <span class="text-[9px] font-mono uppercase tracking-wider text-zinc-300 border border-white/15 px-1.5 py-0.5">Weekends</span>
+                <span class="text-[9px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-1.5 py-0.5">Skip</span>
+              </div>
+            </div>
+            <p class="text-[9px] font-mono uppercase tracking-wider text-zinc-600 pt-1">Thin history borrows from other languages and Census data</p>
+          </div>
+          <ul class="space-y-2 text-sm text-zinc-400 font-light pt-2">
+            <li class="flex items-start gap-2"><iconify-icon icon="solar:check-read-linear" class="text-emerald-500 mt-0.5 min-w-[14px]"></iconify-icon><span>High / Medium / Low film ratings and theater tiers, with cutoffs the programmer can change</span></li>
+            <li class="flex items-start gap-2"><iconify-icon icon="solar:check-read-linear" class="text-emerald-500 mt-0.5 min-w-[14px]"></iconify-icon><span>Buzz search for any title, released or not: Reddit, Wikipedia, YouTube, TMDB</span></li>
+            <li class="flex items-start gap-2"><iconify-icon icon="solar:check-read-linear" class="text-emerald-500 mt-0.5 min-w-[14px]"></iconify-icon><span>Guardrails: Names are never scored as films. Re-releases and Bengali titles are flagged, not shown as zero.</span></li>
+            <li class="flex items-start gap-2"><iconify-icon icon="solar:check-read-linear" class="text-emerald-500 mt-0.5 min-w-[14px]"></iconify-icon><span>An Excel version for planners who live in spreadsheets</span></li>
+          </ul>
+        </div>
+        <div class="p-8 md:p-12 space-y-4 reveal">
+          <h3 class="text-xs font-medium uppercase tracking-widest text-zinc-500">Product Approach</h3>
+          <div class="space-y-3">
+            <p class="text-sm text-zinc-300 font-light flex items-start gap-2"><span class="text-emerald-400 shrink-0">→</span><span>Levers, not verdicts: Programmers set the cutoffs.</span></p>
+            <p class="text-sm text-zinc-300 font-light flex items-start gap-2"><span class="text-emerald-400 shrink-0">→</span><span>Test a signal before adding it.</span></p>
+            <p class="text-sm text-zinc-300 font-light flex items-start gap-2"><span class="text-emerald-400 shrink-0">→</span><span>Free, legal, repeatable sources only.</span></p>
+          </div>
+        </div>
+        <div class="p-8 md:p-12 space-y-4 bg-white/[0.02] reveal">
+          <h3 class="text-xs font-medium uppercase tracking-widest text-emerald-500">Outcomes</h3>
+          <div class="grid grid-cols-2 gap-px bg-white/[0.06] border border-white/10">
+            <div class="bg-black p-4"><p class="text-3xl font-medium text-white">359K</p><p class="text-xs text-zinc-300 mt-1">Reddit posts in the history</p><p class="text-[9px] font-mono uppercase tracking-wider text-zinc-600 mt-2 leading-relaxed">Arctic Shift archive · Nov 2023 to Oct 2026</p></div>
+            <div class="bg-black p-4"><p class="text-3xl font-medium text-white">440</p><p class="text-xs text-zinc-300 mt-1">Indian-language films tracked daily</p><p class="text-[9px] font-mono uppercase tracking-wider text-zinc-600 mt-2 leading-relaxed">TMDB snapshots · from Oct 2026</p></div>
+            <div class="bg-black p-4"><p class="text-3xl font-medium text-white">5</p><p class="text-xs text-zinc-300 mt-1">live public sources</p><p class="text-[9px] font-mono uppercase tracking-wider text-zinc-600 mt-2 leading-relaxed">Free APIs and archives · Nov 2026</p></div>
+            <div class="bg-black p-4"><p class="text-3xl font-medium text-emerald-400">0</p><p class="text-xs text-zinc-300 mt-1">laptops needed</p><p class="text-[9px] font-mono uppercase tracking-wider text-zinc-600 mt-2 leading-relaxed">GitHub Actions + Vercel jobs</p></div>
+          </div>
+          <p class="text-[9px] font-mono uppercase tracking-wider text-zinc-600">Screen Scout · public data only · as of 2026-11-01</p>
+          <p class="text-xs text-zinc-500 font-light">The dashboard is private to the sponsor. Every number on this page comes from public data.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- The Turning Point -->
+    <div class="border-b border-white/10 p-8 md:p-16 bg-gradient-to-b from-black to-zinc-900/20">
+      <div class="max-w-4xl space-y-6">
+        <div class="flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span class="text-[10px] font-mono uppercase tracking-widest text-zinc-500">The turning point</span>
+        </div>
+        <p class="text-2xl md:text-4xl text-white font-medium tracking-tight leading-tight">"The best-sounding signal was leaking the answer."</p>
+        <p class="text-sm md:text-base text-zinc-400 font-light max-w-2xl">A teammate's audit found our Wikipedia flag was read as of today. Many articles get written because a film did well.</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/[0.06] border border-white/10">
+          <div class="bg-black p-4 space-y-2">
+            <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span><span class="text-[10px] font-mono uppercase tracking-widest text-emerald-400">4 weeks before release</span></div>
+            <p class="text-sm text-white font-medium">Booking decision</p>
+            <p class="text-[11px] text-zinc-400 leading-relaxed">The flag now reads here. Only what was knowable on this date.</p>
+          </div>
+          <div class="bg-black p-4 space-y-2">
+            <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-zinc-500"></span><span class="text-[10px] font-mono uppercase tracking-widest text-zinc-500">Release</span></div>
+            <p class="text-sm text-white font-medium">The film opens</p>
+            <p class="text-[11px] text-zinc-400 leading-relaxed">Some do well. Those tend to get articles.</p>
+          </div>
+          <div class="bg-black p-4 space-y-2">
+            <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full border border-zinc-600"></span><span class="text-[10px] font-mono uppercase tracking-widest text-zinc-600">Today</span></div>
+            <p class="text-sm text-zinc-500 font-medium line-through decoration-zinc-700">Where the flag used to read</p>
+            <p class="text-[11px] text-zinc-500 leading-relaxed">An article here can be a result of success, not a predictor of it.</p>
+          </div>
+        </div>
+        <div class="border border-white/10 bg-white/[0.02] p-4 space-y-2 max-w-2xl">
+          <p class="text-xs text-zinc-600 line-through decoration-zinc-700">Has a Wikipedia article, as of today</p>
+          <p class="text-xs text-zinc-200 flex items-start gap-2"><span class="text-emerald-400 shrink-0">→</span><span>Had a Wikipedia article 4 weeks before release. Correcting the flag beat dropping it.</span></p>
+        </div>
+        <p class="text-sm text-zinc-200 font-light flex items-start gap-2"><span class="text-emerald-400 shrink-0">→</span><span>Lesson: Check what a feature could have known at decision time.</span></p>
+      </div>
+    </div>
+
+    <!-- Skills Bar -->
+    <div class="border-b border-white/10 p-6 md:px-16 flex flex-wrap items-center gap-4 bg-[#050505]">
+      <span class="text-[10px] uppercase tracking-widest text-zinc-600 mr-2">Skills:</span>
+      <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] text-zinc-400 bg-white/[0.02]">Data Product</span>
+      <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] text-zinc-400 bg-white/[0.02]">Forecasting</span>
+      <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] text-zinc-400 bg-white/[0.02]">Social Listening</span>
+      <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] text-zinc-400 bg-white/[0.02]">Python</span>
+      <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] text-zinc-400 bg-white/[0.02]">Experiment Design</span>
+      <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] text-zinc-400 bg-white/[0.02]">Stakeholder Mgmt</span>
+    </div>
+
+    <!-- Read More Toggle -->
+    <div id="read-more-container" class="py-24 flex flex-col items-center justify-center border-b border-white/10 bg-gradient-to-b from-black to-zinc-900/20">
+      <button id="read-more-btn" class="group flex gap-3 hover:bg-zinc-200 transition-colors uppercase text-xs font-medium text-black tracking-widest bg-white pt-3 pr-8 pb-3 pl-8 items-center">
+        <span>Read More</span>
+        <iconify-icon icon="solar:arrow-down-linear" width="16" class="group-hover:translate-y-0.5 transition-transform"></iconify-icon>
+      </button>
+    </div>
+
+    <!-- Expanded Content -->
+    <div id="expanded-content" class="hidden">
+
+      <!-- 01 Test before you add -->
+      <section class="grid grid-cols-1 md:grid-cols-12 border-b border-white/10 animate-fade-in">
+        <div class="col-span-1 md:col-span-4 p-8 md:p-16 border-b md:border-b-0 md:border-r border-white/10">
+          <span class="text-xs font-mono text-zinc-600">01</span>
+          <h2 class="text-2xl md:text-3xl text-white font-medium tracking-tight mt-2 mb-4">Test before you add</h2>
+          <p class="text-sm text-zinc-500">Two obvious signals, tested on held-out films</p>
+        </div>
+        <div class="col-span-1 md:col-span-8 p-8 md:p-16 space-y-6">
+          <p class="leading-relaxed text-lg font-light text-zinc-300">Reddit discussion and YouTube trailer views both looked like obvious signals.</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-px bg-white/[0.06] border border-white/10">
+            <div class="bg-black p-5 space-y-3">
+              <div class="flex items-start justify-between gap-3">
+                <h4 class="text-white text-sm font-medium">Reddit discussion</h4>
+                <span class="text-[9px] font-mono uppercase tracking-wider text-zinc-400 border border-white/15 px-1.5 py-0.5 shrink-0">Context only</span>
+              </div>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">10 subreddits</span>
+                <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">9 languages</span>
+              </div>
+              <p class="text-xs text-zinc-500 font-light">Added nothing beyond what the model already knew.</p>
+            </div>
+            <div class="bg-black p-5 space-y-3">
+              <div class="flex items-start justify-between gap-3">
+                <h4 class="text-white text-sm font-medium">YouTube trailer views</h4>
+                <span class="text-[9px] font-mono uppercase tracking-wider text-zinc-400 border border-white/15 px-1.5 py-0.5 shrink-0">Context only</span>
+              </div>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">YouTube Data API</span>
+              </div>
+              <p class="text-xs text-zinc-500 font-light">Added nothing beyond what the model already knew.</p>
+            </div>
+          </div>
+          <div class="pt-6 border-t border-white/10">
+            <p class="text-sm text-zinc-200 font-light flex items-start gap-2"><span class="text-emerald-400 shrink-0">→</span><span>Both stay on the page as context. Neither is in the score.</span></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 02 What I Changed -->
+      <section class="border-b border-white/10 bg-[#050505] animate-fade-in" style="animation-delay: 0.1s;">
+        <div class="p-8 md:p-16 border-b border-white/10">
+          <span class="text-xs font-mono text-zinc-600">02</span>
+          <h2 class="text-2xl md:text-3xl text-white font-medium tracking-tight mt-2">What I changed, and why</h2>
+          <p class="text-sm text-zinc-500 mt-2">Four decisions. The first came from the people who would use it.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2">
+          <div class="p-8 md:p-12 border-b md:border-r border-white/10 space-y-4">
+            <span class="text-xs font-mono text-zinc-600">01</span>
+            <h3 class="text-lg font-medium text-white">Ratings and tiers, not one national forecast.</h3>
+            <div class="border border-white/10 bg-white/[0.02] p-4 space-y-2">
+              <p class="text-xs text-zinc-600 line-through decoration-zinc-700">One national number per film</p>
+              <p class="text-xs text-zinc-200 flex items-start gap-2"><span class="text-emerald-400 shrink-0">→</span><span>A film rating, plus a tier for every theater</span></p>
+            </div>
+            <p class="text-sm text-zinc-400 font-light leading-relaxed">The sponsor's planners told us a national number gets films dropped where they would sell.</p>
+          </div>
+          <div class="p-8 md:p-12 border-b border-white/10 space-y-4">
+            <span class="text-xs font-mono text-zinc-600">02</span>
+            <h3 class="text-lg font-medium text-white">Plans are decided per theater.</h3>
+            <div class="border border-white/10 bg-white/[0.02] p-4 space-y-2">
+              <p class="text-xs text-zinc-600 line-through decoration-zinc-700">Rating × tier lookup table</p>
+              <p class="text-xs text-zinc-200 flex items-start gap-2"><span class="text-emerald-400 shrink-0">→</span><span>Play, Weekends or Skip, decided theater by theater</span></p>
+            </div>
+            <p class="text-sm text-zinc-400 font-light leading-relaxed">The table contradicted itself, so we stopped using it.</p>
+          </div>
+          <div class="p-8 md:p-12 border-b md:border-b-0 md:border-r border-white/10 space-y-4">
+            <span class="text-xs font-mono text-zinc-600">03</span>
+            <h3 class="text-lg font-medium text-white">Re-releases say what the model does not know.</h3>
+            <div class="border border-white/10 bg-white/[0.02] p-4 space-y-2">
+              <p class="text-xs text-zinc-600 line-through decoration-zinc-700">Score an old film like a new one</p>
+              <p class="text-xs text-zinc-200 flex items-start gap-2"><span class="text-emerald-400 shrink-0">→</span><span>Flag it: No cast data for this film</span></p>
+            </div>
+            <p class="text-sm text-zinc-400 font-light leading-relaxed">A warning is more useful than a confident number built on missing inputs.</p>
+          </div>
+          <div class="p-8 md:p-12 space-y-4">
+            <span class="text-xs font-mono text-zinc-600">04</span>
+            <h3 class="text-lg font-medium text-white">A name is not a film.</h3>
+            <div class="border border-white/10 bg-white/[0.02] p-4 space-y-2 font-mono">
+              <p class="text-xs text-zinc-500">Search: "Ranbir"</p>
+              <p class="text-xs text-zinc-200 flex items-start gap-2"><span class="text-emerald-400 shrink-0">→</span><span>Person, not a film. Not scored.</span></p>
+              <p class="text-[9px] uppercase tracking-wider text-zinc-600 pt-1">Verified against Wikidata</p>
+            </div>
+            <p class="text-sm text-zinc-400 font-light leading-relaxed">Buzz search takes any text. Identity is checked before anything gets a score.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 03 System Architecture -->
+      <section class="border-b border-white/10 bg-white/[0.01] animate-fade-in" style="animation-delay: 0.15s;">
+        <div class="p-8 md:p-16 border-b border-white/10">
+          <span class="text-xs font-mono text-zinc-600">03</span>
+          <h2 class="text-2xl md:text-3xl text-white font-medium tracking-tight mt-2">System Architecture</h2>
+          <p class="text-sm text-zinc-500 mt-2">Three stages, free and public sources only</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/10">
+          <div class="p-8 md:p-12 space-y-6">
+            <div class="w-10 h-10 border border-white/10 bg-black flex items-center justify-center text-white"><iconify-icon icon="solar:download-minimalistic-linear" width="20"></iconify-icon></div>
+            <h3 class="text-lg font-medium text-white">1. Ingest</h3>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">Arctic Shift Reddit archive</span>
+              <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">Wikipedia pageviews</span>
+              <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">YouTube Data API</span>
+              <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">TMDB API</span>
+              <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">Census ACS</span>
+              <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">OpenStreetMap competitors</span>
+            </div>
+          </div>
+          <div class="p-8 md:p-12 space-y-6">
+            <div class="w-10 h-10 border border-white/10 bg-black flex items-center justify-center text-white"><iconify-icon icon="solar:graph-new-linear" width="20"></iconify-icon></div>
+            <h3 class="text-lg font-medium text-white">2. Model</h3>
+            <p class="text-sm text-zinc-400 font-light">Python. A shrinkage model for theaters, a ridge model for films, validated on a time split.</p>
+          </div>
+          <div class="p-8 md:p-12 space-y-6">
+            <div class="w-10 h-10 border border-white/10 bg-black flex items-center justify-center text-white"><iconify-icon icon="solar:target-linear" width="20"></iconify-icon></div>
+            <h3 class="text-lg font-medium text-white">3. Deliver</h3>
+            <p class="text-sm text-zinc-400 font-light">Next.js on Vercel with Google sign-in, an Excel tool, and daily and weekly jobs on GitHub Actions.</p>
+          </div>
+        </div>
+        <div class="border-t border-white/10 p-8 md:p-12 bg-[#050505]">
+          <h4 class="text-xs uppercase tracking-widest text-zinc-600 mb-4">Stack</h4>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">Python</span>
+            <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">pandas</span>
+            <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">Next.js</span>
+            <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">Vercel</span>
+            <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">GitHub Actions</span>
+            <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">Arctic Shift</span>
+            <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">YouTube API</span>
+            <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">TMDB API</span>
+            <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 border border-white/[0.08] px-2 py-1">Census ACS</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 04 What Has Not Worked -->
+      <section class="border-b border-white/10 bg-[#050505] animate-fade-in" style="animation-delay: 0.2s;">
+        <div class="p-8 md:p-16 max-w-3xl space-y-5">
+          <span class="text-xs font-mono text-zinc-600">04</span>
+          <h2 class="text-2xl md:text-3xl text-white font-medium tracking-tight">What has not worked yet</h2>
+          <div class="flex items-baseline gap-4">
+            <span class="text-5xl font-medium text-white tracking-tight">5,000</span>
+            <span class="text-sm text-zinc-400 font-light">posts. The cap on a course-licensed X export.</span>
+          </div>
+          <div class="space-y-3 pt-2">
+            <div class="border border-white/10 bg-white/[0.02] p-5">
+              <div class="flex items-start justify-between gap-4 mb-2">
+                <h4 class="text-white text-sm font-medium">X (Twitter)</h4>
+                <span class="text-[9px] font-mono uppercase tracking-wider text-zinc-600 shrink-0">No free legal route</span>
+              </div>
+              <p class="text-xs text-zinc-500 font-light">Scraper libraries break and violate X's terms.</p>
+            </div>
+            <div class="border border-white/10 bg-white/[0.02] p-5">
+              <div class="flex items-start justify-between gap-4 mb-2">
+                <h4 class="text-white text-sm font-medium">Google Trends by metro</h4>
+                <span class="text-[9px] font-mono uppercase tracking-wider text-zinc-600 shrink-0">Manual pilot</span>
+              </div>
+              <p class="text-xs text-zinc-500 font-light">Stays manual until API access arrives.</p>
+            </div>
+            <div class="border border-white/10 bg-white/[0.02] p-5">
+              <div class="flex items-start justify-between gap-4 mb-2">
+                <h4 class="text-white text-sm font-medium">Comment sentiment</h4>
+                <span class="text-[9px] font-mono uppercase tracking-wider text-zinc-600 shrink-0">Low signal</span>
+              </div>
+              <p class="text-xs text-zinc-500 font-light">Mostly neutral, so it rarely separates one film from another.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Closing Note -->
+      <section class="md:p-16 text-center bg-gradient-to-b from-black to-zinc-900/40 border-white/10 border-t pt-8 pr-8 pb-8 pl-8 animate-fade-in" style="animation-delay: 0.25s;">
+        <div class="max-w-3xl mx-auto">
+          <div class="md:p-12 border-white/10 border pt-8 pr-8 pb-8 pl-8 space-y-6">
+            <div class="flex items-center gap-3 mb-2 justify-center">
+              <div class="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500 shrink-0"><iconify-icon icon="solar:lightbulb-bolt-linear" width="16"></iconify-icon></div>
+              <span class="text-xs font-medium uppercase tracking-widest text-emerald-500">Key Takeaway</span>
+            </div>
+            <p class="md:text-xl text-lg font-medium text-white tracking-tight">A national number hid where the demand was.</p>
+            <p class="leading-relaxed text-sm font-light text-zinc-400">The product's job is to show where.</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t relative overflow-hidden border-white/10 bg-black mt-auto">
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,#222_1px,transparent_1px),linear-gradient(to_bottom,#222_1px,transparent_1px)] bg-[size:40px_40px] opacity-20"></div>
+    <div class="grid grid-cols-1 md:grid-cols-12 divide-y md:divide-y-0 md:divide-x relative z-10 divide-white/10">
+      <div class="col-span-1 md:col-span-9 p-8 md:p-12 flex flex-col justify-center items-start">
+        <h2 class="md:text-3xl text-2xl font-medium text-white tracking-tight mb-2">This is how I build.</h2>
+        <p class="text-sm font-light text-zinc-500 mb-6">If it resonates, let's talk.</p>
+        <a href="mailto:kandregulaomesh@gmail.com" class="px-5 py-2 border text-xs font-medium uppercase tracking-widest transition-all duration-300 border-zinc-700 bg-zinc-900/50 text-white hover:bg-white hover:text-black hover:border-white flex items-center gap-2">
+          <iconify-icon icon="solar:letter-linear" width="16"></iconify-icon>
+          Contact Me
+        </a>
+      </div>
+      <div class="col-span-1 md:col-span-3 md:p-12 flex flex-col bg-black/50 pt-8 pr-8 pb-8 pl-8 justify-end">
+        <div class="mt-auto font-mono text-[10px] space-y-3 text-zinc-600">
+          <div class="flex items-center gap-2 text-zinc-400"><iconify-icon icon="solar:map-point-linear" width="14"></iconify-icon><span>PITTSBURGH, PA</span></div>
+          <div class="flex items-center gap-4 border-t pt-4 border-white/10">
+            <span class="block text-zinc-500">40.4406° N</span>
+            <span class="block text-zinc-500">79.9959° W</span>
+          </div>
+          <div class="pt-4 text-zinc-700">© 2026 OMESH KANDREGULA</div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+<script>
+const prog = document.getElementById('scroll-progress');
+window.addEventListener('scroll', () => { const s = document.documentElement; prog.style.width = (s.scrollTop / (s.scrollHeight - s.clientHeight) * 100) + '%'; }, { passive: true });
+const obs = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } }); }, { threshold: 0.07 });
+document.querySelectorAll('.reveal').forEach(el => { if (el.getBoundingClientRect().top < window.innerHeight * 1.05) el.classList.add('visible'); else obs.observe(el); });
+document.getElementById('read-more-btn').addEventListener('click', function() {
+  const expandedContent = document.getElementById('expanded-content');
+  const buttonContainer = document.getElementById('read-more-container');
+  expandedContent.classList.remove('hidden');
+  expandedContent.classList.add('animate-fade-in');
+  buttonContainer.classList.add('hidden');
+  expandedContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  gtag('event', 'read_more_click', { page_title: document.title });
+});
+document.querySelectorAll('a[target="_blank"]').forEach(function(el) {
+  el.addEventListener('click', function() { gtag('event', 'external_link_click', { url: this.href, page_title: document.title }); });
+});
+document.querySelectorAll('a[href^="mailto"]').forEach(function(el) {
+  el.addEventListener('click', function() { gtag('event', 'contact_click', { page_title: document.title }); });
+});
+</script>
+</body>
+</html>
