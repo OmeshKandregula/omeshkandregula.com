@@ -495,8 +495,8 @@ body {
             <div class="text-[10px] font-mono uppercase tracking-wider text-zinc-600 mt-2 leading-relaxed">PeerfectCV · 50 beta users</div>
           </div>
           <div class="p-6 md:p-8 lg:p-10 border-t border-l lg:border-t-0 border-white/10 reveal" style="transition-delay:0.18s">
-            <div class="text-4xl md:text-5xl font-medium text-white tracking-tight"><span class="stat-value" data-target="680">0</span><span class="text-2xl text-zinc-500"> briefs</span></div>
-            <div class="text-xs text-zinc-300 mt-3">Shipped daily · 0 unsubscribes</div>
+            <div class="text-4xl md:text-5xl font-medium text-white tracking-tight"><span class="stat-value" data-target="1200">0</span><span class="text-2xl text-zinc-500">+ briefs</span></div>
+            <div class="text-xs text-zinc-300 mt-3">Shipped daily to 57 readers</div>
             <div class="text-[10px] font-mono uppercase tracking-wider text-zinc-600 mt-2 leading-relaxed">Bulletyn · rebuilt system · $0 marketing</div>
           </div>
         </div>
@@ -1031,7 +1031,7 @@ body {
               I've worked across startups, deep-tech manufacturing, market strategy, and student-led teams. That mix taught me how products fail, what actually moves metrics, and why shipping matters.
             </p>
             <p class="reveal" style="transition-delay:0.15s">
-              Previously founded <a href="https://peerfectcv.com" target="_blank" rel="noopener noreferrer" class="text-zinc-300 underline underline-offset-4 decoration-white/20 hover:text-white hover:decoration-white/50 transition-all duration-200">PeerfectCV</a>, a peer-based resume feedback platform. <a href="https://readbulletyn.com" target="_blank" rel="noopener noreferrer" class="text-zinc-300 underline underline-offset-4 decoration-white/20 hover:text-white hover:decoration-white/50 transition-all duration-200">Bulletyn</a>, an AI-curated daily news brief, has shipped 680 briefs since July 2026. I write about building them, mostly the parts that go wrong, on <a href="https://omeshkandregula.substack.com" target="_blank" rel="noopener noreferrer" class="text-zinc-300 underline underline-offset-4 decoration-white/20 hover:text-white hover:decoration-white/50 transition-all duration-200">Substack</a>.
+              Previously founded <a href="https://peerfectcv.com" target="_blank" rel="noopener noreferrer" class="text-zinc-300 underline underline-offset-4 decoration-white/20 hover:text-white hover:decoration-white/50 transition-all duration-200">PeerfectCV</a>, a peer-based resume feedback platform. <a href="https://readbulletyn.com" target="_blank" rel="noopener noreferrer" class="text-zinc-300 underline underline-offset-4 decoration-white/20 hover:text-white hover:decoration-white/50 transition-all duration-200">Bulletyn</a>, an AI-curated daily news brief, has shipped 1,200+ briefs since July 2026. I write about building them, mostly the parts that go wrong, on <a href="https://omeshkandregula.substack.com" target="_blank" rel="noopener noreferrer" class="text-zinc-300 underline underline-offset-4 decoration-white/20 hover:text-white hover:decoration-white/50 transition-all duration-200">Substack</a>.
             </p>
             <p class="reveal" style="transition-delay:0.20s">
               Outside of work, I play tennis and run. Current half marathon PB is 2:32 and I am working on getting that down.
@@ -1366,8 +1366,8 @@ const statObs = new IntersectionObserver(entries => {
     const start = performance.now();
     (function tick(now) {
       const t = Math.min((now - start) / 1400, 1);
-      el.textContent = Math.floor((1 - Math.pow(1 - t, 3)) * target);
-      if (t < 1) requestAnimationFrame(tick); else el.textContent = target;
+      el.textContent = Math.floor((1 - Math.pow(1 - t, 3)) * target).toLocaleString('en-US');
+      if (t < 1) requestAnimationFrame(tick); else el.textContent = target.toLocaleString('en-US');
     })(start);
     statObs.unobserve(el);
   });
